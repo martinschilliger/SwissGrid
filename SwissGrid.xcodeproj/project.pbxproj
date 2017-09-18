@@ -1,0 +1,756 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		120FCCF7CAD73F4D7D52A548 /* Pods_SwissGridUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AAAEA7AD5CA024A145CC3EE /* Pods_SwissGridUITests.framework */; };
+		263C673FC619299FC4CAC828 /* Pods_SwissGrid.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A0ABD0D8E38916FC55C3205 /* Pods_SwissGrid.framework */; };
+		43E00ED1001B72446C32032F /* Pods_SwissGridTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB959ED8770D77A694943824 /* Pods_SwissGridTests.framework */; };
+		5B2B2D841F6A63170033834A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2B2D831F6A63170033834A /* AppDelegate.swift */; };
+		5B2B2D861F6A63170033834A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2B2D851F6A63170033834A /* ViewController.swift */; };
+		5B2B2D891F6A63170033834A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B2B2D871F6A63170033834A /* Main.storyboard */; };
+		5B2B2D8B1F6A63170033834A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B2B2D8A1F6A63170033834A /* Assets.xcassets */; };
+		5B2B2D8E1F6A63170033834A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B2B2D8C1F6A63170033834A /* LaunchScreen.storyboard */; };
+		5B2B2D991F6A63170033834A /* SwissGridTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2B2D981F6A63170033834A /* SwissGridTests.swift */; };
+		5B2B2DA41F6A63170033834A /* SwissGridUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2B2DA31F6A63170033834A /* SwissGridUITests.swift */; };
+		5B2B2DB31F6A66E60033834A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B2B2DB21F6A66E60033834A /* MapKit.framework */; };
+		5B45A7731F6FEFDE0042331A /* Coordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B45A7721F6FEFDE0042331A /* Coordinates.swift */; };
+		5B45A7751F6FF4570042331A /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B45A7741F6FF4570042331A /* GradientView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5B2B2D951F6A63170033834A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B2B2D781F6A63170033834A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5B2B2D7F1F6A63170033834A;
+			remoteInfo = SwissGrid;
+		};
+		5B2B2DA01F6A63170033834A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B2B2D781F6A63170033834A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5B2B2D7F1F6A63170033834A;
+			remoteInfo = SwissGrid;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		28FE0DC75A4A7660D2B212A4 /* Pods-SwissGridUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwissGridUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwissGridUITests/Pods-SwissGridUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		5B2B2D801F6A63170033834A /* SwissGrid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwissGrid.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B2B2D831F6A63170033834A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5B2B2D851F6A63170033834A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5B2B2D881F6A63170033834A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5B2B2D8A1F6A63170033834A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5B2B2D8D1F6A63170033834A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5B2B2D8F1F6A63170033834A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5B2B2D941F6A63170033834A /* SwissGridTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwissGridTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B2B2D981F6A63170033834A /* SwissGridTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwissGridTests.swift; sourceTree = "<group>"; };
+		5B2B2D9A1F6A63170033834A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5B2B2D9F1F6A63170033834A /* SwissGridUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwissGridUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B2B2DA31F6A63170033834A /* SwissGridUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwissGridUITests.swift; sourceTree = "<group>"; };
+		5B2B2DA51F6A63170033834A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5B2B2DB21F6A66E60033834A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		5B45A7721F6FEFDE0042331A /* Coordinates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinates.swift; sourceTree = "<group>"; };
+		5B45A7741F6FF4570042331A /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		69424AD9DEF8AE64683AA843 /* Pods-SwissGrid.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwissGrid.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwissGrid/Pods-SwissGrid.debug.xcconfig"; sourceTree = "<group>"; };
+		8AAAEA7AD5CA024A145CC3EE /* Pods_SwissGridUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwissGridUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A0ABD0D8E38916FC55C3205 /* Pods_SwissGrid.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwissGrid.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B21DCFB9EF1ECE120B86B740 /* Pods-SwissGridUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwissGridUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwissGridUITests/Pods-SwissGridUITests.release.xcconfig"; sourceTree = "<group>"; };
+		BDC84A4A397892ED8F8FE378 /* Pods-SwissGridTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwissGridTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwissGridTests/Pods-SwissGridTests.release.xcconfig"; sourceTree = "<group>"; };
+		C0F5FECFD76FD16051B9CEFC /* Pods-SwissGridTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwissGridTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwissGridTests/Pods-SwissGridTests.debug.xcconfig"; sourceTree = "<group>"; };
+		CB959ED8770D77A694943824 /* Pods_SwissGridTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwissGridTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F777543313AA1A8AC3A312E2 /* Pods-SwissGrid.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwissGrid.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwissGrid/Pods-SwissGrid.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5B2B2D7D1F6A63170033834A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B2B2DB31F6A66E60033834A /* MapKit.framework in Frameworks */,
+				263C673FC619299FC4CAC828 /* Pods_SwissGrid.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5B2B2D911F6A63170033834A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43E00ED1001B72446C32032F /* Pods_SwissGridTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5B2B2D9C1F6A63170033834A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				120FCCF7CAD73F4D7D52A548 /* Pods_SwissGridUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5B2B2D771F6A63170033834A = {
+			isa = PBXGroup;
+			children = (
+				5B2B2D821F6A63170033834A /* SwissGrid */,
+				5B2B2D971F6A63170033834A /* SwissGridTests */,
+				5B2B2DA21F6A63170033834A /* SwissGridUITests */,
+				5B2B2D811F6A63170033834A /* Products */,
+				5B2B2DB11F6A66E60033834A /* Frameworks */,
+				DC446B4D9CCA7093454CFF5F /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		5B2B2D811F6A63170033834A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5B2B2D801F6A63170033834A /* SwissGrid.app */,
+				5B2B2D941F6A63170033834A /* SwissGridTests.xctest */,
+				5B2B2D9F1F6A63170033834A /* SwissGridUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5B2B2D821F6A63170033834A /* SwissGrid */ = {
+			isa = PBXGroup;
+			children = (
+				5B2B2D831F6A63170033834A /* AppDelegate.swift */,
+				5B2B2D851F6A63170033834A /* ViewController.swift */,
+				5B45A7741F6FF4570042331A /* GradientView.swift */,
+				5B45A7721F6FEFDE0042331A /* Coordinates.swift */,
+				5B2B2D871F6A63170033834A /* Main.storyboard */,
+				5B2B2D8A1F6A63170033834A /* Assets.xcassets */,
+				5B2B2D8C1F6A63170033834A /* LaunchScreen.storyboard */,
+				5B2B2D8F1F6A63170033834A /* Info.plist */,
+			);
+			path = SwissGrid;
+			sourceTree = "<group>";
+		};
+		5B2B2D971F6A63170033834A /* SwissGridTests */ = {
+			isa = PBXGroup;
+			children = (
+				5B2B2D981F6A63170033834A /* SwissGridTests.swift */,
+				5B2B2D9A1F6A63170033834A /* Info.plist */,
+			);
+			path = SwissGridTests;
+			sourceTree = "<group>";
+		};
+		5B2B2DA21F6A63170033834A /* SwissGridUITests */ = {
+			isa = PBXGroup;
+			children = (
+				5B2B2DA31F6A63170033834A /* SwissGridUITests.swift */,
+				5B2B2DA51F6A63170033834A /* Info.plist */,
+			);
+			path = SwissGridUITests;
+			sourceTree = "<group>";
+		};
+		5B2B2DB11F6A66E60033834A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5B2B2DB21F6A66E60033834A /* MapKit.framework */,
+				9A0ABD0D8E38916FC55C3205 /* Pods_SwissGrid.framework */,
+				CB959ED8770D77A694943824 /* Pods_SwissGridTests.framework */,
+				8AAAEA7AD5CA024A145CC3EE /* Pods_SwissGridUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DC446B4D9CCA7093454CFF5F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				69424AD9DEF8AE64683AA843 /* Pods-SwissGrid.debug.xcconfig */,
+				F777543313AA1A8AC3A312E2 /* Pods-SwissGrid.release.xcconfig */,
+				C0F5FECFD76FD16051B9CEFC /* Pods-SwissGridTests.debug.xcconfig */,
+				BDC84A4A397892ED8F8FE378 /* Pods-SwissGridTests.release.xcconfig */,
+				28FE0DC75A4A7660D2B212A4 /* Pods-SwissGridUITests.debug.xcconfig */,
+				B21DCFB9EF1ECE120B86B740 /* Pods-SwissGridUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5B2B2D7F1F6A63170033834A /* SwissGrid */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5B2B2DA81F6A63170033834A /* Build configuration list for PBXNativeTarget "SwissGrid" */;
+			buildPhases = (
+				BF86F3F9BE22BBEF825BA9BA /* [CP] Check Pods Manifest.lock */,
+				5B2B2D7C1F6A63170033834A /* Sources */,
+				5B2B2D7D1F6A63170033834A /* Frameworks */,
+				5B2B2D7E1F6A63170033834A /* Resources */,
+				E22F541AB3A43D0BA566FDC5 /* [CP] Embed Pods Frameworks */,
+				685C2C539B0D12B4B50DE110 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwissGrid;
+			productName = SwissGrid;
+			productReference = 5B2B2D801F6A63170033834A /* SwissGrid.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5B2B2D931F6A63170033834A /* SwissGridTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5B2B2DAB1F6A63170033834A /* Build configuration list for PBXNativeTarget "SwissGridTests" */;
+			buildPhases = (
+				2FD1E61187B0A6D1E29D7974 /* [CP] Check Pods Manifest.lock */,
+				5B2B2D901F6A63170033834A /* Sources */,
+				5B2B2D911F6A63170033834A /* Frameworks */,
+				5B2B2D921F6A63170033834A /* Resources */,
+				0D09F01FBD88B8A5836F0A58 /* [CP] Embed Pods Frameworks */,
+				E4D1C68F2D8705DB1F0B77A9 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5B2B2D961F6A63170033834A /* PBXTargetDependency */,
+			);
+			name = SwissGridTests;
+			productName = SwissGridTests;
+			productReference = 5B2B2D941F6A63170033834A /* SwissGridTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		5B2B2D9E1F6A63170033834A /* SwissGridUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5B2B2DAE1F6A63170033834A /* Build configuration list for PBXNativeTarget "SwissGridUITests" */;
+			buildPhases = (
+				1BE8DA8D5BB529AFDC730F64 /* [CP] Check Pods Manifest.lock */,
+				5B2B2D9B1F6A63170033834A /* Sources */,
+				5B2B2D9C1F6A63170033834A /* Frameworks */,
+				5B2B2D9D1F6A63170033834A /* Resources */,
+				666B549BD99A03D69E30BBF9 /* [CP] Embed Pods Frameworks */,
+				86A6D65266C7334A424F1263 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5B2B2DA11F6A63170033834A /* PBXTargetDependency */,
+			);
+			name = SwissGridUITests;
+			productName = SwissGridUITests;
+			productReference = 5B2B2D9F1F6A63170033834A /* SwissGridUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5B2B2D781F6A63170033834A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Martin Apps";
+				TargetAttributes = {
+					5B2B2D7F1F6A63170033834A = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = F7DL86356B;
+						ProvisioningStyle = Automatic;
+					};
+					5B2B2D931F6A63170033834A = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = F7DL86356B;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 5B2B2D7F1F6A63170033834A;
+					};
+					5B2B2D9E1F6A63170033834A = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = F7DL86356B;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 5B2B2D7F1F6A63170033834A;
+					};
+				};
+			};
+			buildConfigurationList = 5B2B2D7B1F6A63170033834A /* Build configuration list for PBXProject "SwissGrid" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5B2B2D771F6A63170033834A;
+			productRefGroup = 5B2B2D811F6A63170033834A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5B2B2D7F1F6A63170033834A /* SwissGrid */,
+				5B2B2D931F6A63170033834A /* SwissGridTests */,
+				5B2B2D9E1F6A63170033834A /* SwissGridUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5B2B2D7E1F6A63170033834A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B2B2D8E1F6A63170033834A /* LaunchScreen.storyboard in Resources */,
+				5B2B2D8B1F6A63170033834A /* Assets.xcassets in Resources */,
+				5B2B2D891F6A63170033834A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5B2B2D921F6A63170033834A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5B2B2D9D1F6A63170033834A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0D09F01FBD88B8A5836F0A58 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwissGridTests/Pods-SwissGridTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1BE8DA8D5BB529AFDC730F64 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SwissGridUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2FD1E61187B0A6D1E29D7974 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SwissGridTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		666B549BD99A03D69E30BBF9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwissGridUITests/Pods-SwissGridUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		685C2C539B0D12B4B50DE110 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwissGrid/Pods-SwissGrid-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		86A6D65266C7334A424F1263 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwissGridUITests/Pods-SwissGridUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BF86F3F9BE22BBEF825BA9BA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SwissGrid-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E22F541AB3A43D0BA566FDC5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwissGrid/Pods-SwissGrid-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E4D1C68F2D8705DB1F0B77A9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwissGridTests/Pods-SwissGridTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5B2B2D7C1F6A63170033834A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B45A7731F6FEFDE0042331A /* Coordinates.swift in Sources */,
+				5B2B2D861F6A63170033834A /* ViewController.swift in Sources */,
+				5B45A7751F6FF4570042331A /* GradientView.swift in Sources */,
+				5B2B2D841F6A63170033834A /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5B2B2D901F6A63170033834A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B2B2D991F6A63170033834A /* SwissGridTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5B2B2D9B1F6A63170033834A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B2B2DA41F6A63170033834A /* SwissGridUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5B2B2D961F6A63170033834A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5B2B2D7F1F6A63170033834A /* SwissGrid */;
+			targetProxy = 5B2B2D951F6A63170033834A /* PBXContainerItemProxy */;
+		};
+		5B2B2DA11F6A63170033834A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5B2B2D7F1F6A63170033834A /* SwissGrid */;
+			targetProxy = 5B2B2DA01F6A63170033834A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5B2B2D871F6A63170033834A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5B2B2D881F6A63170033834A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5B2B2D8C1F6A63170033834A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5B2B2D8D1F6A63170033834A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5B2B2DA61F6A63170033834A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5B2B2DA71F6A63170033834A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5B2B2DA91F6A63170033834A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 69424AD9DEF8AE64683AA843 /* Pods-SwissGrid.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = F7DL86356B;
+				INFOPLIST_FILE = SwissGrid/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "ch.martin-apps.SwissGrid";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		5B2B2DAA1F6A63170033834A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F777543313AA1A8AC3A312E2 /* Pods-SwissGrid.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = F7DL86356B;
+				INFOPLIST_FILE = SwissGrid/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "ch.martin-apps.SwissGrid";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		5B2B2DAC1F6A63170033834A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C0F5FECFD76FD16051B9CEFC /* Pods-SwissGridTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = F7DL86356B;
+				INFOPLIST_FILE = SwissGridTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "ch.martin-apps.SwissGridTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwissGrid.app/SwissGrid";
+			};
+			name = Debug;
+		};
+		5B2B2DAD1F6A63170033834A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BDC84A4A397892ED8F8FE378 /* Pods-SwissGridTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = F7DL86356B;
+				INFOPLIST_FILE = SwissGridTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "ch.martin-apps.SwissGridTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwissGrid.app/SwissGrid";
+			};
+			name = Release;
+		};
+		5B2B2DAF1F6A63170033834A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 28FE0DC75A4A7660D2B212A4 /* Pods-SwissGridUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = F7DL86356B;
+				INFOPLIST_FILE = SwissGridUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "ch.martin-apps.SwissGridUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = SwissGrid;
+			};
+			name = Debug;
+		};
+		5B2B2DB01F6A63170033834A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B21DCFB9EF1ECE120B86B740 /* Pods-SwissGridUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = F7DL86356B;
+				INFOPLIST_FILE = SwissGridUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "ch.martin-apps.SwissGridUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = SwissGrid;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5B2B2D7B1F6A63170033834A /* Build configuration list for PBXProject "SwissGrid" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5B2B2DA61F6A63170033834A /* Debug */,
+				5B2B2DA71F6A63170033834A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5B2B2DA81F6A63170033834A /* Build configuration list for PBXNativeTarget "SwissGrid" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5B2B2DA91F6A63170033834A /* Debug */,
+				5B2B2DAA1F6A63170033834A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5B2B2DAB1F6A63170033834A /* Build configuration list for PBXNativeTarget "SwissGridTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5B2B2DAC1F6A63170033834A /* Debug */,
+				5B2B2DAD1F6A63170033834A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5B2B2DAE1F6A63170033834A /* Build configuration list for PBXNativeTarget "SwissGridUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5B2B2DAF1F6A63170033834A /* Debug */,
+				5B2B2DB01F6A63170033834A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5B2B2D781F6A63170033834A /* Project object */;
+}

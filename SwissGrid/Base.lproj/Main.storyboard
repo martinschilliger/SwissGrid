@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SwissGrid" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" mapType="standard" rotateEnabled="NO" pitchEnabled="NO" showsUserLocation="YES" showsBuildings="NO" showsPointsOfInterest="NO" showsScale="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kGw-K1-6IO">
+                                <rect key="frame" x="0.0" y="90" width="320" height="478"/>
+                            </mapView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="XX00000/XX00000" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="20" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="sgz-y2-sez">
+                                <rect key="frame" x="16" y="40" width="288" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" spellCheckingType="no" keyboardType="numbersAndPunctuation" returnKeyType="go" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <action selector="coordinateInputEditingChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="K8d-zW-LEe"/>
+                                </connections>
+                            </textField>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9hc-rE-UJf" customClass="GradientView" customModule="SwissGrid" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="90" width="320" height="478"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1yc-sc-SID">
+                                        <rect key="frame" x="0.0" y="30" width="320" height="36"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <state key="normal" title="Tap to open"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="1yc-sc-SID" firstAttribute="top" secondItem="9hc-rE-UJf" secondAttribute="top" constant="30" id="Mid-nJ-7cJ"/>
+                                    <constraint firstItem="1yc-sc-SID" firstAttribute="leading" secondItem="9hc-rE-UJf" secondAttribute="leading" id="Vy6-X4-iDD"/>
+                                    <constraint firstAttribute="trailing" secondItem="1yc-sc-SID" secondAttribute="trailing" id="etk-jL-eBJ"/>
+                                    <constraint firstItem="1yc-sc-SID" firstAttribute="centerX" secondItem="9hc-rE-UJf" secondAttribute="centerX" id="znV-4b-UBU"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                                        <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                                        <color key="value" white="1" alpha="0.29999999999999999" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="sgz-y2-sez" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="6tN-ZW-Drr"/>
+                            <constraint firstItem="sgz-y2-sez" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="8dK-MO-LM1"/>
+                            <constraint firstItem="9hc-rE-UJf" firstAttribute="top" secondItem="sgz-y2-sez" secondAttribute="bottom" constant="20" id="Khc-oe-Okt"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="9hc-rE-UJf" secondAttribute="bottom" id="PLw-rk-SWV"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="kGw-K1-6IO" secondAttribute="bottom" id="UPe-lh-zQz"/>
+                            <constraint firstAttribute="trailing" secondItem="kGw-K1-6IO" secondAttribute="trailing" id="fdr-7w-Qm7"/>
+                            <constraint firstItem="9hc-rE-UJf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="hA9-SD-nLC"/>
+                            <constraint firstItem="kGw-K1-6IO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="mor-7g-b4H"/>
+                            <constraint firstAttribute="trailing" secondItem="9hc-rE-UJf" secondAttribute="trailing" id="nLW-tL-AZc"/>
+                            <constraint firstItem="sgz-y2-sez" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" constant="-16" id="xT3-3t-ozX"/>
+                            <constraint firstItem="kGw-K1-6IO" firstAttribute="top" secondItem="sgz-y2-sez" secondAttribute="bottom" constant="20" id="zpm-Gg-9qk"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="MapShadow" destination="9hc-rE-UJf" id="70I-ag-xeb"/>
+                        <outlet property="coordinateInput" destination="sgz-y2-sez" id="15z-XG-kYU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="108.75" y="123.59154929577466"/>
+        </scene>
+    </scenes>
+</document>
