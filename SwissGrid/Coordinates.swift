@@ -37,11 +37,17 @@ class Coordinates {
         
 
         // Only even numbers can be a valid coordinates-pair
+        if coordinates.characters.count < 12 {
+            debugPrint("Coordinates invalid: not enough numbers")
+            return (false, 0, 0, false)
+        }
+        
+        // Only even numbers can be a valid coordinates-pair
         if coordinates.characters.count % 2 != 0 {
             debugPrint("Coordinates invalid: odd number count")
             return (false, 0, 0, false)
         }
-
+        
         // Find out the type of coordinates
         let middleIndex = coordinates.index(coordinates.startIndex, offsetBy: (coordinates.characters.count / 2))
         coordinate1 = coordinates.substring(to: middleIndex)
