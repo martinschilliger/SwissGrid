@@ -41,8 +41,6 @@ class Coordinates {
     func checkCoordinatesValidity(coordinates: String) -> Bool {
         var coordinate1 = String()
         var coordinate2 = String()
-        var coordinate1Type = String()
-        var coordinate2Type = String()
 
         // Only even numbers can be a valid coordinates-pair
         if coordinates.characters.count % 2 != 0 {
@@ -53,47 +51,109 @@ class Coordinates {
         coordinate1 = coordinates.substring(to: coordinates.index(coordinates.startIndex, offsetBy: (coordinates.characters.count / 2)))
         coordinate2 = coordinates.substring(from: coordinates.index(coordinates.startIndex, offsetBy: (coordinates.characters.count / 2)))
         //        print("coordinate  1: \(coordinate1), coordinate 2: \(coordinate2)")
-        coordinate1Type = findCoordinateType(coordinate: coordinate1)
-        coordinate2Type = findCoordinateType(coordinate: coordinate2)
+        let coordinate1Type = findCoordinateType(coordinate: coordinate1)
+        let coordinate2Type = findCoordinateType(coordinate: coordinate2)
 
-        if !(coordinate1Type != "invalid" && coordinate2Type != "invalid") {
+        if !(coordinate1Type.invalid && coordinate2Type.invalid) && coordinate1Type.coordinateSystem == coordinate2Type.coordinateSystem {
             return false
         }
 
         return true
     }
 
-    func findCoordinateType(coordinate: String) -> String {
+    func findCoordinateType(coordinate: String) -> (coordinateType: String, coordinateSystem: String, invalid: Bool) {
         var coordinateType = String()
+        var coordinateSystem = String()
+        var invalid = Bool()
+
+        // Find number at position and convert to int for further evaluating
+        let firstChar = Int("\(coordinate[coordinate.startIndex])")!
+        let secondChar = Int("\(coordinate[coordinate.index(coordinate.startIndex, offsetBy: 1)])")!
+        let secondLastChar = Int("\(coordinate[coordinate.index(coordinate.endIndex, offsetBy: -2)])")!
+        let lastChar = Int("\(coordinate[coordinate.index(coordinate.endIndex, offsetBy: -1)])")!
+
+        debugPrint("firstChar", firstChar)
+        debugPrint("secondChar", secondChar)
+        debugPrint("secondLastChar", secondLastChar)
+        debugPrint("lastChar", lastChar)
 
         switch coordinate.characters.count {
         case 6:
             // Must be a simple LV03 coordinate
 
-            coordinateType = "LV03"
+            if firstChar < 4 {
+                coordinateType = "LV03x"
+                coordinateSystem = "LV03"
+            } else {
+                coordinateType = "LV03y"
+                coordinateSystem = "LV03"
+            }
+
             break
 
         case 7:
             // Must be a simple LV95 coordinate or a LV03 with one leading zero
 
-            coordinateType = "LV95"
+            if firstChar == 1 && secondChar < 4 {
+                coordinateType = "LV95N"
+                coordinateSystem = "LV95"
+            } else if firstChar == 2 && secondChar > 4 {
+                coordinateType = "LV95E"
+                coordinateSystem = "LV95"
+            } else if firstChar < 4 && lastChar == 0 {
+                coordinateType = "LV03x-0"
+                coordinateSystem = "LV03"
+            } else if firstChar > 4 && lastChar == 0 {
+                coordinateType = "LV03y-0"
+                coordinateSystem = "LV03"
+            } else {
+                invalid = true
+            }
+
             break
 
         case 8:
             // Must be a LV03 coordinate with two leading zeros or a LV95 cooridnate with one leading zero
 
-            coordinateType = "LV95-0"
+            if firstChar == 1 && secondChar < 4 && lastChar == 0 {
+                coordinateType = "LV95N-0"
+                coordinateSystem = "LV95"
+            } else if firstChar == 2 && secondChar > 4 && lastChar == 0 {
+                coordinateType = "LV95E-0"
+                coordinateSystem = "LV95"
+            } else if firstChar < 4 && secondLastChar == 0 && lastChar == 0 {
+                coordinateType = "LV03x-00"
+                coordinateSystem = "LV03"
+            } else if firstChar > 4 && secondLastChar == 0 && lastChar == 0 {
+                coordinateType = "LV03y-00"
+                coordinateSystem = "LV03"
+            } else {
+                invalid = true
+            }
+
             break
 
         case 9:
             // Must be a LV95 coordinate with two leading zeros
 
-            coordinateType = "LV95-00"
+            if firstChar == 1 && secondChar < 4 && secondLastChar == 0 && lastChar == 0 {
+                coordinateType = "LV95N-00"
+                coordinateSystem = "LV95"
+            } else if firstChar == 2 && secondChar > 4 && secondLastChar == 0 && lastChar == 0 {
+                coordinateType = "LV95E-00"
+                coordinateSystem = "LV95"
+            } else {
+                invalid = true
+            }
+
             break
+
         default:
-            coordinateType = "invalid"
+            invalid = true
         }
 
-        return coordinateType
+        debugPrint("coordinateType", coordinateType)
+
+        return (coordinateType, coordinateSystem, invalid)
     }
 }

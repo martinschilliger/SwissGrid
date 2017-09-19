@@ -20,7 +20,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         // Set Delegate for function
         //        coordinateInput.delegate = self;
 
-        coordinateInput.text = "Ich bin eine Koordinate"
+        coordinateInput.text = "600'000/200'000"
     }
 
     override func didReceiveMemoryWarning() {

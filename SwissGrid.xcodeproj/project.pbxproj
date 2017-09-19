@@ -57,6 +57,8 @@
 		5B2B2DB21F6A66E60033834A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		5B45A7721F6FEFDE0042331A /* Coordinates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinates.swift; sourceTree = "<group>"; };
 		5B45A7741F6FF4570042331A /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		5B45A7761F7015CF0042331A /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
+		5B45A7771F70166C0042331A /* SwiftString.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftString.framework; path = "../../Library/Developer/Xcode/DerivedData/SwissGrid-fgocqgeprvbwyecxeretikydhbhr/Build/Products/Debug-iphonesimulator/SwiftString/SwiftString.framework"; sourceTree = "<group>"; };
 		69424AD9DEF8AE64683AA843 /* Pods-SwissGrid.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwissGrid.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwissGrid/Pods-SwissGrid.debug.xcconfig"; sourceTree = "<group>"; };
 		8AAAEA7AD5CA024A145CC3EE /* Pods_SwissGridUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwissGridUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A0ABD0D8E38916FC55C3205 /* Pods_SwissGrid.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwissGrid.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -99,6 +101,7 @@
 		5B2B2D771F6A63170033834A = {
 			isa = PBXGroup;
 			children = (
+				5B45A7761F7015CF0042331A /* MyPlayground.playground */,
 				5B2B2D821F6A63170033834A /* SwissGrid */,
 				5B2B2D971F6A63170033834A /* SwissGridTests */,
 				5B2B2DA21F6A63170033834A /* SwissGridUITests */,
@@ -154,6 +157,7 @@
 		5B2B2DB11F6A66E60033834A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5B45A7771F70166C0042331A /* SwiftString.framework */,
 				5B2B2DB21F6A66E60033834A /* MapKit.framework */,
 				9A0ABD0D8E38916FC55C3205 /* Pods_SwissGrid.framework */,
 				CB959ED8770D77A694943824 /* Pods_SwissGridTests.framework */,
@@ -437,9 +441,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SwissGrid/Pods-SwissGrid-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SwiftString/SwiftString.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftString.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
