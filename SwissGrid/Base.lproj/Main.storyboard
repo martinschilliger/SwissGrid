@@ -30,7 +30,7 @@
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" spellCheckingType="no" keyboardType="numbersAndPunctuation" returnKeyType="go" enablesReturnKeyAutomatically="YES"/>
                                 <connections>
-                                    <action selector="coordinateInputEditingChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="K8d-zW-LEe"/>
+                                    <action selector="coordinateInputEditingChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="oiC-47-WDY"/>
                                 </connections>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9hc-rE-UJf" customClass="GradientView" customModule="SwissGrid" customModuleProvider="target">
@@ -74,7 +74,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="MapShadow" destination="9hc-rE-UJf" id="70I-ag-xeb"/>
                         <outlet property="coordinateInput" destination="sgz-y2-sez" id="15z-XG-kYU"/>
                     </connections>
                 </viewController>
