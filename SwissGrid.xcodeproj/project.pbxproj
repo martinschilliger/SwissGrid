@@ -445,11 +445,11 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SwissGrid/Pods-SwissGrid-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/SwiftString/SwiftString.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftIcons/SwiftIcons.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftString.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftIcons.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -640,7 +640,7 @@
 				DEVELOPMENT_TEAM = F7DL86356B;
 				INFOPLIST_FILE = SwissGrid/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "ch.martin-apps.SwissGrid";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Schilliger.SwissGrid;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -654,7 +654,7 @@
 				DEVELOPMENT_TEAM = F7DL86356B;
 				INFOPLIST_FILE = SwissGrid/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "ch.martin-apps.SwissGrid";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Schilliger.SwissGrid;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
