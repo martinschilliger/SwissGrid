@@ -20,9 +20,7 @@ class Coordinates {
         let regexRange = NSMakeRange(0, coordinates.characters.count)
         let coordinatesOnlyNumbers = regexOnlyNumbers.stringByReplacingMatches(in: coordinates, options: [], range: regexRange, withTemplate: "")
 
-
         let parsedCoordinates = checkCoordinatesValidityAndConvertToInts(coordinates: coordinatesOnlyNumbers)
- 
 
         return (parsedCoordinates.Ey, parsedCoordinates.Nx, parsedCoordinates.LV95)
     }
@@ -34,20 +32,19 @@ class Coordinates {
         var coordinate2 = String()
         var coordinateNx = Int()
         var coordinateEy = Int()
-        
 
         // Only even numbers can be a valid coordinates-pair
         if coordinates.characters.count < 12 {
             debugPrint("Coordinates invalid: not enough numbers")
             return (false, 0, 0, false)
         }
-        
+
         // Only even numbers can be a valid coordinates-pair
         if coordinates.characters.count % 2 != 0 {
             debugPrint("Coordinates invalid: odd number count")
             return (false, 0, 0, false)
         }
-        
+
         // Find out the type of coordinates
         let middleIndex = coordinates.index(coordinates.startIndex, offsetBy: (coordinates.characters.count / 2))
         coordinate1 = coordinates.substring(to: middleIndex)
@@ -65,15 +62,15 @@ class Coordinates {
         // cut the coordinate out of the string
         let coordinate1calculated = coordinateCutPrefixSuffixAndConvertToInt(coordinate: coordinate1, coordinateType: coordinate1Type.coordinateType)
         let coordinate2calculated = coordinateCutPrefixSuffixAndConvertToInt(coordinate: coordinate2, coordinateType: coordinate2Type.coordinateType)
-//        debugPrint(coordinate1calculated)
-//        debugPrint(coordinate2calculated)
-        
+        //        debugPrint(coordinate1calculated)
+        //        debugPrint(coordinate2calculated)
+
         // Proofing, if two different coordinate directinos have been entered
         if coordinate1calculated.direction == coordinate2calculated.direction {
             debugPrint("Coordinates invalid, 2x the same direction")
             return (false, 0, 0, false)
         }
-        
+
         // Assign coordinate1
         if coordinate1calculated.direction == "Nx" {
             coordinateNx = coordinate1calculated.coordinate
@@ -86,10 +83,10 @@ class Coordinates {
         } else if coordinate2calculated.direction == "Ey" {
             coordinateEy = coordinate2calculated.coordinate
         }
-        
-//        debugPrint("coordinateNx", coordinateNx)
-//        debugPrint("coordinateEy", coordinateEy)
-        
+
+        //        debugPrint("coordinateNx", coordinateNx)
+        //        debugPrint("coordinateEy", coordinateEy)
+
         return (true, coordinateEy, coordinateNx, coordinate1Type.coordinateSystem == "LV95")
     }
 
@@ -97,7 +94,7 @@ class Coordinates {
     func findCoordinateType(coordinate: String) -> (coordinateType: String, coordinateSystem: String, invalid: Bool) {
         var coordinateType = String()
         var coordinateSystem = String()
-        var invalid = false;
+        var invalid = false
 
         // Find number at position and convert to int for further evaluating
         let firstChar = Int("\(coordinate[coordinate.startIndex])")!
@@ -105,10 +102,10 @@ class Coordinates {
         let secondLastChar = Int("\(coordinate[coordinate.index(coordinate.endIndex, offsetBy: -2)])")!
         let lastChar = Int("\(coordinate[coordinate.index(coordinate.endIndex, offsetBy: -1)])")!
 
-//        debugPrint("firstChar", firstChar)
-//        debugPrint("secondChar", secondChar)
-//        debugPrint("secondLastChar", secondLastChar)
-//        debugPrint("lastChar", lastChar)
+        //        debugPrint("firstChar", firstChar)
+        //        debugPrint("secondChar", secondChar)
+        //        debugPrint("secondLastChar", secondLastChar)
+        //        debugPrint("lastChar", lastChar)
 
         switch coordinate.characters.count {
         case 6:
@@ -130,13 +127,13 @@ class Coordinates {
             if firstChar == 1 && secondChar < 4 {
                 coordinateType = "LV95N"
                 coordinateSystem = "LV95"
-            } else if firstChar == 2 && secondChar > 4 {
+            } else if firstChar == 2 && secondChar >= 4 {
                 coordinateType = "LV95E"
                 coordinateSystem = "LV95"
             } else if firstChar < 4 && lastChar == 0 {
                 coordinateType = "LV03x-0"
                 coordinateSystem = "LV03"
-            } else if firstChar > 4 && lastChar == 0 {
+            } else if firstChar >= 4 && lastChar == 0 {
                 coordinateType = "LV03y-0"
                 coordinateSystem = "LV03"
             } else {
@@ -151,13 +148,13 @@ class Coordinates {
             if firstChar == 1 && secondChar < 4 && lastChar == 0 {
                 coordinateType = "LV95N-0"
                 coordinateSystem = "LV95"
-            } else if firstChar == 2 && secondChar > 4 && lastChar == 0 {
+            } else if firstChar == 2 && secondChar >= 4 && lastChar == 0 {
                 coordinateType = "LV95E-0"
                 coordinateSystem = "LV95"
             } else if firstChar < 4 && secondLastChar == 0 && lastChar == 0 {
                 coordinateType = "LV03x-00"
                 coordinateSystem = "LV03"
-            } else if firstChar > 4 && secondLastChar == 0 && lastChar == 0 {
+            } else if firstChar >= 4 && secondLastChar == 0 && lastChar == 0 {
                 coordinateType = "LV03y-00"
                 coordinateSystem = "LV03"
             } else {
@@ -172,7 +169,7 @@ class Coordinates {
             if firstChar == 1 && secondChar < 4 && secondLastChar == 0 && lastChar == 0 {
                 coordinateType = "LV95N-00"
                 coordinateSystem = "LV95"
-            } else if firstChar == 2 && secondChar > 4 && secondLastChar == 0 && lastChar == 0 {
+            } else if firstChar == 2 && secondChar >= 4 && secondLastChar == 0 && lastChar == 0 {
                 coordinateType = "LV95E-00"
                 coordinateSystem = "LV95"
             } else {
@@ -185,28 +182,28 @@ class Coordinates {
             invalid = true
         }
 
-//        debugPrint("coordinateType", coordinateType)
-//        debugPrint("coordinateSystem", coordinateSystem)
+        //        debugPrint("coordinateType", coordinateType)
+        //        debugPrint("coordinateSystem", coordinateSystem)
 
         return (coordinateType, coordinateSystem, invalid)
     }
-    
+
     // Cuts the prefix and suffix and converts to Int
     func coordinateCutPrefixSuffixAndConvertToInt(coordinate: String, coordinateType: String) -> (coordinate: Int, direction: String) {
         var coordinate = coordinate // convert to mutable variable
         var direction = String()
-        
+
         let prefix = String(coordinateType.characters.prefix(4))
         let suffix = String(coordinateType.characters.suffix(2))
-        
+
         let directionIndex = coordinateType.index(coordinateType.startIndex, offsetBy: 4)
-        
+
         // Cut prefix if necessary
         //        debugPrint("Prefix: ", prefix)
         if prefix == "LV95" {
             coordinate.characters.removeFirst(1)
         }
-        
+
         // Cut suffix if necessary
         //        debugPrint("Suffix: ", suffix)
         if suffix == "-0" {
@@ -214,22 +211,20 @@ class Coordinates {
         } else if suffix == "00" {
             coordinate.characters.removeLast(2)
         }
-        
-        
+
         // Find out the direction
         //        debugPrint(coordinateType[directionIndex])
         switch coordinateType[directionIndex] {
-        case "N","x":
+        case "N", "x":
             direction = "Nx"
             break
-        case "E","y":
+        case "E", "y":
             direction = "Ey"
             break
         default:
             break
         }
 
-        return (Int(coordinate)!, direction);
+        return (Int(coordinate)!, direction)
     }
-    
 }
