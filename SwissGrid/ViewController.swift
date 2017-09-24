@@ -9,11 +9,12 @@
 import UIKit
 import CoreLocation
 import MapKit
-import SwiftIcons
 
 class ViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegate, CLLocationManagerDelegate {
     @IBOutlet var coordinateInput: UITextField!
-
+    var calculatedCoordinates = (lat:Double(0), long: Double(0))
+    
+    @IBOutlet var openMapsButton: UIButton!
     @IBOutlet var settingsButton: UIButton!
 
     override func viewDidLoad() {
@@ -22,13 +23,11 @@ class ViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegate, 
 
         coordinateInput.becomeFirstResponder()
 
+        // TODO: Remove the prefill
         // Just for developement
         coordinateInput.text = "1 087 648/2 722 759"
         coordinateInput.text = "600 000 / 200 000"
 
-        // Configure the settings button
-        settingsButton.setIcon(icon: .linearIcons(.cog), iconSize: 27, color: .brown, forState: .normal)
-        settingsButton.setIcon(icon: .linearIcons(.cog), iconSize: 27, color: .lightGray, forState: .highlighted) // TODO: lightGray durch Hellbraun ablösen
     }
 
     override func didReceiveMemoryWarning() {
@@ -53,6 +52,8 @@ class ViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegate, 
         let long = Calc1903.CHtoWGSlong(x: Double(coordinates.Nx), y: Double(coordinates.Ey))
 
         showPositionOnMaps(lat: lat, long: long, coordinateTitle: String("\(coordinates.Nx)/\(coordinates.Ey)"))
+        
+        calculatedCoordinates = (lat: lat, long: long)
     }
 
     @IBOutlet var backgroundMap: MKMapView!
@@ -80,5 +81,10 @@ class ViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegate, 
         myposannot.title = coordinateTitle
 
         backgroundMap.addAnnotation(myposannot)
+    }
+    @IBAction func openMapsButtonTriggered(_ sender: Any) {
+        let mapsURL = URL(string: AvailableMaps.GoogleMaps.urlFormat(lat: calculatedCoordinates.lat, long: calculatedCoordinates.long, routing: false))!
+        UIApplication.shared.openURL(mapsURL)
+        //TODO: What happens, if Waze URL is loaded and it isn't installed?
     }
 }

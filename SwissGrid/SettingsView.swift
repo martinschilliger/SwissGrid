@@ -9,34 +9,140 @@
 import Foundation
 import UIKit
 
-// add this custom initializer; You need to do this as soon as the controlled is initialized – if you wait until viewDidLoad() the animation goes awry. 
-// => https://www.hackingwithswift.com/articles/5/how-to-adopt-ios-11-user-interface-changes-in-your-app
-//required init?(coder aDecoder: NSCoder) {
-//    super.init(coder: aDecoder)
-//    navigationItem.largeTitleDisplayMode = .never
-//}
-
 class SettingsViewController: UITableViewController {
+    @IBOutlet var settingsTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
+
         // Makes the title large (iOS11) => https://stackoverflow.com/a/44410330/1145706
-        //navigationController?.navigationBar.prefersLargeTitles = true
-        // or
-//        if #available(iOS 11.0, *) {
-//            self.navigationController?.navigationBar.prefersLargeTitles = true
-//            self.navigationItem.largeTitleDisplayMode = .always
-//        } else {
-//            // Fallback on earlier versions
-//        }
-        
+        if #available(iOS 11.0, *) {
+            self.navigationController?.navigationBar.prefersLargeTitles = true
+            //            self.navigationItem.largeTitleDisplayMode = .always
+        }
     }
+
+    // Close the settings modal
     @IBOutlet var closeButton: UIBarButtonItem!
-    @IBAction func closeButtonTriggered(_ sender: Any) {
-                navigationController?.popViewController(animated: true)
-                dismiss(animated: true, completion: nil)
+    @IBAction func closeButtonTriggered(_: Any) {
+        navigationController?.popViewController(animated: true)
+        dismiss(animated: true, completion: nil)
     }
+    
+
+    // MARK: - Settings content
+    // TODO: Change it to multidimensional arrays or first find out what to store in user settings?
+//    var savedMapProvider = "Apple" // TODO: Place this to user settings
+    var savedMapProvider:String = UserDefaults.standard.object(forKey: "savedMapProvider") as? String ?? "Apple"
+    let mapProviders:[String:String] = [
+        "Waze" : "https://maps.waze.com",
+        "Google" : "https://maps.google.com",
+        "Apple" : "https://maps.apple.com",
+    ]
+    
+    var savedBoolSettings = [false, false, true, false] // TODO: Place this to user settings
+    let boolSettings:[String:String] = [
+        "ffw" : "FastForward coordinates",
+        "paste" : "Auto paste content",
+        "map" : "Aerial view",
+        "routing" : "Start routing directly",
+    ]
+    
+    override func numberOfSections(in _: UITableView) -> Int {
+        return 2
+    }
+
+    override func tableView(_: UITableView, numberOfRowsInSection section: Int) -> Int {
+        switch section {
+        case 0:
+            return mapProviders.count
+        case 1:
+            return boolSettings.count
+        default:
+            return 4
+        }
+     }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        switch section {
+        case 0:
+            return "Map providers"
+        case 1:
+            return "Behavior"
+        default:
+            return "Section \(section)"
+        }
+    }
+    
+    var lastCheckedIndexPath: IndexPath? = IndexPath(row: 0, section: 0)
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SettingsCell", for: indexPath) as UITableViewCell
+        
+        switch indexPath.section {
+        case 0:
+            cell.textLabel?.text = mapProviders[mapProviders.index(mapProviders.startIndex, offsetBy: indexPath.row)].key
+            if cell.textLabel?.text == savedMapProvider {
+                cell.accessoryType = .checkmark
+                lastCheckedIndexPath = indexPath;
+            } else {
+                cell.accessoryType = .none
+            }
+            
+            break
+        case 1:
+            // add a Switch to the cell
+            let cellSwitch = UISwitch(frame: CGRect.zero) as UISwitch
+            cellSwitch.isOn = savedBoolSettings[indexPath.row]
+            cellSwitch.addTarget(self, action: #selector(switchTriggered), for: .valueChanged)
+            cellSwitch.tag = indexPath.row
+            cell.accessoryView = cellSwitch
+            cell.tag = 5000 // from now on this means this is a UITableViewCell with a UISwitch in it
+            cell.selectionStyle = UITableViewCellSelectionStyle.none
+            
+            cell.textLabel?.text = boolSettings[boolSettings.index(boolSettings.startIndex, offsetBy: indexPath.row)].value
+
+            break
+        default:
+            cell.textLabel?.text = "Section \(indexPath.section) Row \(indexPath.row)"
+        }
+        
+
+        return cell
+    }
+    @objc func switchTriggered(sender: UISwitch) {
+        debugPrint("Button \(sender.tag) switched to: \(sender.isOn)")
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // deselect the cell, because trigger is now received by this function
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        // find the new cell
+        let newCell = tableView.cellForRow(at: indexPath)
+        if newCell?.tag == 5000 { // this is a UITableViewCell with a UISwitch in it
+            return;
+        }
+        
+        // check if it was already checked
+        if indexPath.row != lastCheckedIndexPath?.row {
+            // ok, a new cell is checked. remove checkmark at the old cell
+            if let lastCheckedIndexPath = lastCheckedIndexPath {
+                let oldCell = tableView.cellForRow(at: lastCheckedIndexPath)
+                oldCell?.accessoryType = .none
+            }
+            
+            // place checkmark on the new cell
+            newCell?.accessoryType = .checkmark
+            
+            // save the indexPath of the new cell for later comparing
+            lastCheckedIndexPath = indexPath
+            
+            // save the new selected map provider to user settings
+            savedMapProvider = (newCell?.textLabel?.text)!
+            debugPrint(savedMapProvider)
+        }
+     }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

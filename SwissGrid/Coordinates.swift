@@ -47,8 +47,8 @@ class Coordinates {
 
         // Find out the type of coordinates
         let middleIndex = coordinates.index(coordinates.startIndex, offsetBy: (coordinates.characters.count / 2))
-        coordinate1 = coordinates.substring(to: middleIndex)
-        coordinate2 = coordinates.substring(from: middleIndex)
+        coordinate1 = String(coordinates.prefix(upTo: middleIndex))
+        coordinate2 = String(coordinates.suffix(from: middleIndex))
 
         let coordinate1Type = findCoordinateType(coordinate: coordinate1)
         let coordinate2Type = findCoordinateType(coordinate: coordinate2)

@@ -5,7 +5,7 @@ target 'SwissGrid' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
   
-  pod 'SwiftIcons', '~> 1.5.1'
+#  pod 'SwiftIcons', '~> 1.5.1'
 
   # Pods for SwissGrid
 
