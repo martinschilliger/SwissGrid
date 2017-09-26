@@ -1,0 +1,6 @@
+The provided maps app of the iPhone/iPad doesn't fit the swiss coordinate system. This app gives you a simple input field where you can enter "Swiss Grid"-coordinates.
+
+Also it can directly display your current position in WGS84 and "Swiss Grid"-coordinates.
+
+Other names for Swiss Grid:
+Swiss Grid, Swiss coordinate system, CH1903, LV03

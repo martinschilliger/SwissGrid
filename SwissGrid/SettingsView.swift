@@ -31,23 +31,8 @@ class SettingsViewController: UITableViewController {
     
 
     // MARK: - Settings content
-    // TODO: Change it to multidimensional arrays or first find out what to store in user settings?
-//    var savedMapProvider = "Apple" // TODO: Place this to user settings
     var savedMapProvider:String = UserDefaults.standard.object(forKey: "savedMapProvider") as? String ?? "Apple"
-    let mapProviders:[String:String] = [
-        "Waze" : "https://maps.waze.com",
-        "Google" : "https://maps.google.com",
-        "Apple" : "https://maps.apple.com",
-    ]
-    
-    var savedBoolSettings = [false, false, true, false] // TODO: Place this to user settings
-    let boolSettings:[String:String] = [
-        "ffw" : "FastForward coordinates",
-        "paste" : "Auto paste content",
-        "map" : "Aerial view",
-        "routing" : "Start routing directly",
-    ]
-    
+   
     override func numberOfSections(in _: UITableView) -> Int {
         return 2
     }
@@ -55,9 +40,9 @@ class SettingsViewController: UITableViewController {
     override func tableView(_: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0:
-            return mapProviders.count
+            return AvailableMap.count
         case 1:
-            return boolSettings.count
+            return BooleanSetting.count
         default:
             return 4
         }
@@ -80,7 +65,7 @@ class SettingsViewController: UITableViewController {
         
         switch indexPath.section {
         case 0:
-            cell.textLabel?.text = mapProviders[mapProviders.index(mapProviders.startIndex, offsetBy: indexPath.row)].key
+            cell.textLabel?.text = AvailableMap.maps[indexPath.row]
             if cell.textLabel?.text == savedMapProvider {
                 cell.accessoryType = .checkmark
                 lastCheckedIndexPath = indexPath;
@@ -92,14 +77,14 @@ class SettingsViewController: UITableViewController {
         case 1:
             // add a Switch to the cell
             let cellSwitch = UISwitch(frame: CGRect.zero) as UISwitch
-            cellSwitch.isOn = savedBoolSettings[indexPath.row]
+            cellSwitch.isOn = UserDefaults.standard.object(forKey: BooleanSetting.id(indexPath.row).getName()) as? Bool ?? BooleanSetting.id(indexPath.row).getDefaults()
             cellSwitch.addTarget(self, action: #selector(switchTriggered), for: .valueChanged)
             cellSwitch.tag = indexPath.row
             cell.accessoryView = cellSwitch
             cell.tag = 5000 // from now on this means this is a UITableViewCell with a UISwitch in it
             cell.selectionStyle = UITableViewCellSelectionStyle.none
             
-            cell.textLabel?.text = boolSettings[boolSettings.index(boolSettings.startIndex, offsetBy: indexPath.row)].value
+            cell.textLabel?.text = BooleanSetting.id(indexPath.row).getDescription()
 
             break
         default:
@@ -110,7 +95,9 @@ class SettingsViewController: UITableViewController {
         return cell
     }
     @objc func switchTriggered(sender: UISwitch) {
-        debugPrint("Button \(sender.tag) switched to: \(sender.isOn)")
+        let name = BooleanSetting.id(sender.tag).getName()
+        UserDefaults.standard.set(sender.isOn, forKey: name)
+        //        debugPrint("Button \(name) switched to: \(sender.isOn)")
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -139,10 +126,21 @@ class SettingsViewController: UITableViewController {
             
             // save the new selected map provider to user settings
             savedMapProvider = (newCell?.textLabel?.text)!
-            debugPrint(savedMapProvider)
+            
+            // change the map provider to user settings
+            UserDefaults.standard.set(savedMapProvider, forKey: "savedMapProvider")
         }
      }
-
+    
+    override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+        // TODO: Make the mail link clickable!
+        switch section {
+        case 0:
+            return "Is your favorite map application missing? Please tell Martin: info@martin-apps.ch"
+        default:
+            return nil
+        }
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

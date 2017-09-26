@@ -1,0 +1,7 @@
+app_identifier "com.Schilliger.SwissGrid" # The bundle identifier of your app
+apple_id "martin_schilliger@bluewin.ch" # Your Apple email address
+
+team_id "F7DL86356B" # Developer Portal Team ID
+
+# you can even provide different app identifiers, Apple IDs and team names per lane:
+# More information: https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Appfile.md

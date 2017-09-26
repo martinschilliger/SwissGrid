@@ -13,6 +13,7 @@ import MapKit
 class ViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegate, CLLocationManagerDelegate {
     @IBOutlet var coordinateInput: UITextField!
     var calculatedCoordinates = (lat:Double(0), long: Double(0))
+    let coordinatesClass = Coordinates()
     
     @IBOutlet var openMapsButton: UIButton!
     @IBOutlet var settingsButton: UIButton!
@@ -21,15 +22,40 @@ class ViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegate, 
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
 
+        // Show the keyboard
         coordinateInput.becomeFirstResponder()
 
-        // TODO: Remove the prefill
-        // Just for developement
-        coordinateInput.text = "1 087 648/2 722 759"
-        coordinateInput.text = "600 000 / 200 000"
-
+        // Paste if enabled in settings
+        let pasteSetting = UserDefaults.standard.object(forKey: "Paste") as? Bool ?? BooleanSetting.name("Paste").getDefaults()
+        if pasteSetting {
+            if let pasteString = UIPasteboard.general.string {
+                if coordinatesClass.parseCoordinates(coordinates: pasteString).Ey != 0 && coordinatesClass.parseCoordinates(coordinates: pasteString).Nx != 0 { // 0 means invalid coordinates
+                    // Animate pasting
+                    let middleIndex = pasteString.index(pasteString.startIndex, offsetBy: (pasteString.characters.count / 2))
+                    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
+                        let halfstring = pasteString.prefix(upTo: middleIndex)
+                        self.coordinateInput.text = "\(halfstring)"
+                        self.bounceTextField(textField: self.coordinateInput)
+                        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.0) {
+                            self.coordinateInput.text = pasteString
+                            self.coordinateInputEditingChanged(self.coordinateInput) // Trigger change
+                        }
+                    }
+                    
+                }
+            }
+        }
     }
-
+    
+    func bounceTextField(textField: UITextField) {
+        let animation = CAKeyframeAnimation(keyPath: "position.y")
+        animation.values = [0,15,-5,10,0]
+        animation.keyTimes = [0,0.25,0.5,0.75,1]
+        animation.duration = 0.5
+        animation.isAdditive = true
+        textField.layer.add(animation, forKey: "shakeAnimation")
+    }
+ 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -37,8 +63,6 @@ class ViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegate, 
 
     // Coordinates got typed
     @IBAction func coordinateInputEditingChanged(_ sender: UITextField) {
-        //        print("Changed value: \(sender.text ?? "")");
-        let coordinatesClass = Coordinates()
         let coordinates = coordinatesClass.parseCoordinates(coordinates: sender.text!)
 
         debugPrint(coordinates)
@@ -54,10 +78,18 @@ class ViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegate, 
         showPositionOnMaps(lat: lat, long: long, coordinateTitle: String("\(coordinates.Nx)/\(coordinates.Ey)"))
         
         calculatedCoordinates = (lat: lat, long: long)
+        // TODO: Enable «Tap to open» now for the first time! Deactivate it, if no valid coordinates!
     }
 
     @IBOutlet var backgroundMap: MKMapView!
-
+    
+    @IBAction func openMapsButtonTriggered(_ sender: Any) {
+        openMaps()
+    }
+    @IBAction func openMapsButtonDidEndOnExit(_ sender: Any) {
+        openMaps()
+    }
+    
     func showPositionOnMaps(lat: Double, long: Double, coordinateTitle: String) {
 
         // remove the old marker
@@ -82,9 +114,45 @@ class ViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegate, 
 
         backgroundMap.addAnnotation(myposannot)
     }
-    @IBAction func openMapsButtonTriggered(_ sender: Any) {
-        let mapsURL = URL(string: AvailableMaps.GoogleMaps.urlFormat(lat: calculatedCoordinates.lat, long: calculatedCoordinates.long, routing: false))!
-        UIApplication.shared.openURL(mapsURL)
+    
+    func openMaps() {
+        let mapProviderSetting:String = UserDefaults.standard.object(forKey: "savedMapProvider") as? String ?? "Apple"
+        let routingSetting = UserDefaults.standard.object(forKey: "Routing") as? Bool ?? BooleanSetting.name("Routing").getDefaults()
+        var mapsURLString = String()
+        
+        // TODO: Round Double coordinates to useful size
+        
+        switch mapProviderSetting {
+        case "Google":
+            mapsURLString = AvailableMap.GoogleMaps.urlFormat(lat: calculatedCoordinates.lat, long: calculatedCoordinates.long, routing: routingSetting)
+            break
+        case "Waze":
+            mapsURLString = AvailableMap.Waze.urlFormat(lat: calculatedCoordinates.lat, long: calculatedCoordinates.long, routing: routingSetting)
+            break
+        case "maps.me":
+            mapsURLString = AvailableMap.MapsMe.urlFormat(lat: calculatedCoordinates.lat, long: calculatedCoordinates.long, routing: routingSetting)
+            break
+        case "OpenStreetMap":
+            mapsURLString = AvailableMap.OSM.urlFormat(lat: calculatedCoordinates.lat, long: calculatedCoordinates.long, routing: routingSetting)
+            break
+//        case "TomTom":
+//            mapsURLString = AvailableMap.TomTom.urlFormat(lat: calculatedCoordinates.lat, long: calculatedCoordinates.long, routing: routing)
+//            break
+        case "Navigon":
+            mapsURLString = AvailableMap.Navigon.urlFormat(lat: calculatedCoordinates.lat, long: calculatedCoordinates.long, routing: routingSetting)
+            break
+        case "Garmin Western Europe":
+            mapsURLString = AvailableMap.Garmin.urlFormat(lat: calculatedCoordinates.lat, long: calculatedCoordinates.long, routing: routingSetting)
+            break
+        default: // case "Apple"
+            mapsURLString = AvailableMap.AppleMaps.urlFormat(lat: calculatedCoordinates.lat, long: calculatedCoordinates.long, routing: routingSetting)
+        }
+        let mapsURL = URL(string: mapsURLString)!
+        
+        if !UIApplication.shared.openURL(mapsURL) {
+            debugPrint("Not possible to open Map")
+        }
         //TODO: What happens, if Waze URL is loaded and it isn't installed?
     }
+    
 }

@@ -1,0 +1,4 @@
+L'application des cartes n'a pas le pourvoir des coordinatées suisse. C'app fait la possibilité pour entrer "Swiss Grid" coordinatées.
+
+D'autres noms de Swiss Grid:
+Swiss Grid, Systèm de coordinatées Suisse, CH1903, LV03

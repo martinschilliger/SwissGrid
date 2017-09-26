@@ -1,0 +1,6 @@
+Die Karten App des iPhones beherrscht leider die Schweizerischen Landeskoordinaten nicht. Diese App bietet eine einfache Eingabemöglichkeit für «Swiss Grid» Koordinaten. Swiss Grid überlässt dir die Wahl, welche Karte du verwenden willst!
+
+Um die anschliessende Ortung in der Karten-App schneller zu machen, aktiviert diese App bereits beim Start die Ortungsdienste des iPhones. Dabei zeigt es die aktuelle Position in «Swiss Grid» Koordinaten und WGS84 Koordinaten an.
+
+Andere Namen für Swiss Grid:
+Swiss Grid, Schweizerische Landeskoordinaten, CH1903, LV03, Militärkoordinaten, Militärische Landeskoordinaten
