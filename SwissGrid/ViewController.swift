@@ -134,41 +134,15 @@ class ViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegate, 
         let routingSetting = UserDefaults.standard.object(forKey: "Routing") as? Bool ?? BooleanSetting.name("Routing").getDefaults()
         var mapsURLString = String()
         
-        // TODO: Round Double coordinates to useful size
-        
-        switch mapProviderSetting {
-        case "Google":
-            mapsURLString = AvailableMap.GoogleMaps.urlFormat(lat: lat, long: long, routing: routingSetting)
-            break
-        case "Waze":
-            mapsURLString = AvailableMap.Waze.urlFormat(lat: lat, long: long, routing: routingSetting)
-            break
-        case "maps.me":
-            mapsURLString = AvailableMap.MapsMe.urlFormat(lat: lat, long: long, routing: routingSetting)
-            break
-        case "OpenStreetMap":
-            mapsURLString = AvailableMap.OSM.urlFormat(lat: lat, long: long, routing: routingSetting)
-            break
-//        case "TomTom":
-//            mapsURLString = AvailableMap.TomTom.urlFormat(lat: lat, long: long, routing: routing)
-//            break
-        case "Navigon":
-            mapsURLString = AvailableMap.Navigon.urlFormat(lat: lat, long: long, routing: routingSetting)
-            break
-        case "Garmin Western Europe":
-            mapsURLString = AvailableMap.Garmin.urlFormat(lat: lat, long: long, routing: routingSetting)
-            break
-        default: // case "Apple"
-            mapsURLString = AvailableMap.AppleMaps.urlFormat(lat: lat, long: long, routing: routingSetting)
-        }
+        mapsURLString = AvailableMap.getCase(map: mapProviderSetting).urlFormat(lat: lat, long: long, routing: routingSetting)
         let mapsURL = URL(string: mapsURLString)!
         
         if !UIApplication.shared.openURL(mapsURL) {
             debugPrint("Not possible to open Map")
         }
-        //TODO: What happens, if Waze URL is loaded and it isn't installed?
+        //TODO: What happens, if Waze URL is loaded and it isn't installed? => Inform user!
         
-        //TODO: Is this really a good idea?
+        //TODO: Is this really a good idea? What is, if user entered coordinates, and now copied and used FFW on new (copied) coordinates?
 //        if clear {
 //            coordinateInput.text = ""
 //        }
