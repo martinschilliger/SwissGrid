@@ -119,7 +119,7 @@ enum AvailableMap {
             url = "https://maps.apple.com"
             break;
         case .GoogleMaps:
-            if test || UIApplication.shared.canOpenURL(URL(string:"comgooglemaps://")!) {
+            if /*test || */UIApplication.shared.canOpenURL(URL(string:"comgooglemaps://")!) { //=> google maps web app should always be available
                 url = "comgooglemaps://"
             } else {
                 url = "https://maps.google.com"
