@@ -66,6 +66,29 @@ enum AvailableMap {
     static let maps = ["Apple", "Google", "maps.me", "Waze", "OpenStreetMap", /*"TomTom", */"Navigon", "Garmin Western Europe"];
     static let count = maps.count
     
+    static func getCase(map: String) -> AvailableMap {
+        switch map {
+        case "Apple":
+            return AvailableMap.AppleMaps
+        case "Google":
+            return AvailableMap.GoogleMaps
+        case "maps.me":
+            return AvailableMap.MapsMe
+        case "Waze":
+            return AvailableMap.Waze
+        case "OpenStreetMap":
+            return AvailableMap.OSM
+//        case "TomTom":
+//            return AvailableMap.TomTom
+        case "Navigon":
+            return AvailableMap.Navigon
+        case "Garmin Western Europe":
+            return AvailableMap.Garmin
+        default:
+            return AvailableMap.AppleMaps
+        }
+    }
+    
     func getDescription() -> String {
         switch self {
         case .AppleMaps:
@@ -87,23 +110,23 @@ enum AvailableMap {
         }
     }
     
-    func urlFormat(lat: Double, long: Double, routing: Bool) -> String {
+    func urlBase(test: Bool = false) -> String {
         var url:String;
-
-        // Define URL of provider
+        
+        // Define URL of provider => Be shure to add them to the Info.plist also!
         switch self {
         case .AppleMaps:
             url = "https://maps.apple.com"
             break;
         case .GoogleMaps:
-            if UIApplication.shared.canOpenURL(URL(string:"comgooglemaps://")!) {
+            if test || UIApplication.shared.canOpenURL(URL(string:"comgooglemaps://")!) {
                 url = "comgooglemaps://"
             } else {
                 url = "https://maps.google.com"
             }
             break
         case .Waze:
-            if UIApplication.shared.canOpenURL(URL(string:"waze://")!) {
+            if test || UIApplication.shared.canOpenURL(URL(string:"waze://")!) {
                 url = "waze://"
             } else {
                 url = "https://waze.com/ul"
@@ -115,9 +138,9 @@ enum AvailableMap {
         case .OSM:
             url = "http://www.openstreetmap.org"
             break
-//        case .TomTom:
-//            url = "tomtomhome://"
-//            break
+            //        case .TomTom:
+            //            url = "tomtomhome://"
+        //            break
         case .Navigon:
             url = "navigon://"
             break
@@ -125,6 +148,24 @@ enum AvailableMap {
             url = "garminonboardwesterneurope://"
             break
         }
+        
+        return url
+    }
+    
+    func urlFormat(lat: Double, long: Double, routing: Bool) -> String {
+        func roundDouble(_ double: Double,_ decimals: Int = 5) -> Double {
+            var rounded:Double
+            let exponent = pow(Double(10), Double(decimals))
+            rounded = Double(double) * exponent;
+            rounded = round(rounded)
+            rounded = rounded/exponent
+            
+            return rounded
+        }
+        
+        var url:String = urlBase();
+        let lat = roundDouble(lat)
+        let long = roundDouble(long)        
         
         // Define URL content
         switch self {

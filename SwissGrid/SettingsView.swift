@@ -59,6 +59,16 @@ class SettingsViewController: UITableViewController {
         }
     }
     
+    
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
+    
+    override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
+    
     var lastCheckedIndexPath: IndexPath? = IndexPath(row: 0, section: 0)
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SettingsCell", for: indexPath) as UITableViewCell
@@ -73,6 +83,12 @@ class SettingsViewController: UITableViewController {
                 cell.accessoryType = .none
             }
             
+            let cellUrl = AvailableMap.getCase(map: AvailableMap.maps[indexPath.row]).urlBase(test: true)
+            if !UIApplication.shared.canOpenURL(URL(string:cellUrl)!) {
+                cell.textLabel?.isEnabled = false
+            }
+            
+            // TODO: How to hide greyed out maps??
             break
         case 1:
             // add a Switch to the cell
@@ -85,13 +101,11 @@ class SettingsViewController: UITableViewController {
             cell.selectionStyle = UITableViewCellSelectionStyle.none
             
             cell.textLabel?.text = BooleanSetting.id(indexPath.row).getDescription()
-
             break
         default:
             cell.textLabel?.text = "Section \(indexPath.section) Row \(indexPath.row)"
         }
         
-
         return cell
     }
     @objc func switchTriggered(sender: UISwitch) {
@@ -103,6 +117,11 @@ class SettingsViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // deselect the cell, because trigger is now received by this function
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        // Prevent selection of maps not available
+        if tableView.cellForRow(at: indexPath)?.textLabel?.isEnabled == false {
+            return
+        }
         
         // find the new cell
         let newCell = tableView.cellForRow(at: indexPath)
