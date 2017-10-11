@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "345E8B22F042519717B1931E0A49656D"
+               BlueprintIdentifier = "992BCA9448F7405DEB2447D8007E7582"
                BuildableName = "Pods_SwissGrid.framework"
                BlueprintName = "Pods-SwissGrid"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -47,7 +47,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "345E8B22F042519717B1931E0A49656D"
+            BlueprintIdentifier = "992BCA9448F7405DEB2447D8007E7582"
             BuildableName = "Pods_SwissGrid.framework"
             BlueprintName = "Pods-SwissGrid"
             ReferencedContainer = "container:Pods.xcodeproj">

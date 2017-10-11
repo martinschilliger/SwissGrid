@@ -23,6 +23,10 @@
 		5B45A7751F6FF4570042331A /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B45A7741F6FF4570042331A /* GradientView.swift */; };
 		5B45A77C1F711D560042331A /* CLLocation+CH1903.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B45A77B1F711D560042331A /* CLLocation+CH1903.swift */; };
 		5BA7C3E91F77E97700624D17 /* SettingsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA7C3E81F77E97700624D17 /* SettingsData.swift */; };
+		5BEFC7401F8D80EA00738934 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BEFC7411F8D80EA00738934 /* Alamofire.framework */; };
+		5BEFC7421F8D8A4100738934 /* AlamofireObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BEFC7441F8D8A4100738934 /* AlamofireObjectMapper.framework */; };
+		5BEFC7431F8D8A4100738934 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BEFC7451F8D8A4100738934 /* ObjectMapper.framework */; };
+		5BEFC7471F8D8B4700738934 /* JSONlv95towgs84.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BEFC7461F8D8B4700738934 /* JSONlv95towgs84.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,8 +67,13 @@
 		5B45A7741F6FF4570042331A /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		5B45A7771F70166C0042331A /* SwiftString.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftString.framework; path = "../../Library/Developer/Xcode/DerivedData/SwissGrid-fgocqgeprvbwyecxeretikydhbhr/Build/Products/Debug-iphonesimulator/SwiftString/SwiftString.framework"; sourceTree = "<group>"; };
 		5B45A77B1F711D560042331A /* CLLocation+CH1903.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CLLocation+CH1903.swift"; sourceTree = "<group>"; };
+		5B489B941F8CDDDC00D6FF09 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = SOURCE_ROOT; };
 		5B75C7A91F72696000662961 /* SwiftIcons.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftIcons.framework; path = "../../Library/Developer/Xcode/DerivedData/SwissGrid-fgocqgeprvbwyecxeretikydhbhr/Build/Products/Debug-iphonesimulator/SwiftIcons/SwiftIcons.framework"; sourceTree = "<group>"; };
 		5BA7C3E81F77E97700624D17 /* SettingsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsData.swift; sourceTree = "<group>"; };
+		5BEFC7411F8D80EA00738934 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5BEFC7441F8D8A4100738934 /* AlamofireObjectMapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AlamofireObjectMapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5BEFC7451F8D8A4100738934 /* ObjectMapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ObjectMapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5BEFC7461F8D8B4700738934 /* JSONlv95towgs84.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONlv95towgs84.swift; sourceTree = "<group>"; };
 		69424AD9DEF8AE64683AA843 /* Pods-SwissGrid.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwissGrid.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwissGrid/Pods-SwissGrid.debug.xcconfig"; sourceTree = "<group>"; };
 		8AAAEA7AD5CA024A145CC3EE /* Pods_SwissGridUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwissGridUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A0ABD0D8E38916FC55C3205 /* Pods_SwissGrid.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwissGrid.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -80,6 +89,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BEFC7421F8D8A4100738934 /* AlamofireObjectMapper.framework in Frameworks */,
+				5BEFC7431F8D8A4100738934 /* ObjectMapper.framework in Frameworks */,
+				5BEFC7401F8D80EA00738934 /* Alamofire.framework in Frameworks */,
 				5B2B2DB31F6A66E60033834A /* MapKit.framework in Frameworks */,
 				263C673FC619299FC4CAC828 /* Pods_SwissGrid.framework in Frameworks */,
 			);
@@ -131,6 +143,7 @@
 			children = (
 				5B2B2D831F6A63170033834A /* AppDelegate.swift */,
 				5B2B2D851F6A63170033834A /* ViewController.swift */,
+				5BEFC7461F8D8B4700738934 /* JSONlv95towgs84.swift */,
 				5B1B18861F72B4470024DA8B /* SettingsView.swift */,
 				5BA7C3E81F77E97700624D17 /* SettingsData.swift */,
 				5B45A7741F6FF4570042331A /* GradientView.swift */,
@@ -140,6 +153,7 @@
 				5B2B2D8A1F6A63170033834A /* Assets.xcassets */,
 				5B2B2D8C1F6A63170033834A /* LaunchScreen.storyboard */,
 				5B2B2D8F1F6A63170033834A /* Info.plist */,
+				5B489B941F8CDDDC00D6FF09 /* Icon.png */,
 			);
 			path = SwissGrid;
 			sourceTree = "<group>";
@@ -165,6 +179,9 @@
 		5B2B2DB11F6A66E60033834A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5BEFC7441F8D8A4100738934 /* AlamofireObjectMapper.framework */,
+				5BEFC7451F8D8A4100738934 /* ObjectMapper.framework */,
+				5BEFC7411F8D80EA00738934 /* Alamofire.framework */,
 				5B75C7A91F72696000662961 /* SwiftIcons.framework */,
 				5B45A7771F70166C0042331A /* SwiftString.framework */,
 				5B2B2DB21F6A66E60033834A /* MapKit.framework */,
@@ -267,7 +284,7 @@
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = F7DL86356B;
 						LastSwiftMigration = 0900;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					5B2B2D931F6A63170033834A = {
 						CreatedOnToolsVersion = 8.3.3;
@@ -363,7 +380,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		2FD1E61187B0A6D1E29D7974 /* [CP] Check Pods Manifest.lock */ = {
@@ -381,7 +398,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		666B549BD99A03D69E30BBF9 /* [CP] Embed Pods Frameworks */ = {
@@ -444,7 +461,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		E22F541AB3A43D0BA566FDC5 /* [CP] Embed Pods Frameworks */ = {
@@ -489,6 +506,7 @@
 			files = (
 				5BA7C3E91F77E97700624D17 /* SettingsData.swift in Sources */,
 				5B45A7731F6FEFDE0042331A /* Coordinates.swift in Sources */,
+				5BEFC7471F8D8B4700738934 /* JSONlv95towgs84.swift in Sources */,
 				5B45A77C1F711D560042331A /* CLLocation+CH1903.swift in Sources */,
 				5B2B2D861F6A63170033834A /* ViewController.swift in Sources */,
 				5B1B18871F72B4470024DA8B /* SettingsView.swift in Sources */,
@@ -662,11 +680,15 @@
 			baseConfigurationReference = 69424AD9DEF8AE64683AA843 /* Pods-SwissGrid.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = F7DL86356B;
 				INFOPLIST_FILE = SwissGrid/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Schilliger.SwissGrid;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "ec840bb2-663e-474f-bba0-5e918542ee71";
+				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.Schilliger.SwissGrid";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 				SWIFT_VERSION = 4.0;
 			};
@@ -677,11 +699,15 @@
 			baseConfigurationReference = F777543313AA1A8AC3A312E2 /* Pods-SwissGrid.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = F7DL86356B;
 				INFOPLIST_FILE = SwissGrid/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Schilliger.SwissGrid;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "ec840bb2-663e-474f-bba0-5e918542ee71";
+				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.Schilliger.SwissGrid";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 				SWIFT_VERSION = 4.0;
 			};

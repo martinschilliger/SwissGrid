@@ -49,5 +49,7 @@
 		<string>navigon</string>
 		<string>garminonboardwesterneurope</string>
 	</array>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Start getting the location of your device for faster routing in the later opened maps app. $(PRODUCT_NAME) will use it to display your current location in swiss grid coordinates.</string>
 </dict>
 </plist>

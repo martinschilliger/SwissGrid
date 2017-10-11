@@ -12,47 +12,50 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    
-    func fastForward() -> Bool {
+
+    @objc func fastForward() -> Bool {
         // Check if FastForward is enabled in settings
         let fastForward = UserDefaults.standard.object(forKey: "FFW") as? Bool ?? BooleanSetting.name("FFW").getDefaults()
         if fastForward {
             // Check if there is a string to paste
             if let pasteString = UIPasteboard.general.string {
+                let coordinatesClass = Coordinates()
+                let viewControllerClass = ViewController()
+
                 // Check if last open was also from same paste
                 let pastedCoordinates = UserDefaults.standard.object(forKey: "FFWpasted") as? String
                 if pasteString == pastedCoordinates {
-                    // Inform the user that fastForward was terminated because of same string
-                    return false;
+                    // TODO: Inform the user that fastForward was terminated because of same string
+                    return false
                 }
-                
-                let coordinatesClass = Coordinates()
-                let viewControllerClass = ViewController()
-                
-                
-                let parsed = coordinatesClass.parseCoordinates(coordinates: pasteString);
+
+                let parsed = coordinatesClass.parseCoordinates(coordinates: pasteString)
                 if parsed.Ey != 0 && parsed.Nx != 0 { // 0 means invalid coordinates
                     // save coordinates
                     UserDefaults.standard.set(pasteString, forKey: "FFWpasted")
-                    
-                    let Calc1903 = CLLocation1903() //TODO: Make function reusable, is now just copy of line from ViewController.swift!
+
+                    let Calc1903 = CLLocation1903() // TODO: Make function reusable, is now just copy of line from ViewController.swift!
                     let lat = Calc1903.CHtoWGSlat(x: Double(parsed.Nx), y: Double(parsed.Ey))
                     let long = Calc1903.CHtoWGSlong(x: Double(parsed.Nx), y: Double(parsed.Ey))
-                    
+
+                    print("New coordinates in Pasteboard found. Open Maps directly without loading SwissGrid")
+
+                    // Mark app that the coordinates forced map opening last time => Directly paste it on load
+                    UserDefaults.standard.set(true, forKey: "FFWpastedLastTime")
                     viewControllerClass.openMaps(lat: lat, long: long, clear: true)
                     return true
                 }
             }
         }
         return false
-     }
-    
+    }
+
     func application(_: UIApplication, didFinishLaunchingWithOptions _: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
-        // TODO: View gets loaded anyway in background
-        _ = fastForward()
-        
+
+        // Should prevent View from loading
+        performSelector(onMainThread: #selector(fastForward), with: nil, waitUntilDone: true)
+
         return true
     }
 
@@ -73,11 +76,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidBecomeActive(_: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
 
-        _ = fastForward()
+        // Should prevent View from loading
+        performSelector(onMainThread: #selector(fastForward), with: nil, waitUntilDone: true)
     }
 
     func applicationWillTerminate(_: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
 }

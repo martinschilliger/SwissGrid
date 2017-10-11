@@ -28,11 +28,10 @@ class SettingsViewController: UITableViewController {
         navigationController?.popViewController(animated: true)
         dismiss(animated: true, completion: nil)
     }
-    
 
     // MARK: - Settings content
-    var savedMapProvider:String = UserDefaults.standard.object(forKey: "savedMapProvider") as? String ?? "Apple"
-   
+    var savedMapProvider: String = UserDefaults.standard.object(forKey: "savedMapProvider") as? String ?? "Apple"
+
     override func numberOfSections(in _: UITableView) -> Int {
         return 2
     }
@@ -46,9 +45,9 @@ class SettingsViewController: UITableViewController {
         default:
             return 4
         }
-     }
-    
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    }
+
+    override func tableView(_: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch section {
         case 0:
             return "Map providers"
@@ -58,36 +57,34 @@ class SettingsViewController: UITableViewController {
             return "Section \(section)"
         }
     }
-    
-    
-    
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+
+    override func tableView(_: UITableView, heightForRowAt _: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
     }
-    
-    override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+
+    override func tableView(_: UITableView, estimatedHeightForRowAt _: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
     }
-    
+
     var lastCheckedIndexPath: IndexPath? = IndexPath(row: 0, section: 0)
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SettingsCell", for: indexPath) as UITableViewCell
-        
+
         switch indexPath.section {
         case 0:
             cell.textLabel?.text = AvailableMap.maps[indexPath.row]
             if cell.textLabel?.text == savedMapProvider {
                 cell.accessoryType = .checkmark
-                lastCheckedIndexPath = indexPath;
+                lastCheckedIndexPath = indexPath
             } else {
                 cell.accessoryType = .none
             }
-            
+
             let cellUrl = AvailableMap.getCase(map: AvailableMap.maps[indexPath.row]).urlBase(test: true)
-            if !UIApplication.shared.canOpenURL(URL(string:cellUrl)!) {
+            if !UIApplication.shared.canOpenURL(URL(string: cellUrl)!) {
                 cell.textLabel?.isEnabled = false
             }
-            
+
             // TODO: How to hide greyed out maps??
             break
         case 1:
@@ -99,36 +96,37 @@ class SettingsViewController: UITableViewController {
             cell.accessoryView = cellSwitch
             cell.tag = 5000 // from now on this means this is a UITableViewCell with a UISwitch in it
             cell.selectionStyle = UITableViewCellSelectionStyle.none
-            
+
             cell.textLabel?.text = BooleanSetting.id(indexPath.row).getDescription()
             break
         default:
             cell.textLabel?.text = "Section \(indexPath.section) Row \(indexPath.row)"
         }
-        
+
         return cell
     }
+
     @objc func switchTriggered(sender: UISwitch) {
         let name = BooleanSetting.id(sender.tag).getName()
         UserDefaults.standard.set(sender.isOn, forKey: name)
         //        debugPrint("Button \(name) switched to: \(sender.isOn)")
     }
-    
+
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // deselect the cell, because trigger is now received by this function
         tableView.deselectRow(at: indexPath, animated: true)
-        
+
         // Prevent selection of maps not available
         if tableView.cellForRow(at: indexPath)?.textLabel?.isEnabled == false {
             return
         }
-        
+
         // find the new cell
         let newCell = tableView.cellForRow(at: indexPath)
         if newCell?.tag == 5000 { // this is a UITableViewCell with a UISwitch in it
-            return;
+            return
         }
-        
+
         // check if it was already checked
         if indexPath.row != lastCheckedIndexPath?.row {
             // ok, a new cell is checked. remove checkmark at the old cell
@@ -136,29 +134,24 @@ class SettingsViewController: UITableViewController {
                 let oldCell = tableView.cellForRow(at: lastCheckedIndexPath)
                 oldCell?.accessoryType = .none
             }
-            
+
             // place checkmark on the new cell
             newCell?.accessoryType = .checkmark
-            
+
             // save the indexPath of the new cell for later comparing
             lastCheckedIndexPath = indexPath
-            
+
             // save the new selected map provider to user settings
             savedMapProvider = (newCell?.textLabel?.text)!
-            
+
             // change the map provider to user settings
             UserDefaults.standard.set(savedMapProvider, forKey: "savedMapProvider")
         }
-     }
-    
-    override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+    }
+
+    override func tableView(_: UITableView, titleForFooterInSection section: Int) -> String? {
         // TODO: Make the mail link clickable!
-        switch section {
-        case 0:
-            return "Is your favorite map application missing? Please tell Martin: info@martin-apps.ch"
-        default:
-            return nil
-        }
+        return SectionFooter.getText(section: section)
     }
 
     override func didReceiveMemoryWarning() {
