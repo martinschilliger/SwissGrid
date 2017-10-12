@@ -122,11 +122,12 @@ class ViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegate, 
         // TODO: Enable «Tap to open» now for the first time! Deactivate it, if no valid coordinates!
 
         if coordinates.LV95 {
-            coordinateProgress.isHidden = false
             coordinateProgress.setProgress(0.0, animated: false)
-            // Nx can be only 5 numbers
-            debugPrint(String(coordinates.Nx).characters.count)
-            debugPrint(coordinates.Nx.distance(to: 0))
+            UIView.animate(withDuration: 0.3, delay: 0, options: [], animations: {
+                self.coordinateProgress.alpha = 1 // Here you will get the animation you want
+            })
+            
+            // Nx can be only 5 numbers, so count the numbers and add a 0 if needed
             var geodesyURL = "https://geodesy.geo.admin.ch/reframe/lv95towgs84?format=json&easting="
             geodesyURL += "2\(coordinates.Ey)&northing="
             if String(coordinates.Nx).characters.count == 5 {
@@ -134,11 +135,14 @@ class ViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegate, 
             } else {
                 geodesyURL += "1\(coordinates.Nx)"
             }
-            print(geodesyURL)
-            
+
+            // Start the request
+            // TODO: What if the request fails?
             Alamofire.request(geodesyURL)
                 .downloadProgress { progress in
-                    self.coordinateProgress.setProgress(Float(progress.fractionCompleted), animated: true)
+                    // multiply with 0.6 cause otherwise the progress-bar is immediatly 100%
+                    // when the request is done it is set to 1.0 with animated, so ther user can see a completion
+                    self.coordinateProgress.setProgress(Float(progress.fractionCompleted)*0.6, animated: false)
                 }
                 .validate(statusCode: 200 ..< 300)
                 .validate(contentType: ["application/json"])
@@ -161,7 +165,10 @@ class ViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegate, 
                         }
                     }
                     self.coordinateProgress.setProgress(1.0, animated: true)
-                    self.coordinateProgress.isHidden = true
+                    // Hide the progressView shortly after request is done
+                    UIView.animate(withDuration: 0.5, delay: 0.3, options: [], animations: {
+                        self.coordinateProgress.alpha = 0 // because only alpha can be animated, isHidden cannot
+                    })
                 }
         }
     }

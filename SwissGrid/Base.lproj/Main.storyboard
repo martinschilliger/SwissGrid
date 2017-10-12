@@ -66,8 +66,9 @@
                                             <segue destination="DAP-sn-RAb" kind="presentation" modalPresentationStyle="formSheet" id="bte-wl-vx9"/>
                                         </connections>
                                     </button>
-                                    <progressView hidden="YES" opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="sH9-bJ-9Nn">
+                                    <progressView opaque="NO" alpha="0.0" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="sH9-bJ-9Nn">
                                         <rect key="frame" x="24" y="80" width="283" height="2"/>
+                                        <color key="trackTintColor" red="0.66799789669999998" green="0.57002056850000005" blue="0.46499380689999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </progressView>
                                 </subviews>
                                 <constraints>
