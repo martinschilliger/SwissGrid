@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
-    <device id="ipad9_7" orientation="portrait">
-        <adaptation id="splitview2_3"/>
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -21,19 +21,19 @@
                         <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="438" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YeQ-Lg-Olh">
-                                <rect key="frame" x="0.0" y="0.0" width="438" height="1024"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BIU-fe-oKy">
-                                        <rect key="frame" x="137" y="110" width="165" height="36"/>
+                                        <rect key="frame" x="78" y="110" width="165" height="36"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         <state key="normal" title="Tap to open maps"/>
                                     </button>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="XX00000/XX00000" textAlignment="center" minimumFontSize="20" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="7Uf-QG-AtA">
-                                        <rect key="frame" x="20" y="40" width="354" height="40"/>
+                                        <rect key="frame" x="20" y="40" width="236" height="40"/>
                                         <color key="backgroundColor" white="1" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="jRS-oy-tJ6">
@@ -48,13 +48,19 @@
                                         </variation>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tge-5a-moo">
-                                        <rect key="frame" x="384" y="43" width="34" height="34"/>
+                                        <rect key="frame" x="266" y="43" width="34" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="34" id="7AI-By-a9p"/>
                                             <constraint firstAttribute="width" secondItem="Tge-5a-moo" secondAttribute="height" multiplier="34:34" id="9uU-zV-5aH"/>
                                             <constraint firstAttribute="height" constant="34" id="b5f-i8-g0D"/>
                                         </constraints>
                                     </button>
+                                    <imageView userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="eOv-eO-EWE">
+                                        <rect key="frame" x="0.0" y="248" width="320" height="320"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="eOv-eO-EWE" secondAttribute="height" multiplier="1:1" id="c3d-SB-Qx6"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="Tge-5a-moo" firstAttribute="leading" secondItem="7Uf-QG-AtA" secondAttribute="trailing" constant="10" id="7VX-ep-SOL"/>
@@ -63,12 +69,15 @@
                                         <variation key="widthClass=regular" constant="70"/>
                                         <variation key="heightClass=compact-widthClass=compact" constant="40"/>
                                     </constraint>
+                                    <constraint firstAttribute="trailing" secondItem="eOv-eO-EWE" secondAttribute="trailing" id="G92-8d-f2z"/>
                                     <constraint firstItem="BIU-fe-oKy" firstAttribute="centerXWithinMargins" secondItem="YeQ-Lg-Olh" secondAttribute="centerX" id="MHS-6M-tzr"/>
+                                    <constraint firstItem="eOv-eO-EWE" firstAttribute="leading" secondItem="YeQ-Lg-Olh" secondAttribute="leading" id="Of5-5p-AAe"/>
                                     <constraint firstItem="BIU-fe-oKy" firstAttribute="top" secondItem="7Uf-QG-AtA" secondAttribute="bottom" constant="30" id="QET-1o-BJj"/>
                                     <constraint firstItem="7Uf-QG-AtA" firstAttribute="left" secondItem="YeQ-Lg-Olh" secondAttribute="left" constant="20" id="aEX-7I-0EV">
                                         <variation key="widthClass=regular" constant="70"/>
                                         <variation key="heightClass=compact-widthClass=compact" constant="40"/>
                                     </constraint>
+                                    <constraint firstAttribute="bottom" secondItem="eOv-eO-EWE" secondAttribute="bottom" id="cua-Gn-ioN"/>
                                     <constraint firstItem="7Uf-QG-AtA" firstAttribute="top" secondItem="YeQ-Lg-Olh" secondAttribute="top" constant="40" id="lXj-iP-yLI">
                                         <variation key="heightClass=regular-widthClass=regular" constant="100"/>
                                     </constraint>
@@ -86,8 +95,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="52" y="374.66266866566718"/>
+            <point key="canvasLocation" x="50.625" y="373.94366197183098"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Icon.png" width="1024" height="1024"/>
+    </resources>
     <color key="tintColor" red="0.14687815309999999" green="0.086892776190000007" blue="0.037600044159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

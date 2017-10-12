@@ -10,17 +10,15 @@ import Foundation
 import ObjectMapper
 
 class JSONlv95towgs84Response: Mappable {
-   
+
     var easting: String?
     var northing: String?
-    
-    required init?(map: Map){
-        
+
+    required init?(map _: Map) {
     }
-    
+
     func mapping(map: Map) {
         easting <- map["easting"]
         northing <- map["northing"]
     }
 }
-

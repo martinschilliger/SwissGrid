@@ -1,0 +1,9 @@
+git_url "ssh://git@bitbucket.org/rettung-stgallen/fastlane-zertifikate-martin-privat.git"
+
+type "appstore" # The default type, can be: appstore, adhoc or development
+
+app_identifier "com.Schilliger.SwissGrid,com.Schilliger.SwissGrid.CurrentPosition" 
+username "martin_schilliger@bluewin.ch" # Your Apple Developer Portal username
+
+# For all available options run `match --help`
+# Remove the # in the beginning of the line to enable the other options

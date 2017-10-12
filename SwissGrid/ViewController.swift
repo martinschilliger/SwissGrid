@@ -22,7 +22,7 @@ class ViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegate, 
     let authorizationStatus = CLLocationManager.authorizationStatus()
 
     @IBOutlet var openMapsButton: UIButton!
-    @IBOutlet var settingsButton: UIButton!
+    @IBOutlet var settingsButton: UIButton! // TODO: Coq as Icon for the settings button
     @IBOutlet var coordinateProgress: UIProgressView!
 
     override func viewDidLoad() {
@@ -118,7 +118,7 @@ class ViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegate, 
 
         showPositionOnMaps(lat: lat, long: long, coordinateTitle: String("\(coordinates.Nx)/\(coordinates.Ey)"))
         calculatedCoordinates = (lat: lat, long: long)
-        
+
         // TODO: Enable «Tap to open» now for the first time! Deactivate it, if no valid coordinates!
 
         if coordinates.LV95 {
@@ -126,7 +126,7 @@ class ViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegate, 
             UIView.animate(withDuration: 0.3, delay: 0, options: [], animations: {
                 self.coordinateProgress.alpha = 1 // Here you will get the animation you want
             })
-            
+
             // Nx can be only 5 numbers, so count the numbers and add a 0 if needed
             var geodesyURL = "https://geodesy.geo.admin.ch/reframe/lv95towgs84?format=json&easting="
             geodesyURL += "2\(coordinates.Ey)&northing="
@@ -142,7 +142,7 @@ class ViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegate, 
                 .downloadProgress { progress in
                     // multiply with 0.6 cause otherwise the progress-bar is immediatly 100%
                     // when the request is done it is set to 1.0 with animated, so ther user can see a completion
-                    self.coordinateProgress.setProgress(Float(progress.fractionCompleted)*0.6, animated: false)
+                    self.coordinateProgress.setProgress(Float(progress.fractionCompleted) * 0.6, animated: false)
                 }
                 .validate(statusCode: 200 ..< 300)
                 .validate(contentType: ["application/json"])
@@ -151,11 +151,11 @@ class ViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegate, 
                     case let .failure(error):
                         debugPrint(error)
                         break
-                    case .success(_):
+                    case .success:
                         let lv95toWGS84Coordinates = response.result.value
                         let easting = lv95toWGS84Coordinates?.easting
                         let northing = lv95toWGS84Coordinates?.northing
-                        
+
                         if easting != nil && northing != nil {
                             lat = Double(northing!)!
                             long = Double(easting!)!

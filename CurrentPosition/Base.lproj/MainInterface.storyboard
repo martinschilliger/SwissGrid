@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="M4Y-Lb-cyx">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Today View Controller-->
+        <scene sceneID="cwh-vc-ff4">
+            <objects>
+                <viewController id="M4Y-Lb-cyx" customClass="TodayViewController" customModule="CurrentPosition" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" simulatedAppContext="notificationCenter" id="S3S-Oj-5AN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Location" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="200" translatesAutoresizingMaskIntoConstraints="NO" id="Tvv-Aw-EM0">
+                                <rect key="frame" x="0.0" y="54.000000000000007" width="320" height="20.666666666666679"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="754" verticalCompressionResistancePriority="754" image="currentLocationImg.png" translatesAutoresizingMaskIntoConstraints="NO" id="yuN-WE-TGV">
+                                <rect key="frame" x="15" y="76" width="37" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="yuN-WE-TGV" secondAttribute="height" multiplier="37:37" id="ihe-F2-6c0"/>
+                                    <constraint firstAttribute="height" constant="37" id="wrG-1K-Pxq"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" text="600'000/200'000" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="200" translatesAutoresizingMaskIntoConstraints="NO" id="GcN-lo-r42">
+                                <rect key="frame" x="62" y="79.666666666666671" width="201" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.14687815309999999" green="0.086892776190000007" blue="0.037600044159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Tvv-Aw-EM0" firstAttribute="leading" secondItem="ssy-KU-ocm" secondAttribute="leading" id="7dL-8R-CcP"/>
+                            <constraint firstItem="yuN-WE-TGV" firstAttribute="leading" secondItem="ssy-KU-ocm" secondAttribute="leading" constant="15" id="F3S-W3-9F2"/>
+                            <constraint firstItem="GcN-lo-r42" firstAttribute="trailing" secondItem="ssy-KU-ocm" secondAttribute="trailing" constant="-57" id="LBc-MO-qhZ"/>
+                            <constraint firstItem="GcN-lo-r42" firstAttribute="leading" secondItem="yuN-WE-TGV" secondAttribute="trailing" constant="10" id="PmK-UR-sTv"/>
+                            <constraint firstItem="Tvv-Aw-EM0" firstAttribute="top" secondItem="ssy-KU-ocm" secondAttribute="top" constant="10" id="Wjh-Ls-37O"/>
+                            <constraint firstItem="GcN-lo-r42" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="ssy-KU-ocm" secondAttribute="bottom" id="Zbi-lm-7ve"/>
+                            <constraint firstItem="ssy-KU-ocm" firstAttribute="trailing" secondItem="Tvv-Aw-EM0" secondAttribute="trailing" id="ccY-en-E1a"/>
+                            <constraint firstItem="GcN-lo-r42" firstAttribute="top" secondItem="Tvv-Aw-EM0" secondAttribute="bottom" constant="5" id="lz6-zu-BBO"/>
+                            <constraint firstItem="yuN-WE-TGV" firstAttribute="centerY" secondItem="GcN-lo-r42" secondAttribute="centerY" id="vjm-l4-LtY"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ssy-KU-ocm"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="60"/>
+                    <connections>
+                        <outlet property="currentPosition" destination="GcN-lo-r42" id="K8E-Uj-6Nz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="33.333333333333336" y="35.054347826086961"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="currentLocationImg.png" width="850" height="850"/>
+    </resources>
+    <color key="tintColor" red="0.14687815309999999" green="0.086892776190000007" blue="0.037600044159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+</document>

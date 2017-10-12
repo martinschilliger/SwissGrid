@@ -22,6 +22,13 @@
 		5B45A7731F6FEFDE0042331A /* Coordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B45A7721F6FEFDE0042331A /* Coordinates.swift */; };
 		5B45A7751F6FF4570042331A /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B45A7741F6FF4570042331A /* GradientView.swift */; };
 		5B45A77C1F711D560042331A /* CLLocation+CH1903.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B45A77B1F711D560042331A /* CLLocation+CH1903.swift */; };
+		5B8B08371F8FAE6400926144 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B8B08361F8FAE6400926144 /* NotificationCenter.framework */; };
+		5B8B083A1F8FAE6500926144 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8B08391F8FAE6500926144 /* TodayViewController.swift */; };
+		5B8B083D1F8FAE6500926144 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B8B083B1F8FAE6500926144 /* MainInterface.storyboard */; };
+		5B8B08411F8FAE6500926144 /* CurrentPosition.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 5B8B08351F8FAE6400926144 /* CurrentPosition.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5B8B084A1F8FBFE900926144 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B8B08491F8FBEE400926144 /* Icon.png */; };
+		5B8B084B1F8FBFEC00926144 /* currentLocationImg.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B8B08481F8FBEE400926144 /* currentLocationImg.png */; };
+		5B8B084C1F8FC94000926144 /* CLLocation+CH1903.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B45A77B1F711D560042331A /* CLLocation+CH1903.swift */; };
 		5BA7C3E91F77E97700624D17 /* SettingsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA7C3E81F77E97700624D17 /* SettingsData.swift */; };
 		5BEFC7401F8D80EA00738934 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BEFC7411F8D80EA00738934 /* Alamofire.framework */; };
 		5BEFC7421F8D8A4100738934 /* AlamofireObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BEFC7441F8D8A4100738934 /* AlamofireObjectMapper.framework */; };
@@ -44,7 +51,28 @@
 			remoteGlobalIDString = 5B2B2D7F1F6A63170033834A;
 			remoteInfo = SwissGrid;
 		};
+		5B8B083F1F8FAE6500926144 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B2B2D781F6A63170033834A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5B8B08341F8FAE6400926144;
+			remoteInfo = CurrentPosition;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5B8B08451F8FAE6500926144 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				5B8B08411F8FAE6500926144 /* CurrentPosition.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		28FE0DC75A4A7660D2B212A4 /* Pods-SwissGridUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwissGridUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwissGridUITests/Pods-SwissGridUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -67,8 +95,14 @@
 		5B45A7741F6FF4570042331A /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		5B45A7771F70166C0042331A /* SwiftString.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftString.framework; path = "../../Library/Developer/Xcode/DerivedData/SwissGrid-fgocqgeprvbwyecxeretikydhbhr/Build/Products/Debug-iphonesimulator/SwiftString/SwiftString.framework"; sourceTree = "<group>"; };
 		5B45A77B1F711D560042331A /* CLLocation+CH1903.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CLLocation+CH1903.swift"; sourceTree = "<group>"; };
-		5B489B941F8CDDDC00D6FF09 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = SOURCE_ROOT; };
 		5B75C7A91F72696000662961 /* SwiftIcons.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftIcons.framework; path = "../../Library/Developer/Xcode/DerivedData/SwissGrid-fgocqgeprvbwyecxeretikydhbhr/Build/Products/Debug-iphonesimulator/SwiftIcons/SwiftIcons.framework"; sourceTree = "<group>"; };
+		5B8B08351F8FAE6400926144 /* CurrentPosition.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CurrentPosition.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B8B08361F8FAE6400926144 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		5B8B08391F8FAE6500926144 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		5B8B083C1F8FAE6500926144 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		5B8B083E1F8FAE6500926144 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5B8B08481F8FBEE400926144 /* currentLocationImg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = currentLocationImg.png; path = Images/currentLocationImg.png; sourceTree = "<group>"; };
+		5B8B08491F8FBEE400926144 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = Images/Icon.png; sourceTree = "<group>"; };
 		5BA7C3E81F77E97700624D17 /* SettingsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsData.swift; sourceTree = "<group>"; };
 		5BEFC7411F8D80EA00738934 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BEFC7441F8D8A4100738934 /* AlamofireObjectMapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AlamofireObjectMapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -113,6 +147,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5B8B08321F8FAE6400926144 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B8B08371F8FAE6400926144 /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -122,6 +164,7 @@
 				5B2B2D821F6A63170033834A /* SwissGrid */,
 				5B2B2D971F6A63170033834A /* SwissGridTests */,
 				5B2B2DA21F6A63170033834A /* SwissGridUITests */,
+				5B8B08381F8FAE6400926144 /* CurrentPosition */,
 				5B2B2D811F6A63170033834A /* Products */,
 				5B2B2DB11F6A66E60033834A /* Frameworks */,
 				DC446B4D9CCA7093454CFF5F /* Pods */,
@@ -134,6 +177,7 @@
 				5B2B2D801F6A63170033834A /* SwissGrid.app */,
 				5B2B2D941F6A63170033834A /* SwissGridTests.xctest */,
 				5B2B2D9F1F6A63170033834A /* SwissGridUITests.xctest */,
+				5B8B08351F8FAE6400926144 /* CurrentPosition.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -153,7 +197,8 @@
 				5B2B2D8A1F6A63170033834A /* Assets.xcassets */,
 				5B2B2D8C1F6A63170033834A /* LaunchScreen.storyboard */,
 				5B2B2D8F1F6A63170033834A /* Info.plist */,
-				5B489B941F8CDDDC00D6FF09 /* Icon.png */,
+				5B8B08481F8FBEE400926144 /* currentLocationImg.png */,
+				5B8B08491F8FBEE400926144 /* Icon.png */,
 			);
 			path = SwissGrid;
 			sourceTree = "<group>";
@@ -188,8 +233,19 @@
 				9A0ABD0D8E38916FC55C3205 /* Pods_SwissGrid.framework */,
 				CB959ED8770D77A694943824 /* Pods_SwissGridTests.framework */,
 				8AAAEA7AD5CA024A145CC3EE /* Pods_SwissGridUITests.framework */,
+				5B8B08361F8FAE6400926144 /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5B8B08381F8FAE6400926144 /* CurrentPosition */ = {
+			isa = PBXGroup;
+			children = (
+				5B8B08391F8FAE6500926144 /* TodayViewController.swift */,
+				5B8B083B1F8FAE6500926144 /* MainInterface.storyboard */,
+				5B8B083E1F8FAE6500926144 /* Info.plist */,
+			);
+			path = CurrentPosition;
 			sourceTree = "<group>";
 		};
 		DC446B4D9CCA7093454CFF5F /* Pods */ = {
@@ -218,10 +274,12 @@
 				5B2B2D7E1F6A63170033834A /* Resources */,
 				E22F541AB3A43D0BA566FDC5 /* [CP] Embed Pods Frameworks */,
 				685C2C539B0D12B4B50DE110 /* [CP] Copy Pods Resources */,
+				5B8B08451F8FAE6500926144 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				5B8B08401F8FAE6500926144 /* PBXTargetDependency */,
 			);
 			name = SwissGrid;
 			productName = SwissGrid;
@@ -270,13 +328,30 @@
 			productReference = 5B2B2D9F1F6A63170033834A /* SwissGridUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		5B8B08341F8FAE6400926144 /* CurrentPosition */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5B8B08441F8FAE6500926144 /* Build configuration list for PBXNativeTarget "CurrentPosition" */;
+			buildPhases = (
+				5B8B08311F8FAE6400926144 /* Sources */,
+				5B8B08321F8FAE6400926144 /* Frameworks */,
+				5B8B08331F8FAE6400926144 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CurrentPosition;
+			productName = CurrentPosition;
+			productReference = 5B8B08351F8FAE6400926144 /* CurrentPosition.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		5B2B2D781F6A63170033834A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0830;
+				LastSwiftUpdateCheck = 0900;
 				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Martin Apps";
 				TargetAttributes = {
@@ -284,7 +359,7 @@
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = F7DL86356B;
 						LastSwiftMigration = 0900;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 					5B2B2D931F6A63170033834A = {
 						CreatedOnToolsVersion = 8.3.3;
@@ -299,6 +374,11 @@
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 5B2B2D7F1F6A63170033834A;
+					};
+					5B8B08341F8FAE6400926144 = {
+						CreatedOnToolsVersion = 9.0;
+						DevelopmentTeam = F7DL86356B;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -318,6 +398,7 @@
 				5B2B2D7F1F6A63170033834A /* SwissGrid */,
 				5B2B2D931F6A63170033834A /* SwissGridTests */,
 				5B2B2D9E1F6A63170033834A /* SwissGridUITests */,
+				5B8B08341F8FAE6400926144 /* CurrentPosition */,
 			);
 		};
 /* End PBXProject section */
@@ -327,6 +408,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B8B084A1F8FBFE900926144 /* Icon.png in Resources */,
 				5B2B2D8E1F6A63170033834A /* LaunchScreen.storyboard in Resources */,
 				5B2B2D8B1F6A63170033834A /* Assets.xcassets in Resources */,
 				5B2B2D891F6A63170033834A /* Main.storyboard in Resources */,
@@ -344,6 +426,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5B8B08331F8FAE6400926144 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B8B084B1F8FBFEC00926144 /* currentLocationImg.png in Resources */,
+				5B8B083D1F8FAE6500926144 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -531,6 +622,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5B8B08311F8FAE6400926144 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B8B083A1F8FAE6500926144 /* TodayViewController.swift in Sources */,
+				5B8B084C1F8FC94000926144 /* CLLocation+CH1903.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -543,6 +643,11 @@
 			isa = PBXTargetDependency;
 			target = 5B2B2D7F1F6A63170033834A /* SwissGrid */;
 			targetProxy = 5B2B2DA01F6A63170033834A /* PBXContainerItemProxy */;
+		};
+		5B8B08401F8FAE6500926144 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5B8B08341F8FAE6400926144 /* CurrentPosition */;
+			targetProxy = 5B8B083F1F8FAE6500926144 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -561,6 +666,14 @@
 				5B2B2D8D1F6A63170033834A /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		5B8B083B1F8FAE6500926144 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5B8B083C1F8FAE6500926144 /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -679,16 +792,19 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 69424AD9DEF8AE64683AA843 /* Pods-SwissGrid.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = F7DL86356B;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = SwissGrid/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Schilliger.SwissGrid;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "ec840bb2-663e-474f-bba0-5e918542ee71";
-				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.Schilliger.SwissGrid";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 				SWIFT_VERSION = 4.0;
 			};
@@ -698,16 +814,19 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F777543313AA1A8AC3A312E2 /* Pods-SwissGrid.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = F7DL86356B;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = SwissGrid/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Schilliger.SwissGrid;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "ec840bb2-663e-474f-bba0-5e918542ee71";
-				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.Schilliger.SwissGrid";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 				SWIFT_VERSION = 4.0;
 			};
@@ -779,6 +898,52 @@
 			};
 			name = Release;
 		};
+		5B8B08421F8FAE6500926144 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = F7DL86356B;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = CurrentPosition/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Schilliger.SwissGrid.CurrentPosition;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5B8B08431F8FAE6500926144 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = F7DL86356B;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = CurrentPosition/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Schilliger.SwissGrid.CurrentPosition;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -814,6 +979,15 @@
 			buildConfigurations = (
 				5B2B2DAF1F6A63170033834A /* Debug */,
 				5B2B2DB01F6A63170033834A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5B8B08441F8FAE6500926144 /* Build configuration list for PBXNativeTarget "CurrentPosition" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5B8B08421F8FAE6500926144 /* Debug */,
+				5B8B08431F8FAE6500926144 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
