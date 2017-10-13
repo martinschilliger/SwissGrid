@@ -123,10 +123,12 @@ class ViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegate, 
     @IBAction func coordinateInputEditingChanged(_ sender: UITextField) {
         let coordinates = coordinatesClass.parseCoordinates(coordinates: sender.text!)
 
-        debugPrint(coordinates)
-
+        // Check, if coordinates are valid and activate button
         if coordinates.Ey == 0 || coordinates.Nx == 0 {
+            openMapsButton.isEnabled = false
             return
+        } else {
+            openMapsButton.isEnabled = true
         }
 
         let Calc1903 = CLLocation1903()
@@ -135,8 +137,6 @@ class ViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegate, 
 
         showPositionOnMaps(lat: lat, long: long, coordinateTitle: String("\(coordinates.Nx)/\(coordinates.Ey)"))
         calculatedCoordinates = (lat: lat, long: long)
-
-        // TODO: Enable «Tap to open» now for the first time! Deactivate it, if no valid coordinates!
 
         if coordinates.LV95 {
             coordinateProgress.setProgress(0.0, animated: false)
@@ -189,7 +189,7 @@ class ViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegate, 
                 }
         }
     }
-
+    
     @IBOutlet var backgroundMap: MKMapView!
 
     @IBAction func openMapsButtonTriggered(_: Any) {
