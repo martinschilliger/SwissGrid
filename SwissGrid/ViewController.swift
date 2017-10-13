@@ -49,7 +49,15 @@ class ViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegate, 
         // Directly paste if last launch of the app fastforwarded to maps. Even overwrite (normally anyway empty) coordinateInput text. So that at relaunch of the app it makes sense to the user, which coordinates have been used
         let pastedLastTime = UserDefaults.standard.object(forKey: "FFWpastedLastTime") as? Bool ?? false
         if pastedLastTime {
-            print("Last time coordinates got fast forwarded. Directly paste them to coordinateInput now")
+            let oldestPossibleDate = Date.init(timeIntervalSinceNow: -60*10)
+            let pastedDate = UserDefaults.standard.object(forKey: "FFWpastedLastTimeDate") as? Date ?? Date.init(timeIntervalSinceNow: -60*11) //default older than oldestPossibleDate
+            
+            if pastedDate < oldestPossibleDate {
+                debugPrint("It's long ago since coordinates got fast forwarded. Don't paste them")
+                return
+            }
+            
+            debugPrint("Last time coordinates got fast forwarded. Directly paste them to coordinateInput now")
             let pastedCoordinates = UserDefaults.standard.object(forKey: "FFWpasted") as? String
             coordinateInput.text = pastedCoordinates
             coordinateInputEditingChanged(coordinateInput) // Trigger change
@@ -66,6 +74,15 @@ class ViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegate, 
         let pasteSetting = UserDefaults.standard.object(forKey: "Paste") as? Bool ?? BooleanSetting.name("Paste").getDefaults()
         if pasteSetting {
             if let pasteString = UIPasteboard.general.string {
+                // Check if the latest copier was the todayViewWidget of Swiss Grid
+                let pasteFfw = UIPasteboard.init(name: UIPasteboardName.init(rawValue: "com.schilliger.swissgrid.ffw"), create: false)
+                
+                if let pasteFfwString = pasteFfw?.string {
+                    if pasteString == pasteFfwString {
+                        return
+                    }
+                }
+                
                 if coordinatesClass.parseCoordinates(coordinates: pasteString).Ey != 0 && coordinatesClass.parseCoordinates(coordinates: pasteString).Nx != 0 { // 0 means invalid coordinates
 
                     // Animate pasting

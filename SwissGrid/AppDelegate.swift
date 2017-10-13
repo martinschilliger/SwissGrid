@@ -17,8 +17,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Check if FastForward is enabled in settings
         let fastForward = UserDefaults.standard.object(forKey: "FFW") as? Bool ?? BooleanSetting.name("FFW").getDefaults()
         if fastForward {
+            
             // Check if there is a string to paste
             if let pasteString = UIPasteboard.general.string {
+                // Check if the latest copier was the todayViewWidget of Swiss Grid
+                let pasteFfw = UIPasteboard.init(name: UIPasteboardName.init(rawValue: "com.schilliger.swissgrid.ffw"), create: false)
+
+                if let pasteFfwString = pasteFfw?.string {
+                    if pasteString == pasteFfwString {
+                        return false
+                    }
+                }
+                
                 let coordinatesClass = Coordinates()
                 let viewControllerClass = ViewController()
 
@@ -42,6 +52,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
                     // Mark app that the coordinates forced map opening last time => Directly paste it on load
                     UserDefaults.standard.set(true, forKey: "FFWpastedLastTime")
+                    
+                    // Save the Date when it was pasted last time
+                    let currentDate = Date()
+                    UserDefaults.standard.set(currentDate, forKey: "FFWpastedLastTimeDate")
+                    
                     viewControllerClass.openMaps(lat: lat, long: long, clear: true)
                     return true
                 }

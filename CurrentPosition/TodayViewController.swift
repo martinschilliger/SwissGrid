@@ -9,9 +9,16 @@
 import UIKit
 import NotificationCenter
 import CoreLocation
+import MapKit
+
+// TODO: Click on coordinates should copy them to clipboard. How to show that to the user?
 
 class TodayViewController: UIViewController, NCWidgetProviding {
-    @IBOutlet var currentPosition: UILabel!
+    @IBOutlet var currentPosition: UIButton!
+    @IBOutlet var currentPositionMap: MKMapView!
+    @IBOutlet var copiedLabel: UILabel!
+    var currentPositionText = "600000/200000"
+    
     // This is used to indicate whether an update of the today widget is required or not
     private var updateResult = NCUpdateResult.noData
 
@@ -59,7 +66,30 @@ class TodayViewController: UIViewController, NCWidgetProviding {
 
         let formatter = NumberFormatter()
         formatter.numberStyle = NumberFormatter.Style.decimal
-        currentPosition.text = "\(formatter.string(for: y)!)/\(formatter.string(for: x)!)"
+        currentPosition.setTitle("\(formatter.string(for: y)!)/\(formatter.string(for: x)!)", for: .normal)
+        currentPositionText = "\(y)/\(x)"
+        
+        // zoom map there
+        // visible radius, kinda zoom level
+        let latDelta: CLLocationDegrees = 0.01
+        let longDelta: CLLocationDegrees = 0.01
+        let theSpan: MKCoordinateSpan = MKCoordinateSpanMake(latDelta, longDelta)
+        let myreg: MKCoordinateRegion = MKCoordinateRegionMake(location.coordinate, theSpan)
+        currentPositionMap.setRegion(myreg, animated: false)
+
+    }
+    @IBAction func locationClicked(_ sender: Any) {
+        UIPasteboard.general.string = currentPositionText
+        debugPrint("Coordinates copied: \(UIPasteboard.general.string!)")
+
+        // TODO: Prevent FFW on Swiss Grid launch
+        let pasteffw = UIPasteboard.init(name: UIPasteboardName.init(rawValue: "com.schilliger.swissgrid.ffw"), create: true)
+        pasteffw?.string = currentPositionText
+        
+        copiedLabel.alpha = 1
+        UIView.animate(withDuration: 0.3, delay: 2, options: [], animations: {
+            self.copiedLabel.alpha = 0
+        })
     }
 }
 

@@ -24,6 +24,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="eOv-eO-EWE">
+                                <rect key="frame" x="0.0" y="248" width="320" height="320"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="eOv-eO-EWE" secondAttribute="height" multiplier="1:1" id="QuS-ml-SVY"/>
+                                    <constraint firstAttribute="width" secondItem="eOv-eO-EWE" secondAttribute="height" multiplier="1:1" id="c3d-SB-Qx6"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gradientBackground.png" translatesAutoresizingMaskIntoConstraints="NO" id="phw-mS-frH">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YeQ-Lg-Olh">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
@@ -55,12 +65,6 @@
                                             <constraint firstAttribute="height" constant="34" id="b5f-i8-g0D"/>
                                         </constraints>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="eOv-eO-EWE">
-                                        <rect key="frame" x="0.0" y="248" width="320" height="320"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="eOv-eO-EWE" secondAttribute="height" multiplier="1:1" id="c3d-SB-Qx6"/>
-                                        </constraints>
-                                    </imageView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="Tge-5a-moo" firstAttribute="leading" secondItem="7Uf-QG-AtA" secondAttribute="trailing" constant="10" id="7VX-ep-SOL"/>
@@ -69,27 +73,31 @@
                                         <variation key="widthClass=regular" constant="70"/>
                                         <variation key="heightClass=compact-widthClass=compact" constant="40"/>
                                     </constraint>
-                                    <constraint firstAttribute="trailing" secondItem="eOv-eO-EWE" secondAttribute="trailing" id="G92-8d-f2z"/>
                                     <constraint firstItem="BIU-fe-oKy" firstAttribute="centerXWithinMargins" secondItem="YeQ-Lg-Olh" secondAttribute="centerX" id="MHS-6M-tzr"/>
-                                    <constraint firstItem="eOv-eO-EWE" firstAttribute="leading" secondItem="YeQ-Lg-Olh" secondAttribute="leading" id="Of5-5p-AAe"/>
                                     <constraint firstItem="BIU-fe-oKy" firstAttribute="top" secondItem="7Uf-QG-AtA" secondAttribute="bottom" constant="30" id="QET-1o-BJj"/>
                                     <constraint firstItem="7Uf-QG-AtA" firstAttribute="left" secondItem="YeQ-Lg-Olh" secondAttribute="left" constant="20" id="aEX-7I-0EV">
                                         <variation key="widthClass=regular" constant="70"/>
                                         <variation key="heightClass=compact-widthClass=compact" constant="40"/>
                                     </constraint>
-                                    <constraint firstAttribute="bottom" secondItem="eOv-eO-EWE" secondAttribute="bottom" id="cua-Gn-ioN"/>
                                     <constraint firstItem="7Uf-QG-AtA" firstAttribute="top" secondItem="YeQ-Lg-Olh" secondAttribute="top" constant="40" id="lXj-iP-yLI">
                                         <variation key="heightClass=regular-widthClass=regular" constant="100"/>
                                     </constraint>
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.6470588235294118" green="0.52549019607843139" blue="0.43529411764705883" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.14687815309999999" green="0.086892776190000007" blue="0.037600044159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="phw-mS-frH" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="9yu-sR-JV1"/>
+                            <constraint firstItem="eOv-eO-EWE" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="MqL-bX-mRY"/>
+                            <constraint firstAttribute="trailing" secondItem="eOv-eO-EWE" secondAttribute="trailing" id="Qgy-L8-U11"/>
                             <constraint firstItem="YeQ-Lg-Olh" firstAttribute="bottom" secondItem="xb3-aO-Qok" secondAttribute="top" id="R1J-dj-hnr"/>
                             <constraint firstItem="YeQ-Lg-Olh" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="-20" id="SF1-lv-tqH"/>
                             <constraint firstAttribute="right" secondItem="YeQ-Lg-Olh" secondAttribute="right" id="aNj-9e-5AJ"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="eOv-eO-EWE" secondAttribute="bottom" id="efa-Ud-yTN"/>
+                            <constraint firstAttribute="trailing" secondItem="phw-mS-frH" secondAttribute="trailing" id="gXM-3D-3nx"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="phw-mS-frH" secondAttribute="bottom" id="sv2-RR-g55"/>
                             <constraint firstItem="YeQ-Lg-Olh" firstAttribute="left" secondItem="Ze5-6b-2t3" secondAttribute="left" id="v9X-KM-Fpr"/>
+                            <constraint firstItem="phw-mS-frH" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="xvo-L3-aie"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -100,6 +108,7 @@
     </scenes>
     <resources>
         <image name="Icon.png" width="1024" height="1024"/>
+        <image name="gradientBackground.png" width="1" height="3000"/>
     </resources>
-    <color key="tintColor" red="0.14687815309999999" green="0.086892776190000007" blue="0.037600044159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+    <color key="tintColor" red="0.22352941179999999" green="0.14901960780000001" blue="0.074509803920000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
