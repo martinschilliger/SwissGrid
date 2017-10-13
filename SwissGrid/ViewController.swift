@@ -13,6 +13,8 @@ import Alamofire
 import ObjectMapper
 import AlamofireObjectMapper
 
+
+
 class ViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegate, CLLocationManagerDelegate {
     @IBOutlet var coordinateInput: UITextField!
     var calculatedCoordinates = (lat: Double(0), long: Double(0))
@@ -111,18 +113,6 @@ class ViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegate, 
 
         if progressView != nil {
             progressView?.layer.add(animation, forKey: "shakeAnimation")
-        }
-    }
-    
-    override func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
-        // Allow only cut, copy, paste
-        switch action {
-        case #selector(UIResponderStandardEditActions.cut(_:)),
-         #selector(UIResponderStandardEditActions.copy(_:)),
-         #selector(UIResponderStandardEditActions.paste(_:)):
-            return true
-        default:
-            return false
         }
     }
 
@@ -256,3 +246,19 @@ class ViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegate, 
         //        }
     }
 }
+
+// Allow only cut, copy, paste. As extension, because otherwise "Share" and "Look Up" are still visible
+// Found here: https://stackoverflow.com/a/46470592/1145706
+extension UITextField{
+    open override func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
+        switch action {
+        case #selector(UIResponderStandardEditActions.cut(_:)),
+             #selector(UIResponderStandardEditActions.copy(_:)),
+             #selector(UIResponderStandardEditActions.paste(_:)):
+            return true
+        default:
+            return false
+        }
+    }
+}
+
