@@ -68,12 +68,12 @@ enum BooleanSetting {
 }
 
 enum AvailableMap {
-    case AppleMaps, GoogleMaps, Waze, MapsMe, OSM, /* TomTom, */ Navigon, Garmin // => TomTom doesn't have an launchurl right now…
+    case AppleMaps, GoogleMaps, Waze, MapsMe, OSM, /* TomTom, */ Navigon, Garmin, SBB // => TomTom doesn't have an launchurl right now…
 
     // Define variables here also, for easier reading in swift
     // be shure to change ViewController.swift openMaps() also!
     // sorting of maps is done here also
-    static let maps = ["Apple", "Google", "maps.me", "Waze", "OpenStreetMap", /* "TomTom", */ "Navigon", "Garmin Western Europe"]
+    static let maps = ["Apple", "Google", "maps.me", "Waze", "OpenStreetMap", /* "TomTom", */ "Navigon", "Garmin Western Europe", "SBB Mobile"]
     static let count = maps.count
 
     static func getCase(map: String) -> AvailableMap {
@@ -94,6 +94,8 @@ enum AvailableMap {
             return AvailableMap.Navigon
         case "Garmin Western Europe":
             return AvailableMap.Garmin
+        case "SBB Mobile":
+            return AvailableMap.SBB
         default:
             return AvailableMap.AppleMaps
         }
@@ -117,6 +119,8 @@ enum AvailableMap {
             return "Navigon"
         case .Garmin:
             return "Garmin Western Europe"
+        case .SBB:
+            return "SBB Mobile"
         }
     }
 
@@ -156,6 +160,10 @@ enum AvailableMap {
             break
         case .Garmin:
             url = "garminonboardwesterneurope://"
+            break
+        case .SBB:
+            // Got information here: https://www.sbb.ch/content/dam/sbb/en/pdf/en_mobile/SBBmobile_Developer.pdf
+            url = "sbbmobile://"
             break
         }
 
@@ -219,6 +227,9 @@ enum AvailableMap {
                 url += "gm?action=nav&lat=\(lat)&lon=\(long)"
             }
             break
+        case .SBB:
+            url += "?toll=\(lat),\(long)"
+            break
         }
 
         // add aerial view if possible
@@ -231,7 +242,7 @@ enum AvailableMap {
             case .GoogleMaps:
                 url += "&views=satellite"
                 break
-            case .Waze, .MapsMe, .OSM, /* .TomTom, */ .Navigon, .Garmin:
+            case .Waze, .MapsMe, .OSM, /* .TomTom, */ .Navigon, .Garmin, .SBB:
                 // no satellite map possible
                 break
             }
