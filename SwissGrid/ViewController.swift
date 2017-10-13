@@ -113,6 +113,18 @@ class ViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegate, 
             progressView?.layer.add(animation, forKey: "shakeAnimation")
         }
     }
+    
+    override func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
+        // Allow only cut, copy, paste
+        switch action {
+        case #selector(UIResponderStandardEditActions.cut(_:)),
+         #selector(UIResponderStandardEditActions.copy(_:)),
+         #selector(UIResponderStandardEditActions.paste(_:)):
+            return true
+        default:
+            return false
+        }
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
