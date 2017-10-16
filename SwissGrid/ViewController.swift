@@ -46,6 +46,11 @@ class ViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegate, 
         pasteInCoordinateInput()
     }
 
+    // location manager got error
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error){
+        locationManager.stopUpdatingLocation()
+    }
+    
     func pasteInCoordinateInput() {
 
         // Directly paste if last launch of the app fastforwarded to maps. Even overwrite (normally anyway empty) coordinateInput text. So that at relaunch of the app it makes sense to the user, which coordinates have been used
@@ -239,11 +244,6 @@ class ViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegate, 
             debugPrint("Not possible to open Map")
         }
         // TODO: What happens, if Waze URL is loaded and it isn't installed? => Inform user!
-
-        // TODO: Is this really a good idea? What is, if user entered coordinates, and now copied and used FFW on new (copied) coordinates?
-        //        if clear {
-        //            coordinateInput.text = ""
-        //        }
     }
 }
 
