@@ -84,8 +84,6 @@ class SettingsViewController: UITableViewController {
             if !UIApplication.shared.canOpenURL(URL(string: cellUrl)!) {
                 cell.textLabel?.isEnabled = false
             }
-
-            // TODO: How to hide greyed out maps??
             break
         case 1:
             // add a Switch to the cell
