@@ -126,8 +126,8 @@ enum AvailableMap {
 
     func urlBase(test: Bool = false) -> String {
         var url: String
-
         // Define URL of provider => Be shure to add them to the Info.plist also!
+        
         switch self {
         case .AppleMaps:
             url = "https://maps.apple.com"
@@ -228,7 +228,7 @@ enum AvailableMap {
             }
             break
         case .SBB:
-            url += "?toll=\(lat),\(long)"
+            url += "timetable?toll=\(lat),\(long)"
             break
         }
 
