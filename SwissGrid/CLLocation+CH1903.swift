@@ -15,6 +15,8 @@
 import Foundation
 
 class CLLocation1903 {
+    
+    // TODO: Insert the requests to https://geodesy.geo.admin.ch/reframe/lv95towgs84 also as functions here?
 
     func CHtoWGSlat(x: Double, y: Double) -> Double {
         // Converts militar to civil and to unit = 1000km
@@ -92,8 +94,6 @@ class CLLocation1903 {
 
         return x
     }
-
-    // TODO: Logik nicht vergessen!
 
     // Convert DEC angle to SEX DMS
     func decToSex(_ angle: Double) -> Double {
