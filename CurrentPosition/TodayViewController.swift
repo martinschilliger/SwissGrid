@@ -11,16 +11,15 @@ import NotificationCenter
 import CoreLocation
 import MapKit
 
-// TODO: Click on coordinates should copy them to clipboard. How to show that to the user?
-
 class TodayViewController: UIViewController, NCWidgetProviding {
     @IBOutlet var currentPosition: UIButton!
-    @IBOutlet var currentPositionMap: MKMapView!
+    @IBOutlet var currentPositionMap: UIImageView!
     @IBOutlet var copiedLabel: UILabel!
-    var currentPositionText = "600000/200000"
+    var currentPositionText = "Location not allowed"
+    var memorySaver: Bool = false
     
     // This is used to indicate whether an update of the today widget is required or not
-    private var updateResult = NCUpdateResult.noData
+    private var updateResult = NCUpdateResult.noData //TODO: Is this ever getting used?
 
     // We use a lazy instance of CLLocationManager to get the user's location
     private lazy var locman = CLLocationManager()
@@ -32,17 +31,15 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         // Do any additional setup after loading the view from its nib.
 
         locman.delegate = self
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-
+        locman.distanceFilter = 10
         locman.startUpdatingLocation()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+        debugPrint("Memory-Warning!")
+        memorySaver = true
     }
 
     func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
@@ -69,20 +66,17 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         currentPosition.setTitle("\(formatter.string(for: y)!)/\(formatter.string(for: x)!)", for: .normal)
         currentPositionText = "\(y)/\(x)"
         
-        // zoom map there
-        // visible radius, kinda zoom level
-        let latDelta: CLLocationDegrees = 0.01
-        let longDelta: CLLocationDegrees = 0.01
-        let theSpan: MKCoordinateSpan = MKCoordinateSpanMake(latDelta, longDelta)
-        let myreg: MKCoordinateRegion = MKCoordinateRegionMake(location.coordinate, theSpan)
-        currentPositionMap.setRegion(myreg, animated: false)
-
+        // show the map
+        if !memorySaver {
+            createMapShot(coordinate: location.coordinate)
+        }
     }
+
     @IBAction func locationClicked(_ sender: Any) {
         UIPasteboard.general.string = currentPositionText
         debugPrint("Coordinates copied: \(UIPasteboard.general.string!)")
 
-        // TODO: Prevent FFW on Swiss Grid launch
+        // Prevent FFW on Swiss Grid launch
         let pasteffw = UIPasteboard.init(name: UIPasteboardName.init(rawValue: "com.schilliger.swissgrid.ffw"), create: true)
         pasteffw?.string = currentPositionText
         
@@ -91,6 +85,36 @@ class TodayViewController: UIViewController, NCWidgetProviding {
             self.copiedLabel.alpha = 0
         })
     }
+    
+    
+    // MKMapSnapshot
+    func createMapShot(coordinate: CLLocationCoordinate2D) {
+        let options = MKMapSnapshotOptions()
+        let myreg: MKCoordinateRegion = MKCoordinateRegionMake(coordinate, MKCoordinateSpanMake(0.01, 0.01))
+        options.region = myreg
+        options.size = currentPositionMap.frame.size
+
+        // Start the snapshotter
+        let snapshotter = MKMapSnapshotter(options: options)
+        snapshotter.start() {
+            snapshot, error in
+            
+            if error != nil {
+                return
+            }
+            
+            self.showMapShot(mapImage: snapshot?.image)
+        }
+        
+    }
+    
+    func showMapShot(mapImage: UIImage?) {
+        if mapImage != nil {
+            currentPositionMap.image = mapImage!
+            return
+        }
+        debugPrint("Could not generate a background-Image")
+    }
 }
 
 typealias LocationDelegate = TodayViewController
@@ -98,6 +122,7 @@ extension LocationDelegate: CLLocationManagerDelegate {
     func locationManager(_: CLLocationManager, didFailWithError _: Error) {
         // If we could not retrive location data, set our update result to Failed
         updateResult = .failed
+        currentPosition.setTitle(currentPositionText, for: .normal)
     }
 
     func locationManager(_: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -106,3 +131,6 @@ extension LocationDelegate: CLLocationManagerDelegate {
         updateResult = .newData
     }
 }
+
+
+

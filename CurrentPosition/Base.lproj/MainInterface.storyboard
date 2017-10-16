@@ -18,9 +18,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" zoomEnabled="NO" scrollEnabled="NO" rotateEnabled="NO" pitchEnabled="NO" showsUserLocation="YES" showsCompass="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mq3-kL-I1D">
+                            <imageView userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WE7-BB-DEx" userLabel="currentPositionMap">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
-                            </mapView>
+                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gradientBackground.png" translatesAutoresizingMaskIntoConstraints="NO" id="D8k-JV-9QR">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
                             </imageView>
@@ -33,7 +33,7 @@
                             <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wUx-xg-nhl">
                                 <rect key="frame" x="0.0" y="35.5" width="320" height="24.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="Location not allowed"/>
+                                <state key="normal" title="600'000/200'000"/>
                                 <connections>
                                     <action selector="locationClicked:" destination="M4Y-Lb-cyx" eventType="primaryActionTriggered" id="bSU-KD-1in"/>
                                 </connections>
@@ -46,21 +46,21 @@
                         </subviews>
                         <constraints>
                             <constraint firstItem="wUx-xg-nhl" firstAttribute="top" secondItem="Tvv-Aw-EM0" secondAttribute="bottom" constant="5" id="1z1-Bq-1jI"/>
+                            <constraint firstItem="ssy-KU-ocm" firstAttribute="trailing" secondItem="WE7-BB-DEx" secondAttribute="trailing" id="3PY-h9-k09"/>
                             <constraint firstItem="Tvv-Aw-EM0" firstAttribute="leading" secondItem="ssy-KU-ocm" secondAttribute="leading" id="7dL-8R-CcP"/>
                             <constraint firstItem="hXT-PM-2UP" firstAttribute="leading" secondItem="ssy-KU-ocm" secondAttribute="leading" id="95i-y4-oiA"/>
-                            <constraint firstItem="Mq3-kL-I1D" firstAttribute="leading" secondItem="ssy-KU-ocm" secondAttribute="leading" id="9tj-Go-4s7"/>
                             <constraint firstItem="D8k-JV-9QR" firstAttribute="leading" secondItem="ssy-KU-ocm" secondAttribute="leading" id="KS6-fA-o8u"/>
-                            <constraint firstItem="ssy-KU-ocm" firstAttribute="trailing" secondItem="Mq3-kL-I1D" secondAttribute="trailing" id="PdS-bc-jmk"/>
+                            <constraint firstAttribute="bottom" secondItem="WE7-BB-DEx" secondAttribute="bottom" id="LH4-DK-Q54"/>
                             <constraint firstItem="wUx-xg-nhl" firstAttribute="leading" secondItem="ssy-KU-ocm" secondAttribute="leading" id="T0M-bg-ccg"/>
                             <constraint firstItem="ssy-KU-ocm" firstAttribute="trailing" secondItem="hXT-PM-2UP" secondAttribute="trailing" constant="16" id="VGg-qP-CVM"/>
                             <constraint firstItem="Tvv-Aw-EM0" firstAttribute="top" secondItem="ssy-KU-ocm" secondAttribute="top" constant="10" id="Wjh-Ls-37O"/>
                             <constraint firstItem="ssy-KU-ocm" firstAttribute="trailing" secondItem="wUx-xg-nhl" secondAttribute="trailing" id="Yrl-1X-iJE"/>
+                            <constraint firstItem="WE7-BB-DEx" firstAttribute="top" secondItem="S3S-Oj-5AN" secondAttribute="top" id="Zv6-Ci-OkF"/>
                             <constraint firstItem="D8k-JV-9QR" firstAttribute="top" secondItem="S3S-Oj-5AN" secondAttribute="top" id="cE6-b0-8n1"/>
                             <constraint firstItem="ssy-KU-ocm" firstAttribute="trailing" secondItem="Tvv-Aw-EM0" secondAttribute="trailing" id="ccY-en-E1a"/>
                             <constraint firstItem="hXT-PM-2UP" firstAttribute="top" secondItem="ssy-KU-ocm" secondAttribute="top" constant="10" id="dFR-cN-bt8"/>
                             <constraint firstItem="ssy-KU-ocm" firstAttribute="trailing" secondItem="D8k-JV-9QR" secondAttribute="trailing" id="dwY-a0-OuR"/>
-                            <constraint firstItem="Mq3-kL-I1D" firstAttribute="top" secondItem="S3S-Oj-5AN" secondAttribute="top" id="ggD-wb-sah"/>
-                            <constraint firstAttribute="bottom" secondItem="Mq3-kL-I1D" secondAttribute="bottom" id="l5n-EQ-u5k"/>
+                            <constraint firstItem="WE7-BB-DEx" firstAttribute="leading" secondItem="ssy-KU-ocm" secondAttribute="leading" id="g0d-dr-XFp"/>
                             <constraint firstAttribute="bottom" secondItem="D8k-JV-9QR" secondAttribute="bottom" id="m4W-Cs-gKd"/>
                             <constraint firstItem="ssy-KU-ocm" firstAttribute="bottom" secondItem="wUx-xg-nhl" secondAttribute="bottom" id="opD-ZB-kf6"/>
                         </constraints>
@@ -72,7 +72,7 @@
                     <connections>
                         <outlet property="copiedLabel" destination="hXT-PM-2UP" id="yE6-km-aAS"/>
                         <outlet property="currentPosition" destination="wUx-xg-nhl" id="XYU-gb-YUo"/>
-                        <outlet property="currentPositionMap" destination="Mq3-kL-I1D" id="Yoz-t2-QMH"/>
+                        <outlet property="currentPositionMap" destination="WE7-BB-DEx" id="I1u-1R-HS7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>
