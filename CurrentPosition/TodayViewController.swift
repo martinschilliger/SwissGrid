@@ -17,9 +17,9 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     @IBOutlet var copiedLabel: UILabel!
     var currentPositionText = NSLocalizedString("Location not allowed", comment: "")
     var memorySaver: Bool = false
-    
+
     // This is used to indicate whether an update of the today widget is required or not
-    private var updateResult = NCUpdateResult.noData //TODO: Is this ever getting used?
+    private var updateResult = NCUpdateResult.noData // TODO: Is this ever getting used?
 
     // We use a lazy instance of CLLocationManager to get the user's location
     private lazy var locman = CLLocationManager()
@@ -64,28 +64,27 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         formatter.numberStyle = NumberFormatter.Style.decimal
         currentPosition.setTitle("\(formatter.string(for: y)!)/\(formatter.string(for: x)!)", for: .normal)
         currentPositionText = "\(y)/\(x)"
-        
+
         // show the map
         if !memorySaver {
             createMapShot(coordinate: location.coordinate)
         }
     }
 
-    @IBAction func locationClicked(_ sender: Any) {
+    @IBAction func locationClicked(_: Any) {
         UIPasteboard.general.string = currentPositionText
         debugPrint("Coordinates copied: \(UIPasteboard.general.string!)")
 
         // Prevent FFW on Swiss Grid launch
-        let pasteffw = UIPasteboard.init(name: UIPasteboardName.init(rawValue: "com.schilliger.swissgrid.ffw"), create: true)
+        let pasteffw = UIPasteboard(name: UIPasteboardName(rawValue: "com.schilliger.swissgrid.ffw"), create: true)
         pasteffw?.string = currentPositionText
-        
+
         copiedLabel.alpha = 1
         UIView.animate(withDuration: 0.3, delay: 2, options: [], animations: {
             self.copiedLabel.alpha = 0
         })
     }
-    
-    
+
     // MKMapSnapshot
     func createMapShot(coordinate: CLLocationCoordinate2D) {
         let options = MKMapSnapshotOptions()
@@ -95,18 +94,17 @@ class TodayViewController: UIViewController, NCWidgetProviding {
 
         // Start the snapshotter
         let snapshotter = MKMapSnapshotter(options: options)
-        snapshotter.start() {
+        snapshotter.start {
             snapshot, error in
-            
+
             if error != nil {
                 return
             }
-            
+
             self.showMapShot(mapImage: snapshot?.image)
         }
-        
     }
-    
+
     func showMapShot(mapImage: UIImage?) {
         if mapImage != nil {
             currentPositionMap.image = mapImage!
@@ -130,6 +128,3 @@ extension LocationDelegate: CLLocationManagerDelegate {
         updateResult = .newData
     }
 }
-
-
-

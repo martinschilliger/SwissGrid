@@ -68,12 +68,11 @@ enum BooleanSetting {
 }
 
 enum AvailableMap {
-    case AppleMaps, GoogleMaps, Waze, MapsMe, OSM, /* TomTom, */ Navigon, Garmin/*, SBB*/ // => TomTom doesn't have an launchurl right now…
+    case AppleMaps, GoogleMaps, Waze, MapsMe, OSM, /* TomTom, */ Navigon, Garmin /* , SBB */ // => TomTom doesn't have an launchurl right now…
 
     // Define variables here also, for easier reading in swift
-    // be shure to change ViewController.swift openMaps() also!
     // sorting of maps is done here also
-    static let maps = ["Apple", "Google", "maps.me", "Waze", "OpenStreetMap", /* "TomTom", */ "Navigon", "Garmin Western Europe"/*, "SBB Mobile"*/]
+    static let maps = ["Apple", "Google", "maps.me", "Waze", "OpenStreetMap", /* "TomTom", */ "Navigon", "Garmin Western Europe" /* , "SBB Mobile" */ ]
     static let count = maps.count
 
     static func getCase(map: String) -> AvailableMap {
@@ -94,8 +93,8 @@ enum AvailableMap {
             return AvailableMap.Navigon
         case "Garmin Western Europe":
             return AvailableMap.Garmin
-//        case "SBB Mobile":
-//            return AvailableMap.SBB
+            //        case "SBB Mobile":
+            //            return AvailableMap.SBB
         default:
             return AvailableMap.AppleMaps
         }
@@ -104,9 +103,9 @@ enum AvailableMap {
     func getDescription() -> String {
         switch self {
         case .AppleMaps:
-            return "Apple"
+            return "Apple Maps"
         case .GoogleMaps:
-            return "Google"
+            return "Google Maps"
         case .Waze:
             return "Waze"
         case .MapsMe:
@@ -119,15 +118,15 @@ enum AvailableMap {
             return "Navigon"
         case .Garmin:
             return "Garmin Western Europe"
-//        case .SBB:
-//            return "SBB Mobile"
+            //        case .SBB:
+            //            return "SBB Mobile"
         }
     }
 
     func urlBase(test: Bool = false) -> String {
         var url: String
         // Define URL of provider => Be shure to add them to the Info.plist also!
-        
+
         switch self {
         case .AppleMaps:
             url = "https://maps.apple.com"
@@ -161,11 +160,11 @@ enum AvailableMap {
         case .Garmin:
             url = "garminonboardwesterneurope://"
             break
-//        case .SBB:
-//            // Got information here: https://www.sbb.ch/content/dam/sbb/en/pdf/en_mobile/SBBmobile_Developer.pdf
-//            // Support sayed, that it will not be available anymore in the future
-//            url = "sbbmobile://"
-//            break
+            //        case .SBB:
+            //            // Got information here: https://www.sbb.ch/content/dam/sbb/en/pdf/en_mobile/SBBmobile_Developer.pdf
+            //            // Support sayed, that it will not be available anymore in the future
+            //            url = "sbbmobile://"
+            //            break
         }
 
         return url
@@ -228,9 +227,9 @@ enum AvailableMap {
                 url += "gm?action=nav&lat=\(lat)&lon=\(long)"
             }
             break
-//        case .SBB:
-//            url += "timetable?toll=\(lat),\(long)"
-//            break
+            //        case .SBB:
+            //            url += "timetable?toll=\(lat),\(long)"
+            //            break
         }
 
         // add aerial view if possible
@@ -243,7 +242,7 @@ enum AvailableMap {
             case .GoogleMaps:
                 url += "&views=satellite"
                 break
-            case .Waze, .MapsMe, .OSM, /* .TomTom, */ .Navigon, .Garmin: /*, .SBB*/
+            case .Waze, .MapsMe, .OSM, /* .TomTom, */ .Navigon, .Garmin: /* , .SBB */
                 // no satellite map possible
                 break
             }

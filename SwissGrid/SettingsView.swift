@@ -107,7 +107,6 @@ class SettingsViewController: UITableViewController {
     @objc func switchTriggered(sender: UISwitch) {
         let name = BooleanSetting.id(sender.tag).getName()
         UserDefaults.standard.set(sender.isOn, forKey: name)
-        //        debugPrint("Button \(name) switched to: \(sender.isOn)")
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

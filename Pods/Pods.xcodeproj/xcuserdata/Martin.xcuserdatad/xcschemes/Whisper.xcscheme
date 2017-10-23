@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9502FB01641FBABB78522037E882757B"
-               BuildableName = "AlamofireObjectMapper.framework"
-               BlueprintName = "AlamofireObjectMapper"
+               BlueprintIdentifier = "E1C99F574549A60EF069083C8C418020"
+               BuildableName = "Whisper.framework"
+               BlueprintName = "Whisper"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -47,9 +47,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9502FB01641FBABB78522037E882757B"
-            BuildableName = "AlamofireObjectMapper.framework"
-            BlueprintName = "AlamofireObjectMapper"
+            BlueprintIdentifier = "E1C99F574549A60EF069083C8C418020"
+            BuildableName = "Whisper.framework"
+            BlueprintName = "Whisper"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

@@ -15,7 +15,7 @@
 import Foundation
 
 class CLLocation1903 {
-    
+
     // TODO: Insert the requests to https://geodesy.geo.admin.ch/reframe/lv95towgs84 also as functions here?
 
     func CHtoWGSlat(x: Double, y: Double) -> Double {

@@ -9,7 +9,7 @@ target 'SwissGrid' do
  #  pod 'SwiftIcons', '~> 1.5.1'
  pod 'Alamofire', '~> 4.5'
  pod 'AlamofireObjectMapper', '~> 5.0'
- 
+ pod 'Whisper'
  
   target 'SwissGridTests' do
     inherit! :search_paths

@@ -33,6 +33,9 @@
 		5B9CD4B11F9E179400A7831C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5B9CD4B31F9E179400A7831C /* InfoPlist.strings */; };
 		5B9CD4B61F9E179500A7831C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5B9CD4B81F9E179500A7831C /* InfoPlist.strings */; };
 		5B9CD4BE1F9E269E00A7831C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5B9CD4C01F9E269E00A7831C /* Localizable.strings */; };
+		5B9CD4C51F9E771E00A7831C /* Whisper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B9CD4C61F9E771E00A7831C /* Whisper.framework */; };
+		5B9CD4C81F9E82C600A7831C /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9CD4C71F9E82C600A7831C /* Colors.swift */; };
+		5B9CD4C91F9E82C600A7831C /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9CD4C71F9E82C600A7831C /* Colors.swift */; };
 		5BA7C3E91F77E97700624D17 /* SettingsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA7C3E81F77E97700624D17 /* SettingsData.swift */; };
 		5BBA778A1F90A1630002DC58 /* gradientBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BBA77891F90A0800002DC58 /* gradientBackground.png */; };
 		5BBA778B1F90A1640002DC58 /* gradientBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BBA77891F90A0800002DC58 /* gradientBackground.png */; };
@@ -106,9 +109,7 @@
 		5B43FB741F9E0E2900BBBF99 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/MainInterface.strings; sourceTree = "<group>"; };
 		5B45A7721F6FEFDE0042331A /* Coordinates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinates.swift; sourceTree = "<group>"; };
 		5B45A7741F6FF4570042331A /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
-		5B45A7771F70166C0042331A /* SwiftString.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftString.framework; path = "../../Library/Developer/Xcode/DerivedData/SwissGrid-fgocqgeprvbwyecxeretikydhbhr/Build/Products/Debug-iphonesimulator/SwiftString/SwiftString.framework"; sourceTree = "<group>"; };
 		5B45A77B1F711D560042331A /* CLLocation+CH1903.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CLLocation+CH1903.swift"; sourceTree = "<group>"; };
-		5B75C7A91F72696000662961 /* SwiftIcons.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftIcons.framework; path = "../../Library/Developer/Xcode/DerivedData/SwissGrid-fgocqgeprvbwyecxeretikydhbhr/Build/Products/Debug-iphonesimulator/SwiftIcons/SwiftIcons.framework"; sourceTree = "<group>"; };
 		5B8B08351F8FAE6400926144 /* CurrentPosition.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CurrentPosition.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B8B08361F8FAE6400926144 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		5B8B08391F8FAE6500926144 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
@@ -123,6 +124,8 @@
 		5B9CD4BF1F9E269E00A7831C /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5B9CD4C11F9E269F00A7831C /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5B9CD4C21F9E277E00A7831C /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5B9CD4C61F9E771E00A7831C /* Whisper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Whisper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B9CD4C71F9E82C600A7831C /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		5BA7C3E81F77E97700624D17 /* SettingsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsData.swift; sourceTree = "<group>"; };
 		5BBA77891F90A0800002DC58 /* gradientBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gradientBackground.png; path = Images/gradientBackground.png; sourceTree = "<group>"; };
 		5BEFC7411F8D80EA00738934 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -144,6 +147,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B9CD4C51F9E771E00A7831C /* Whisper.framework in Frameworks */,
 				5BEFC7421F8D8A4100738934 /* AlamofireObjectMapper.framework in Frameworks */,
 				5BEFC7431F8D8A4100738934 /* ObjectMapper.framework in Frameworks */,
 				5BEFC7401F8D80EA00738934 /* Alamofire.framework in Frameworks */,
@@ -209,6 +213,7 @@
 				5B9CD4B91F9E17BD00A7831C /* Localization */,
 				5B2B2D831F6A63170033834A /* AppDelegate.swift */,
 				5B2B2D851F6A63170033834A /* ViewController.swift */,
+				5B9CD4C71F9E82C600A7831C /* Colors.swift */,
 				5BEFC7461F8D8B4700738934 /* JSONlv95towgs84.swift */,
 				5B1B18861F72B4470024DA8B /* SettingsView.swift */,
 				5BA7C3E81F77E97700624D17 /* SettingsData.swift */,
@@ -247,11 +252,10 @@
 		5B2B2DB11F6A66E60033834A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5B9CD4C61F9E771E00A7831C /* Whisper.framework */,
 				5BEFC7441F8D8A4100738934 /* AlamofireObjectMapper.framework */,
 				5BEFC7451F8D8A4100738934 /* ObjectMapper.framework */,
 				5BEFC7411F8D80EA00738934 /* Alamofire.framework */,
-				5B75C7A91F72696000662961 /* SwiftIcons.framework */,
-				5B45A7771F70166C0042331A /* SwiftString.framework */,
 				5B2B2DB21F6A66E60033834A /* MapKit.framework */,
 				9A0ABD0D8E38916FC55C3205 /* Pods_SwissGrid.framework */,
 				CB959ED8770D77A694943824 /* Pods_SwissGridTests.framework */,
@@ -512,7 +516,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		2FD1E61187B0A6D1E29D7974 /* [CP] Check Pods Manifest.lock */ = {
@@ -530,7 +534,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		666B549BD99A03D69E30BBF9 /* [CP] Embed Pods Frameworks */ = {
@@ -593,7 +597,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E22F541AB3A43D0BA566FDC5 /* [CP] Embed Pods Frameworks */ = {
@@ -603,11 +607,17 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SwissGrid/Pods-SwissGrid-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/SwiftIcons/SwiftIcons.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/Whisper/Whisper.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftIcons.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Whisper.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -637,6 +647,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BA7C3E91F77E97700624D17 /* SettingsData.swift in Sources */,
+				5B9CD4C81F9E82C600A7831C /* Colors.swift in Sources */,
 				5B45A7731F6FEFDE0042331A /* Coordinates.swift in Sources */,
 				5BEFC7471F8D8B4700738934 /* JSONlv95towgs84.swift in Sources */,
 				5B45A77C1F711D560042331A /* CLLocation+CH1903.swift in Sources */,
@@ -668,6 +679,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B8B083A1F8FAE6500926144 /* TodayViewController.swift in Sources */,
+				5B9CD4C91F9E82C600A7831C /* Colors.swift in Sources */,
 				5B8B084C1F8FC94000926144 /* CLLocation+CH1903.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -877,7 +889,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 69424AD9DEF8AE64683AA843 /* Pods-SwissGrid.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -899,7 +910,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F777543313AA1A8AC3A312E2 /* Pods-SwissGrid.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -921,7 +931,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C0F5FECFD76FD16051B9CEFC /* Pods-SwissGridTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = F7DL86356B;
 				INFOPLIST_FILE = SwissGridTests/Info.plist;
@@ -938,7 +947,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BDC84A4A397892ED8F8FE378 /* Pods-SwissGridTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = F7DL86356B;
 				INFOPLIST_FILE = SwissGridTests/Info.plist;
@@ -955,7 +963,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 28FE0DC75A4A7660D2B212A4 /* Pods-SwissGridUITests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = F7DL86356B;
 				INFOPLIST_FILE = SwissGridUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -971,7 +978,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B21DCFB9EF1ECE120B86B740 /* Pods-SwissGridUITests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = F7DL86356B;
 				INFOPLIST_FILE = SwissGridUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

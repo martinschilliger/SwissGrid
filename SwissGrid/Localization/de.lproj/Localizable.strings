@@ -4,16 +4,31 @@
 /* Title for the list of behavior options */
 "Behavior" = "Verhalten";
 
+/* Shows the coordinate system used */
+"Entered %@ coordinates" = "%@-Koordinaten eingegeben";
+
+/* Error message when swiss grid cannot open the chosen map app. */
+"Error: Is %@ still installed?" = "Fehler: Ist %@ noch installiert?";
+
 /* No comment provided by engineer. */
 "FastForward coordinates" = "Vorspulen";
 
 /* Description of the function FastForward */
 "FastForward looks for coordinates in the pasteboard and then opens your favorite maps app directly on launch. The LV95 to WGS84 conversion service of geo.admin.ch will not be used." = "Vorspulen schaut nach gültigen Koordinaten in der Zwischenablage und öffnet diese direkt in der gewählten Karten-App. Der Umrechnungsservice von LV95- nach WGS84-Koordinaten von geo.admin.ch wird dabei nicht genutzt.";
 
+/* message displayed after fast-forwarded coordinates last time. */
+"FastForwarded coordinates last time" = "Beim letzten öffnen wurde Vorspulen genutzt.";
+
 /* No comment provided by engineer. */
 "Force aerial view" = "Erzwinge Satellitenansicht";
 
-/* Request to mail the developer if an map app ist missing on the list */
+/* 2x same direction (east) entred */
+"Invalid: Entered two easting coordinates" = "Ungültig: 2x Ost-Koordinaten eingegeben";
+
+/* 2x same direction (north) entred */
+"Invalid: Entered two northing coordinates" = "Ungültig: 2x Nord-Koordinaten eingegeben";
+
+/* Request to mail the developer if an map app is missing on the list */
 "Is your favorite map application missing? Please tell Martin: info@martin-apps.ch" = "Fehlt deine Lieblings-Karten-App? Informiere Martin darüber: info@martin-apps.ch. Er freut sich auch über Lob und Schnorris.";
 
 /* Title for the list of available map apps a user can open */

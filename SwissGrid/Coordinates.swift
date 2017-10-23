@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Whisper
 
 class Coordinates {
 
@@ -68,6 +69,14 @@ class Coordinates {
         // Proofing, if two different coordinate directinos have been entered
         if coordinate1calculated.direction == coordinate2calculated.direction {
             debugPrint("Coordinates invalid, 2x the same direction")
+            let msg:String
+            if coordinate1calculated.direction == "Nx" {
+                msg = NSLocalizedString("Invalid: Entered two northing coordinates", comment: "2x same direction (north) entred")
+            } else {
+                msg = NSLocalizedString("Invalid: Entered two easting coordinates", comment: "2x same direction (east) entred")
+            }
+            let murmur = Murmur(title: msg, backgroundColor: Colors.ErrorBackground.color(), titleColor: UIColor.white)
+            Whisper.show(whistle: murmur, action: .show(5))
             return (false, 0, 0, false)
         }
 
@@ -101,11 +110,6 @@ class Coordinates {
         let secondChar = Int("\(coordinate[coordinate.index(coordinate.startIndex, offsetBy: 1)])")!
         let secondLastChar = Int("\(coordinate[coordinate.index(coordinate.endIndex, offsetBy: -2)])")!
         let lastChar = Int("\(coordinate[coordinate.index(coordinate.endIndex, offsetBy: -1)])")!
-
-        //        debugPrint("firstChar", firstChar)
-        //        debugPrint("secondChar", secondChar)
-        //        debugPrint("secondLastChar", secondLastChar)
-        //        debugPrint("lastChar", lastChar)
 
         switch coordinate.characters.count {
         case 6:
@@ -184,6 +188,9 @@ class Coordinates {
 
         //        debugPrint("coordinateType", coordinateType)
         //        debugPrint("coordinateSystem", coordinateSystem)
+        let msg = String(format: NSLocalizedString("Entered %@ coordinates", comment: "Shows the coordinate system used"), coordinateSystem)
+        let murmur = Murmur(title: msg, backgroundColor: Colors.LightBackground.color(), titleColor: UIColor.black)
+        Whisper.show(whistle: murmur, action: .show(2.5))
 
         return (coordinateType, coordinateSystem, invalid)
     }

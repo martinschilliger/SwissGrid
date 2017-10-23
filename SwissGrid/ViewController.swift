@@ -12,8 +12,7 @@ import MapKit
 import Alamofire
 import ObjectMapper
 import AlamofireObjectMapper
-
-
+import Whisper
 
 class ViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegate, CLLocationManagerDelegate {
     @IBOutlet var coordinateInput: UITextField!
@@ -47,28 +46,32 @@ class ViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegate, 
     }
 
     // location manager got error
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error){
+    func locationManager(_: CLLocationManager, didFailWithError _: Error) {
         locationManager.stopUpdatingLocation()
     }
-    
+
     func pasteInCoordinateInput() {
 
         // Directly paste if last launch of the app fastforwarded to maps. Even overwrite (normally anyway empty) coordinateInput text. So that at relaunch of the app it makes sense to the user, which coordinates have been used
         let pastedLastTime = UserDefaults.standard.object(forKey: "FFWpastedLastTime") as? Bool ?? false
         if pastedLastTime {
-            let oldestPossibleDate = Date.init(timeIntervalSinceNow: -60*10)
-            let pastedDate = UserDefaults.standard.object(forKey: "FFWpastedLastTimeDate") as? Date ?? Date.init(timeIntervalSinceNow: -60*11) //default older than oldestPossibleDate
-            
+            let oldestPossibleDate = Date(timeIntervalSinceNow: -60 * 10)
+            let pastedDate = UserDefaults.standard.object(forKey: "FFWpastedLastTimeDate") as? Date ?? Date(timeIntervalSinceNow: -60 * 11) // default older than oldestPossibleDate
+
             if pastedDate < oldestPossibleDate {
                 debugPrint("It's long ago since coordinates got fast forwarded. Don't paste them")
                 return
             }
-            
+
             debugPrint("Last time coordinates got fast forwarded. Directly paste them to coordinateInput now")
             let pastedCoordinates = UserDefaults.standard.object(forKey: "FFWpasted") as? String
             coordinateInput.text = pastedCoordinates
             coordinateInputEditingChanged(coordinateInput) // Trigger change
             UserDefaults.standard.removeObject(forKey: "FFWpastedLastTime")
+            
+            let msg = NSLocalizedString("FastForwarded coordinates last time", comment: "message displayed after fast-forwarded coordinates last time.")
+            let murmur = Murmur(title: msg, backgroundColor: Colors.LightBackground.color(), titleColor: UIColor.black)
+            Whisper.show(whistle: murmur, action: .show(5))
             return
         }
 
@@ -82,14 +85,14 @@ class ViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegate, 
         if pasteSetting {
             if let pasteString = UIPasteboard.general.string {
                 // Check if the latest copier was the todayViewWidget of Swiss Grid
-                let pasteFfw = UIPasteboard.init(name: UIPasteboardName.init(rawValue: "com.schilliger.swissgrid.ffw"), create: false)
-                
+                let pasteFfw = UIPasteboard(name: UIPasteboardName(rawValue: "com.schilliger.swissgrid.ffw"), create: false)
+
                 if let pasteFfwString = pasteFfw?.string {
                     if pasteString == pasteFfwString {
                         return
                     }
                 }
-                
+
                 if coordinatesClass.parseCoordinates(coordinates: pasteString).Ey != 0 && coordinatesClass.parseCoordinates(coordinates: pasteString).Nx != 0 { // 0 means invalid coordinates
 
                     // Animate pasting
@@ -174,6 +177,8 @@ class ViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegate, 
                     switch response.result {
                     case let .failure(error):
                         debugPrint(error)
+                        let murmur = Murmur(title: error.localizedDescription, backgroundColor: Colors.ErrorBackground.color(), titleColor: UIColor.white)
+                        Whisper.show(whistle: murmur, action: .show(5))
                         break
                     case .success:
                         let lv95toWGS84Coordinates = response.result.value
@@ -196,7 +201,7 @@ class ViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegate, 
                 }
         }
     }
-    
+
     @IBOutlet var backgroundMap: MKMapView!
 
     @IBAction func openMapsButtonTriggered(_: Any) {
@@ -241,16 +246,19 @@ class ViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegate, 
         let mapsURL = URL(string: mapsURLString)!
 
         if !UIApplication.shared.openURL(mapsURL) {
-            debugPrint("Not possible to open Map")
+            // Murmor styling seen here: https://github.com/hyperoslo/Whisper/blob/3c39eb404faf63782d47e607c87c4e275236779e/Source/Message.swift#L43
+            let errorMsg = String(format: NSLocalizedString("Error: Is %@ still installed?", comment: "Error message when swiss grid cannot open the chosen map app."), AvailableMap.getCase(map: mapProviderSetting).getDescription())
+            let murmur = Murmur(title: errorMsg, backgroundColor: Colors.ErrorBackground.color(), titleColor: UIColor.white)
+            Whisper.show(whistle: murmur, action: .show(5))
+
         }
-        // TODO: What happens, if Waze URL is loaded and it isn't installed? => Inform user!
     }
 }
 
 // Allow only cut, copy, paste. As extension, because otherwise "Share" and "Look Up" are still visible
 // Found here: https://stackoverflow.com/a/46470592/1145706
-extension UITextField{
-    open override func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
+extension UITextField {
+    open override func canPerformAction(_ action: Selector, withSender _: Any?) -> Bool {
         switch action {
         case #selector(UIResponderStandardEditActions.cut(_:)),
              #selector(UIResponderStandardEditActions.copy(_:)),
