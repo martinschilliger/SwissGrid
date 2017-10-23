@@ -15,7 +15,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     @IBOutlet var currentPosition: UIButton!
     @IBOutlet var currentPositionMap: UIImageView!
     @IBOutlet var copiedLabel: UILabel!
-    var currentPositionText = "Location not allowed"
+    var currentPositionText = NSLocalizedString("Location not allowed", comment: "")
     var memorySaver: Bool = false
     
     // This is used to indicate whether an update of the today widget is required or not
@@ -31,7 +31,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         // Do any additional setup after loading the view from its nib.
 
         locman.delegate = self
-        locman.distanceFilter = 10
+        locman.distanceFilter = 50 // TODO: Is this working?
         locman.startUpdatingLocation()
     }
 
@@ -53,7 +53,6 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     }
 
     // Update our display
-    // TODO: What happens, when location services are not allowed?
     func updateDisplay(location: CLLocation) {
         let lat = location.coordinate.latitude
         let long = location.coordinate.longitude

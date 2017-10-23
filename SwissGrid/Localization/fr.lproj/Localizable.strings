@@ -1,0 +1,24 @@
+/* No comment provided by engineer. */
+"Auto paste content" = "Insertion automatique";
+
+/* Title for the list of behavior options */
+"Behavior" = "Comportement";
+
+/* No comment provided by engineer. */
+"FastForward coordinates" = "Avancer";
+
+/* Description of the function FastForward */
+"FastForward looks for coordinates in the pasteboard and then opens your favorite maps app directly on launch. The LV95 to WGS84 conversion service of geo.admin.ch will not be used." = "Avancer recherche des coordonnées valides dans le presse-papiers et l'ouvre directement dans l'application cartographique sélectionnée. Le service de conversion des coordonnées LV95 à WGS84 de geo.admin.ch n'est pas utilisé.";
+
+/* No comment provided by engineer. */
+"Force aerial view" = "Forcer la vue satellite";
+
+/* Request to mail the developer if an map app ist missing on the list */
+"Is your favorite map application missing? Please tell Martin: info@martin-apps.ch" = "Votre application de carte préférée est-elle manquante? Informez Martin à ce sujet: info@martin-apps.ch. Et même si la traduction est mauvaise…";
+
+/* Title for the list of available map apps a user can open */
+"Map providers" = "Applications Cartographique";
+
+/* No comment provided by engineer. */
+"Start routing directly" = "Démarrer le routage directement";
+

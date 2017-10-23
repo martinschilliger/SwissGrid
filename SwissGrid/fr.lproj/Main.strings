@@ -1,0 +1,15 @@
+/* Class = "UIButton"; normalTitle = "open maps"; ObjectID = "1yc-sc-SID"; */
+"1yc-sc-SID.normalTitle" = "Ouvrir Plans";
+
+/* Class = "UIViewController"; title = "Coordinate Input"; ObjectID = "BYZ-38-t0r"; */
+"BYZ-38-t0r.title" = "Coordonner entrée";
+
+/* Class = "UINavigationItem"; title = "Settings"; ObjectID = "b1X-Fz-a3Q"; */
+"b1X-Fz-a3Q.title" = "Réglages";
+
+/* Class = "UITextField"; accessibilityLabel = "Coordinate input"; ObjectID = "sgz-y2-sez"; */
+"sgz-y2-sez.accessibilityLabel" = "Coordonner champ de saisie";
+
+/* Class = "UITextField"; placeholder = "XX00000/XX00000"; ObjectID = "sgz-y2-sez"; */
+"sgz-y2-sez.placeholder" = "XX00000/XX00000";
+

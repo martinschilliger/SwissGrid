@@ -1,0 +1,3 @@
+/* (No Comment) */
+"NSLocationWhenInUseUsageDescription" = "Starte mit der Ortung deines Gerätes bereits in $(PRODUCT_NAME) um später in der Karten-App die Route schneller zu berechnen. $(PRODUCT_NAME) wird die Daten nur nutzen, um deine aktuelle Position anzuzeigen.";
+

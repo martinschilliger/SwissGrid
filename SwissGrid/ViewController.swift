@@ -24,7 +24,7 @@ class ViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegate, 
     let authorizationStatus = CLLocationManager.authorizationStatus()
 
     @IBOutlet var openMapsButton: UIButton!
-    @IBOutlet var settingsButton: UIButton! // TODO: Coq as Icon for the settings button
+    @IBOutlet var settingsButton: UIButton!
     @IBOutlet var coordinateProgress: UIProgressView!
 
     override func viewDidLoad() {
@@ -261,4 +261,3 @@ extension UITextField{
         }
     }
 }
-

@@ -7,7 +7,7 @@
 		<key>CurrentPosition.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>5</integer>
+			<integer>7</integer>
 		</dict>
 		<key>SwissGrid.xcscheme</key>
 		<dict>
@@ -28,6 +28,11 @@
 			<true/>
 		</dict>
 		<key>5B2B2D9E1F6A63170033834A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5B8B08341F8FAE6400926144</key>
 		<dict>
 			<key>primary</key>
 			<true/>

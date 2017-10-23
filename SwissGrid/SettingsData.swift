@@ -13,9 +13,9 @@ enum SectionFooter {
     static func getText(section: Int) -> String? {
         switch section {
         case 0:
-            return "Is your favorite map application missing? Please tell that Martin: info@martin-apps.ch"
+            return NSLocalizedString("Is your favorite map application missing? Please tell Martin: info@martin-apps.ch", comment: "Request to mail the developer if an map app is missing on the list")
         case 1:
-            return "FastForward looks for coordinates in the pasteboard and then opens your favorite maps app directly on launch. The LV95 to WGS84 conversion service of geo.admin.ch will not be used."
+            return NSLocalizedString("FastForward looks for coordinates in the pasteboard and then opens your favorite maps app directly on launch. The LV95 to WGS84 conversion service of geo.admin.ch will not be used.", comment: "Description of the function FastForward")
         default:
             return nil
         }
@@ -46,10 +46,10 @@ enum BooleanSetting {
     func getDescription() -> String {
         let keyName = getName()
         let descriptions: [String: String] = [
-            "FFW": "FastForward coordinates",
-            "Paste": "Auto paste content",
-            "MapType": "Force aerial view",
-            "Routing": "Start routing directly",
+            "FFW": NSLocalizedString("FastForward coordinates", comment: ""),
+            "Paste": NSLocalizedString("Auto paste content", comment: ""),
+            "MapType": NSLocalizedString("Force aerial view", comment: ""),
+            "Routing": NSLocalizedString("Start routing directly", comment: ""),
         ]
 
         return descriptions[keyName]!

@@ -1,0 +1,9 @@
+/* Class = "UILabel"; text = "Current Location"; ObjectID = "Tvv-Aw-EM0"; */
+"Tvv-Aw-EM0.text" = "Localisation actuelle";
+
+/* Class = "UILabel"; text = "copied!"; ObjectID = "hXT-PM-2UP"; */
+"hXT-PM-2UP.text" = "copié!";
+
+/* Class = "UIButton"; normalTitle = "600.000/200.000"; ObjectID = "wUx-xg-nhl"; */
+"wUx-xg-nhl.normalTitle" = "600'000/200'000";
+

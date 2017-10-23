@@ -50,9 +50,9 @@ class SettingsViewController: UITableViewController {
     override func tableView(_: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch section {
         case 0:
-            return "Map providers"
+            return NSLocalizedString("Map providers", comment: "Title for the list of available map apps a user can open")
         case 1:
-            return "Behavior"
+            return NSLocalizedString("Behavior", comment: "Title for the list of behavior options")
         default:
             return "Section \(section)"
         }
