@@ -1,11 +1,14 @@
 /* No comment provided by engineer. */
-"Auto paste content" = "Insertion automatique";
+"Auto paste content" = "Coller automatique";
 
 /* Title for the list of behavior options */
 "Behavior" = "Comportement";
 
 /* Shows the coordinate system used */
 "Entered %@ coordinates" = "Système de coordonnées: %@";
+
+/* No comment provided by engineer. */
+"Entered invalid coordinates" = "Coordonnées invalide ";
 
 /* Error message when swiss grid cannot open the chosen map app. */
 "Error: Is %@ still installed?" = "Erreur: %@ est-il toujours installé?";

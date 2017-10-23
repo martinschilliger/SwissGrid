@@ -7,6 +7,9 @@
 /* Shows the coordinate system used */
 "Entered %@ coordinates" = "%@-Koordinaten eingegeben";
 
+/* No comment provided by engineer. */
+"Entered invalid coordinates" = "ungültige Koordinaten eingegeben";
+
 /* Error message when swiss grid cannot open the chosen map app. */
 "Error: Is %@ still installed?" = "Fehler: Ist %@ noch installiert?";
 

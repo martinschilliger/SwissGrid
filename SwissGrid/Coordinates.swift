@@ -57,7 +57,16 @@ class Coordinates {
         // Proofing, if all coordinates are valid
         if coordinate1Type.invalid || coordinate2Type.invalid || coordinate1Type.coordinateSystem != coordinate2Type.coordinateSystem {
             debugPrint("Coordinates invalid while looking for type")
+            let msg = NSLocalizedString("Entered invalid coordinates", comment: nil)
+            let murmur = Murmur(title: msg, backgroundColor: Colors.LightBackground.color(), titleColor: UIColor.black)
+            Whisper.show(whistle: murmur, action: .show(2.5))
             return (false, 0, 0, false)
+        } else {
+            // Inform the user about his input
+            let msg = String(format: NSLocalizedString("Entered %@ coordinates", comment: "Shows the coordinate system used"), coordinate1Type.coordinateSystem)
+            let murmur = Murmur(title: msg, backgroundColor: Colors.LightBackground.color(), titleColor: UIColor.black)
+            Whisper.show(whistle: murmur, action: .show(2.5))
+
         }
 
         // cut the coordinate out of the string
@@ -185,13 +194,7 @@ class Coordinates {
         default:
             invalid = true
         }
-
-        //        debugPrint("coordinateType", coordinateType)
-        //        debugPrint("coordinateSystem", coordinateSystem)
-        let msg = String(format: NSLocalizedString("Entered %@ coordinates", comment: "Shows the coordinate system used"), coordinateSystem)
-        let murmur = Murmur(title: msg, backgroundColor: Colors.LightBackground.color(), titleColor: UIColor.black)
-        Whisper.show(whistle: murmur, action: .show(2.5))
-
+        
         return (coordinateType, coordinateSystem, invalid)
     }
 
