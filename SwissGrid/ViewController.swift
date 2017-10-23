@@ -68,7 +68,7 @@ class ViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegate, 
             coordinateInput.text = pastedCoordinates
             coordinateInputEditingChanged(coordinateInput) // Trigger change
             UserDefaults.standard.removeObject(forKey: "FFWpastedLastTime")
-            
+
             let msg = NSLocalizedString("FastForwarded coordinates last time", comment: "message displayed after fast-forwarded coordinates last time.")
             let murmur = Murmur(title: msg, backgroundColor: Colors.LightBackground.color(), titleColor: UIColor.black)
             Whisper.show(whistle: murmur, action: .show(5))
@@ -250,7 +250,6 @@ class ViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegate, 
             let errorMsg = String(format: NSLocalizedString("Error: Is %@ still installed?", comment: "Error message when swiss grid cannot open the chosen map app."), AvailableMap.getCase(map: mapProviderSetting).getDescription())
             let murmur = Murmur(title: errorMsg, backgroundColor: Colors.ErrorBackground.color(), titleColor: UIColor.white)
             Whisper.show(whistle: murmur, action: .show(5))
-
         }
     }
 }

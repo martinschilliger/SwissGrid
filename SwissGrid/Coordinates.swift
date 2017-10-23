@@ -57,7 +57,7 @@ class Coordinates {
         // Proofing, if all coordinates are valid
         if coordinate1Type.invalid || coordinate2Type.invalid || coordinate1Type.coordinateSystem != coordinate2Type.coordinateSystem {
             debugPrint("Coordinates invalid while looking for type")
-            let msg = NSLocalizedString("Entered invalid coordinates", comment: nil)
+            let msg = NSLocalizedString("Entered invalid coordinates", comment: "")
             let murmur = Murmur(title: msg, backgroundColor: Colors.LightBackground.color(), titleColor: UIColor.black)
             Whisper.show(whistle: murmur, action: .show(2.5))
             return (false, 0, 0, false)
@@ -66,7 +66,6 @@ class Coordinates {
             let msg = String(format: NSLocalizedString("Entered %@ coordinates", comment: "Shows the coordinate system used"), coordinate1Type.coordinateSystem)
             let murmur = Murmur(title: msg, backgroundColor: Colors.LightBackground.color(), titleColor: UIColor.black)
             Whisper.show(whistle: murmur, action: .show(2.5))
-
         }
 
         // cut the coordinate out of the string
@@ -78,7 +77,7 @@ class Coordinates {
         // Proofing, if two different coordinate directinos have been entered
         if coordinate1calculated.direction == coordinate2calculated.direction {
             debugPrint("Coordinates invalid, 2x the same direction")
-            let msg:String
+            let msg: String
             if coordinate1calculated.direction == "Nx" {
                 msg = NSLocalizedString("Invalid: Entered two northing coordinates", comment: "2x same direction (north) entred")
             } else {
@@ -194,7 +193,7 @@ class Coordinates {
         default:
             invalid = true
         }
-        
+
         return (coordinateType, coordinateSystem, invalid)
     }
 

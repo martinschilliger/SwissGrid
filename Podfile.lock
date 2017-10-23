@@ -4,19 +4,19 @@ PODS:
     - Alamofire (~> 4.1)
     - ObjectMapper (~> 3.0)
   - ObjectMapper (3.0.0)
-  - Whisper (5.0.0)
+  - Whisper (5.1.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.5)
   - AlamofireObjectMapper (~> 5.0)
-  - Whisper
+  - Whisper (~> 5.1)
 
 SPEC CHECKSUMS:
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
   AlamofireObjectMapper: 5fafc816351cbbc0d486611aaeba7461c0cbad49
   ObjectMapper: 92230db59bf8f341a5c3a3cf0b9fbdde3cf0d87f
-  Whisper: 051f25e704bf8992641ffd28b20d5682ddc5f5d3
+  Whisper: 62e406a71a288476e605a4db06de8c6975bbb350
 
-PODFILE CHECKSUM: 49809273a9c9a8529e484fca2b8e808e62940fc8
+PODFILE CHECKSUM: 70ac66c147a7156ef64f37c5922641a910b2cc64
 
 COCOAPODS: 1.3.1
