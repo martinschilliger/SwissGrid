@@ -26,6 +26,9 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="eOv-eO-EWE">
                                 <rect key="frame" x="0.0" y="248" width="320" height="320"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
+                                </accessibility>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="eOv-eO-EWE" secondAttribute="height" multiplier="1:1" id="QuS-ml-SVY"/>
                                     <constraint firstAttribute="width" secondItem="eOv-eO-EWE" secondAttribute="height" multiplier="1:1" id="c3d-SB-Qx6"/>
@@ -57,7 +60,7 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         </variation>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tge-5a-moo">
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tge-5a-moo">
                                         <rect key="frame" x="266" y="43" width="34" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="34" id="7AI-By-a9p"/>
