@@ -5,7 +5,7 @@
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -57,13 +57,14 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         </variation>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tge-5a-moo">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tge-5a-moo">
                                         <rect key="frame" x="266" y="43" width="34" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="34" id="7AI-By-a9p"/>
                                             <constraint firstAttribute="width" secondItem="Tge-5a-moo" secondAttribute="height" multiplier="34:34" id="9uU-zV-5aH"/>
                                             <constraint firstAttribute="height" constant="34" id="b5f-i8-g0D"/>
                                         </constraints>
+                                        <state key="normal" image="iconSettings.png"/>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -109,6 +110,7 @@
     <resources>
         <image name="Icon.png" width="1024" height="1024"/>
         <image name="gradientBackground.png" width="1" height="3000"/>
+        <image name="iconSettings.png" width="400" height="400"/>
     </resources>
     <color key="tintColor" red="0.22352941179999999" green="0.14901960780000001" blue="0.074509803920000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
