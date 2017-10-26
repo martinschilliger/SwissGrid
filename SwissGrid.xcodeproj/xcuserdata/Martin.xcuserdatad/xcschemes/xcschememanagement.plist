@@ -4,15 +4,20 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>CurrentPosition.xcscheme</key>
+		<key>CurrentPosition.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>7</integer>
+			<integer>1</integer>
 		</dict>
-		<key>SwissGrid.xcscheme</key>
+		<key>SwissGrid.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+		<key>SwissGridUIScreenshots.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>9</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
@@ -33,6 +38,11 @@
 			<true/>
 		</dict>
 		<key>5B8B08341F8FAE6400926144</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5B9CD4CD1F9F2B5900A7831C</key>
 		<dict>
 			<key>primary</key>
 			<true/>

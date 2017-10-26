@@ -1,3 +1,9 @@
 /* (No Comment) */
-"NSLocationWhenInUseUsageDescription" = "Commencez par localiser votre appareil dans $ (PRODUCT_NAME) pour calculer l'itinéraire plus rapidement dans l'application de carte plus tard. $ (PRODUCT_NAME) utilisera uniquement les données pour afficher votre position actuelle.";
+"CFBundleDisplayName" = "SwissGrid";
+
+/* (No Comment) */
+"CFBundleName" = "SwissGrid";
+
+/* (No Comment) */
+"NSLocationWhenInUseUsageDescription" = "Commencez par localiser votre appareil dans SwissGrid pour calculer l'itinéraire plus rapidement dans l'application de carte plus tard. SwissGrid utilisera uniquement les données pour afficher votre position actuelle.";
 

@@ -72,14 +72,14 @@ enum AvailableMap {
 
     // Define variables here also, for easier reading in swift
     // sorting of maps is done here also
-    static let maps = ["Apple", "Google", "maps.me", "Waze", "OpenStreetMap", /* "TomTom", */ "Navigon", "Garmin Western Europe" /* , "SBB Mobile" */ ]
+    static let maps = ["Apple Maps", "Google Maps", "maps.me", "Waze", "OpenStreetMap", /* "TomTom", */ "Navigon", "Garmin Western Europe" /* , "SBB Mobile" */ ]
     static let count = maps.count
 
     static func getCase(map: String) -> AvailableMap {
         switch map {
-        case "Apple":
+        case "Apple Maps":
             return AvailableMap.AppleMaps
-        case "Google":
+        case "Google Maps":
             return AvailableMap.GoogleMaps
         case "maps.me":
             return AvailableMap.MapsMe

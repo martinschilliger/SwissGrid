@@ -36,6 +36,8 @@
 		5B9CD4C51F9E771E00A7831C /* Whisper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B9CD4C61F9E771E00A7831C /* Whisper.framework */; };
 		5B9CD4C81F9E82C600A7831C /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9CD4C71F9E82C600A7831C /* Colors.swift */; };
 		5B9CD4C91F9E82C600A7831C /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9CD4C71F9E82C600A7831C /* Colors.swift */; };
+		5B9CD4D11F9F2B5900A7831C /* SwissGridUIScreenshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9CD4D01F9F2B5900A7831C /* SwissGridUIScreenshots.swift */; };
+		5B9CD4D91F9F2C1900A7831C /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9CD4D81F9F2C1800A7831C /* SnapshotHelper.swift */; };
 		5BA7C3E91F77E97700624D17 /* SettingsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA7C3E81F77E97700624D17 /* SettingsData.swift */; };
 		5BBA778A1F90A1630002DC58 /* gradientBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BBA77891F90A0800002DC58 /* gradientBackground.png */; };
 		5BBA778B1F90A1640002DC58 /* gradientBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BBA77891F90A0800002DC58 /* gradientBackground.png */; };
@@ -60,12 +62,26 @@
 			remoteGlobalIDString = 5B2B2D7F1F6A63170033834A;
 			remoteInfo = SwissGrid;
 		};
+		5B6CCC031FA083AD0025DFBD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B2B2D781F6A63170033834A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5B8B08341F8FAE6400926144;
+			remoteInfo = CurrentPosition;
+		};
 		5B8B083F1F8FAE6500926144 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5B2B2D781F6A63170033834A /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 5B8B08341F8FAE6400926144;
 			remoteInfo = CurrentPosition;
+		};
+		5B9CD4D31F9F2B5900A7831C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B2B2D781F6A63170033834A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5B2B2D7F1F6A63170033834A;
+			remoteInfo = SwissGrid;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -126,6 +142,10 @@
 		5B9CD4C21F9E277E00A7831C /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5B9CD4C61F9E771E00A7831C /* Whisper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Whisper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B9CD4C71F9E82C600A7831C /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		5B9CD4CE1F9F2B5900A7831C /* SwissGridUIScreenshots.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwissGridUIScreenshots.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B9CD4D01F9F2B5900A7831C /* SwissGridUIScreenshots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwissGridUIScreenshots.swift; sourceTree = "<group>"; };
+		5B9CD4D21F9F2B5900A7831C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5B9CD4D81F9F2C1800A7831C /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 		5BA7C3E81F77E97700624D17 /* SettingsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsData.swift; sourceTree = "<group>"; };
 		5BBA77891F90A0800002DC58 /* gradientBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gradientBackground.png; path = Images/gradientBackground.png; sourceTree = "<group>"; };
 		5BEFC7411F8D80EA00738934 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -180,6 +200,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5B9CD4CB1F9F2B5900A7831C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -190,6 +217,7 @@
 				5B2B2D971F6A63170033834A /* SwissGridTests */,
 				5B2B2DA21F6A63170033834A /* SwissGridUITests */,
 				5B8B08381F8FAE6400926144 /* CurrentPosition */,
+				5B9CD4CF1F9F2B5900A7831C /* SwissGridUIScreenshots */,
 				5B2B2D811F6A63170033834A /* Products */,
 				5B2B2DB11F6A66E60033834A /* Frameworks */,
 				DC446B4D9CCA7093454CFF5F /* Pods */,
@@ -203,6 +231,7 @@
 				5B2B2D941F6A63170033834A /* SwissGridTests.xctest */,
 				5B2B2D9F1F6A63170033834A /* SwissGridUITests.xctest */,
 				5B8B08351F8FAE6400926144 /* CurrentPosition.appex */,
+				5B9CD4CE1F9F2B5900A7831C /* SwissGridUIScreenshots.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -284,6 +313,16 @@
 				5B9CD4AE1F9E179300A7831C /* Localizable.strings */,
 			);
 			path = Localization;
+			sourceTree = "<group>";
+		};
+		5B9CD4CF1F9F2B5900A7831C /* SwissGridUIScreenshots */ = {
+			isa = PBXGroup;
+			children = (
+				5B9CD4D81F9F2C1800A7831C /* SnapshotHelper.swift */,
+				5B9CD4D01F9F2B5900A7831C /* SwissGridUIScreenshots.swift */,
+				5B9CD4D21F9F2B5900A7831C /* Info.plist */,
+			);
+			path = SwissGridUIScreenshots;
 			sourceTree = "<group>";
 		};
 		DC446B4D9CCA7093454CFF5F /* Pods */ = {
@@ -383,6 +422,25 @@
 			productReference = 5B8B08351F8FAE6400926144 /* CurrentPosition.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
+		5B9CD4CD1F9F2B5900A7831C /* SwissGridUIScreenshots */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5B9CD4D71F9F2B5900A7831C /* Build configuration list for PBXNativeTarget "SwissGridUIScreenshots" */;
+			buildPhases = (
+				5B9CD4CA1F9F2B5900A7831C /* Sources */,
+				5B9CD4CB1F9F2B5900A7831C /* Frameworks */,
+				5B9CD4CC1F9F2B5900A7831C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5B6CCC041FA083AD0025DFBD /* PBXTargetDependency */,
+				5B9CD4D41F9F2B5900A7831C /* PBXTargetDependency */,
+			);
+			name = SwissGridUIScreenshots;
+			productName = SwissGridUIScreenshots;
+			productReference = 5B9CD4CE1F9F2B5900A7831C /* SwissGridUIScreenshots.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -418,6 +476,11 @@
 						DevelopmentTeam = F7DL86356B;
 						ProvisioningStyle = Automatic;
 					};
+					5B9CD4CD1F9F2B5900A7831C = {
+						CreatedOnToolsVersion = 9.0.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 5B2B2D7F1F6A63170033834A;
+					};
 				};
 			};
 			buildConfigurationList = 5B2B2D7B1F6A63170033834A /* Build configuration list for PBXProject "SwissGrid" */;
@@ -438,6 +501,7 @@
 				5B2B2D931F6A63170033834A /* SwissGridTests */,
 				5B2B2D9E1F6A63170033834A /* SwissGridUITests */,
 				5B8B08341F8FAE6400926144 /* CurrentPosition */,
+				5B9CD4CD1F9F2B5900A7831C /* SwissGridUIScreenshots */,
 			);
 		};
 /* End PBXProject section */
@@ -480,6 +544,13 @@
 				5B9CD4BE1F9E269E00A7831C /* Localizable.strings in Resources */,
 				5B9CD4B61F9E179500A7831C /* InfoPlist.strings in Resources */,
 				5B8B083D1F8FAE6500926144 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5B9CD4CC1F9F2B5900A7831C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -610,6 +681,7 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/SimulatorStatusMagic/SimulatorStatusMagic.framework",
 				"${BUILT_PRODUCTS_DIR}/Whisper/Whisper.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -617,6 +689,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SimulatorStatusMagic.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Whisper.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -684,6 +757,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5B9CD4CA1F9F2B5900A7831C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B9CD4D11F9F2B5900A7831C /* SwissGridUIScreenshots.swift in Sources */,
+				5B9CD4D91F9F2C1900A7831C /* SnapshotHelper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -697,10 +779,20 @@
 			target = 5B2B2D7F1F6A63170033834A /* SwissGrid */;
 			targetProxy = 5B2B2DA01F6A63170033834A /* PBXContainerItemProxy */;
 		};
+		5B6CCC041FA083AD0025DFBD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5B8B08341F8FAE6400926144 /* CurrentPosition */;
+			targetProxy = 5B6CCC031FA083AD0025DFBD /* PBXContainerItemProxy */;
+		};
 		5B8B08401F8FAE6500926144 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 5B8B08341F8FAE6400926144 /* CurrentPosition */;
 			targetProxy = 5B8B083F1F8FAE6500926144 /* PBXContainerItemProxy */;
+		};
+		5B9CD4D41F9F2B5900A7831C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5B2B2D7F1F6A63170033834A /* SwissGrid */;
+			targetProxy = 5B9CD4D31F9F2B5900A7831C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1035,6 +1127,44 @@
 			};
 			name = Release;
 		};
+		5B9CD4D51F9F2B5900A7831C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = SwissGridUIScreenshots/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.schilliger.swissgrid.SwissGridUIScreenshots;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SwissGrid;
+			};
+			name = Debug;
+		};
+		5B9CD4D61F9F2B5900A7831C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = SwissGridUIScreenshots/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.schilliger.swissgrid.SwissGridUIScreenshots;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SwissGrid;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1079,6 +1209,15 @@
 			buildConfigurations = (
 				5B8B08421F8FAE6500926144 /* Debug */,
 				5B8B08431F8FAE6500926144 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5B9CD4D71F9F2B5900A7831C /* Build configuration list for PBXNativeTarget "SwissGridUIScreenshots" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5B9CD4D51F9F2B5900A7831C /* Debug */,
+				5B9CD4D61F9F2B5900A7831C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -9,14 +9,14 @@
          <BuildActionEntry
             buildForTesting = "YES"
             buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5B2B2D7F1F6A63170033834A"
-               BuildableName = "SwissGrid.app"
-               BlueprintName = "SwissGrid"
+               BlueprintIdentifier = "5B9CD4CD1F9F2B5900A7831C"
+               BuildableName = "SwissGridUIScreenshots.xctest"
+               BlueprintName = "SwissGridUIScreenshots"
                ReferencedContainer = "container:SwissGrid.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -33,32 +33,13 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5B2B2D931F6A63170033834A"
-               BuildableName = "SwissGridTests.xctest"
-               BlueprintName = "SwissGridTests"
-               ReferencedContainer = "container:SwissGrid.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5B2B2D9E1F6A63170033834A"
-               BuildableName = "SwissGridUITests.xctest"
-               BlueprintName = "SwissGridUITests"
+               BlueprintIdentifier = "5B9CD4CD1F9F2B5900A7831C"
+               BuildableName = "SwissGridUIScreenshots.xctest"
+               BlueprintName = "SwissGridUIScreenshots"
                ReferencedContainer = "container:SwissGrid.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5B2B2D7F1F6A63170033834A"
-            BuildableName = "SwissGrid.app"
-            BlueprintName = "SwissGrid"
-            ReferencedContainer = "container:SwissGrid.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -73,16 +54,15 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5B2B2D7F1F6A63170033834A"
-            BuildableName = "SwissGrid.app"
-            BlueprintName = "SwissGrid"
+            BlueprintIdentifier = "5B9CD4CD1F9F2B5900A7831C"
+            BuildableName = "SwissGridUIScreenshots.xctest"
+            BlueprintName = "SwissGridUIScreenshots"
             ReferencedContainer = "container:SwissGrid.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -92,16 +72,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5B2B2D7F1F6A63170033834A"
-            BuildableName = "SwissGrid.app"
-            BlueprintName = "SwissGrid"
+            BlueprintIdentifier = "5B9CD4CD1F9F2B5900A7831C"
+            BuildableName = "SwissGridUIScreenshots.xctest"
+            BlueprintName = "SwissGridUIScreenshots"
             ReferencedContainer = "container:SwissGrid.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

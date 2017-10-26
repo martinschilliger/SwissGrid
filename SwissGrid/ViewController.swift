@@ -30,6 +30,13 @@ class ViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegate, 
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
 
+        // stop function when in snapshot-mode
+        if UserDefaults.standard.bool(forKey: "FASTLANE_SNAPSHOT") {
+            // Show the keyboard
+            coordinateInput.becomeFirstResponder()
+            return
+        }
+        
         // Ask for location authorization
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()

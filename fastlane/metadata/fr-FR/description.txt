@@ -1,4 +1,10 @@
-L'application des cartes n'a pas le pourvoir des coordinatées suisse. C'app fait la possibilité pour entrer "Swiss Grid" coordinatées.
+L'appli Plans n'a pas le pourvoir des coordinatées suisse. SwissGrid vous donne une entrée simple pour ces coordonnées de style MN03 et MN95. Il vous permet même de choisir votre application cartographique préférée ou votre site Web.
 
-D'autres noms de Swiss Grid:
-Swiss Grid, Systèm de coordinatées Suisse, CH1903, LV03
+= C'est rapide =
+SwissGrid est rapide! Lorsque vous activez «Avancer», elle vérifie que votre presse-papiers contient des coordonnées valides même avant que l'appli se lance. Et elle vous enverra directement à votre application de carte préférée. Si cela est trop rapide, elle peut automatiquement coller vos coordonnées. Le formatage est (presque) égale.
+
+= Localisation avec des coordonnées "Swiss Grid" =
+Pour accélérer le routage dans l'application cartographique choisi, SwissGrid démarre déjà le service de localisation. Et elle affiche votre position actuelle dans une widget pour le centre de notifications.
+
+=D'autres noms de Swiss Grid=
+Systèm de coordinatées Suisse, CH1903, MN03, CH1995, MN95

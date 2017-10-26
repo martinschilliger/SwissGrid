@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '2F5622F3B18DF497981AB58C6D1FC72F'
-               BlueprintName = 'ObjectMapper'
+               BlueprintIdentifier = '9E640E9FE5094D3625EB720DC36E0277'
+               BlueprintName = 'SimulatorStatusMagic'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'ObjectMapper.framework'>
+               BuildableName = 'SimulatorStatusMagic.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

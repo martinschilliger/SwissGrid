@@ -63,9 +63,9 @@ class Coordinates {
             return (false, 0, 0, false)
         } else {
             // Inform the user about his input
-            let msg = String(format: NSLocalizedString("Entered %@ coordinates", comment: "Shows the coordinate system used"), coordinate1Type.coordinateSystem)
-            let murmur = Murmur(title: msg, backgroundColor: Colors.LightBackground.color(), titleColor: UIColor.black)
-            Whisper.show(whistle: murmur, action: .show(2.5))
+            //            let msg = String(format: NSLocalizedString("Entered %@ coordinates", comment: "Shows the coordinate system used"), coordinate1Type.coordinateSystem)
+            //            let murmur = Murmur(title: msg, backgroundColor: Colors.LightBackground.color(), titleColor: UIColor.black)
+            //            Whisper.show(whistle: murmur, action: .show(2.5))
         }
 
         // cut the coordinate out of the string
@@ -77,14 +77,14 @@ class Coordinates {
         // Proofing, if two different coordinate directinos have been entered
         if coordinate1calculated.direction == coordinate2calculated.direction {
             debugPrint("Coordinates invalid, 2x the same direction")
-            let msg: String
-            if coordinate1calculated.direction == "Nx" {
-                msg = NSLocalizedString("Invalid: Entered two northing coordinates", comment: "2x same direction (north) entred")
-            } else {
-                msg = NSLocalizedString("Invalid: Entered two easting coordinates", comment: "2x same direction (east) entred")
-            }
-            let murmur = Murmur(title: msg, backgroundColor: Colors.ErrorBackground.color(), titleColor: UIColor.white)
-            Whisper.show(whistle: murmur, action: .show(5))
+            //            let msg: String
+            //            if coordinate1calculated.direction == "Nx" {
+            //                msg = NSLocalizedString("Invalid: Entered two northing coordinates", comment: "2x same direction (north) entred")
+            //            } else {
+            //                msg = NSLocalizedString("Invalid: Entered two easting coordinates", comment: "2x same direction (east) entred")
+            //            }
+            //            let murmur = Murmur(title: msg, backgroundColor: Colors.ErrorBackground.color(), titleColor: UIColor.white)
+            //            Whisper.show(whistle: murmur, action: .show(5))
             return (false, 0, 0, false)
         }
 

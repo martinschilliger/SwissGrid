@@ -1,1 +1,0 @@
-- Du kannst auswählen, in welcher Karte die Koordinaten angezeigt werden sollen!

@@ -45,7 +45,7 @@
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         <state key="normal" title="Tap to open maps"/>
                                     </button>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="XX00000/XX00000" textAlignment="center" minimumFontSize="20" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="7Uf-QG-AtA">
+                                    <textField opaque="NO" clipsSubviews="YES" alpha="0.90000000000000002" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="XX00000/XX00000" textAlignment="center" minimumFontSize="20" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="7Uf-QG-AtA">
                                         <rect key="frame" x="20" y="40" width="236" height="40"/>
                                         <color key="backgroundColor" white="1" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>

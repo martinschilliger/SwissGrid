@@ -4,19 +4,22 @@ PODS:
     - Alamofire (~> 4.1)
     - ObjectMapper (~> 3.0)
   - ObjectMapper (3.0.0)
+  - SimulatorStatusMagic (2.0)
   - Whisper (5.1.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.5)
   - AlamofireObjectMapper (~> 5.0)
+  - SimulatorStatusMagic
   - Whisper (~> 5.1)
 
 SPEC CHECKSUMS:
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
   AlamofireObjectMapper: 5fafc816351cbbc0d486611aaeba7461c0cbad49
   ObjectMapper: 92230db59bf8f341a5c3a3cf0b9fbdde3cf0d87f
+  SimulatorStatusMagic: c8e958d70e0e0cd2d7cf33bb95014a222ddecf0a
   Whisper: 62e406a71a288476e605a4db06de8c6975bbb350
 
-PODFILE CHECKSUM: 70ac66c147a7156ef64f37c5922641a910b2cc64
+PODFILE CHECKSUM: bbb644f0f7d546c17a1690772194e7e47a0c188a
 
 COCOAPODS: 1.3.1

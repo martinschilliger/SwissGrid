@@ -32,6 +32,9 @@
                                         <rect key="frame" x="135.66666666666666" y="134" width="104" height="36"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         <state key="normal" title="open maps"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="buttonOpenMaps"/>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="openMapsButtonTriggered:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="dN6-DD-YUt"/>
                                         </connections>
@@ -68,6 +71,9 @@
                                             <constraint firstAttribute="height" constant="34" id="sSl-A8-8HA"/>
                                         </constraints>
                                         <state key="normal" image="iconSettings.png"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="buttonOpenSettings"/>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <segue destination="DAP-sn-RAb" kind="presentation" modalPresentationStyle="formSheet" id="bte-wl-vx9"/>
                                         </connections>
@@ -152,6 +158,9 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Settings" id="b1X-Fz-a3Q">
                         <barButtonItem key="leftBarButtonItem" style="done" systemItem="done" id="OGB-3v-xex">
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="buttonCloseSettings"/>
+                            </userDefinedRuntimeAttributes>
                             <connections>
                                 <action selector="closeButtonTriggered:" destination="B6u-cA-hR8" id="dQm-JG-3Hr"/>
                             </connections>

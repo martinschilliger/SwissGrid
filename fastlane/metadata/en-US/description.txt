@@ -1,6 +1,10 @@
-The provided maps app of the iPhone/iPad doesn't fit the swiss coordinate system. This app gives you a simple input field where you can enter "Swiss Grid"-coordinates.
+The Maps app doesn't work with Swiss Coordinates. SwissGrid gives you a simple input for those coordinates in LV03 and LV95 style. It even let's you choose your favourite map application or website.
 
-Also it can directly display your current position in WGS84 and "Swiss Grid"-coordinates.
+= It's fast =
+SwissGrid is fast! When you activate "FastForward" it checks your pasteboard for valid coordinates even before the app has loaded. And it will forward you directly to your favourite map app. If this it too fast, it can automatically paste your coordinates. The formatting (nearly) doesn't matter.
 
-Other names for Swiss Grid:
-Swiss Grid, Swiss coordinate system, CH1903, LV03
+= Location in "Swiss Grid" coordinates =
+To speed up routing in the loaded map app, SwissGrid already starts the location service. And it displays your current location in the Today view of your Notification Center.
+
+= Other names for Swiss Grid =
+Swiss coordinate system, CH1903, LV03, CH1995, LV95
