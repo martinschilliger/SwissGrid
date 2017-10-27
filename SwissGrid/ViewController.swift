@@ -14,6 +14,7 @@ import ObjectMapper
 import AlamofireObjectMapper
 import Whisper
 
+
 class ViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegate, CLLocationManagerDelegate {
     @IBOutlet var coordinateInput: UITextField!
     var calculatedCoordinates = (lat: Double(0), long: Double(0))

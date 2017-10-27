@@ -44,7 +44,7 @@ class SwissGridUIScreenshots: XCTestCase {
 
         // Type coordinates into field
         let xx00000Xx00000TextField = app.textFields["XX00000/XX00000"]
-        xx00000Xx00000TextField.typeText("2600000,1200000")
+        xx00000Xx00000TextField.typeText("600'000 / 200'000")
         snapshot("1Coordinates")
 
         // Open Settings to show available map providers

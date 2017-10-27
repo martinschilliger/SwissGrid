@@ -23,6 +23,7 @@
 		5B45A7731F6FEFDE0042331A /* Coordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B45A7721F6FEFDE0042331A /* Coordinates.swift */; };
 		5B45A7751F6FF4570042331A /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B45A7741F6FF4570042331A /* GradientView.swift */; };
 		5B45A77C1F711D560042331A /* CLLocation+CH1903.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B45A77B1F711D560042331A /* CLLocation+CH1903.swift */; };
+		5B6240251FA1E12800BD1D93 /* SimulatorStatusMagic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B6240261FA1E12800BD1D93 /* SimulatorStatusMagic.framework */; };
 		5B8B08371F8FAE6400926144 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B8B08361F8FAE6400926144 /* NotificationCenter.framework */; };
 		5B8B083A1F8FAE6500926144 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8B08391F8FAE6500926144 /* TodayViewController.swift */; };
 		5B8B083D1F8FAE6500926144 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B8B083B1F8FAE6500926144 /* MainInterface.storyboard */; };
@@ -126,6 +127,10 @@
 		5B45A7721F6FEFDE0042331A /* Coordinates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinates.swift; sourceTree = "<group>"; };
 		5B45A7741F6FF4570042331A /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		5B45A77B1F711D560042331A /* CLLocation+CH1903.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CLLocation+CH1903.swift"; sourceTree = "<group>"; };
+		5B6240201FA1DAC800BD1D93 /* SimulatorStatusMagic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SimulatorStatusMagic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B6240221FA1DCBD00BD1D93 /* SimulatorStatusMagic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SimulatorStatusMagic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B6240241FA1DE2A00BD1D93 /* SimulatorStatusMagic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SimulatorStatusMagic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B6240261FA1E12800BD1D93 /* SimulatorStatusMagic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SimulatorStatusMagic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B8B08351F8FAE6400926144 /* CurrentPosition.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CurrentPosition.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B8B08361F8FAE6400926144 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		5B8B08391F8FAE6500926144 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
@@ -167,6 +172,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B6240251FA1E12800BD1D93 /* SimulatorStatusMagic.framework in Frameworks */,
 				5B9CD4C51F9E771E00A7831C /* Whisper.framework in Frameworks */,
 				5BEFC7421F8D8A4100738934 /* AlamofireObjectMapper.framework in Frameworks */,
 				5BEFC7431F8D8A4100738934 /* ObjectMapper.framework in Frameworks */,
@@ -281,6 +287,10 @@
 		5B2B2DB11F6A66E60033834A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5B6240261FA1E12800BD1D93 /* SimulatorStatusMagic.framework */,
+				5B6240241FA1DE2A00BD1D93 /* SimulatorStatusMagic.framework */,
+				5B6240221FA1DCBD00BD1D93 /* SimulatorStatusMagic.framework */,
+				5B6240201FA1DAC800BD1D93 /* SimulatorStatusMagic.framework */,
 				5B9CD4C61F9E771E00A7831C /* Whisper.framework */,
 				5BEFC7441F8D8A4100738934 /* AlamofireObjectMapper.framework */,
 				5BEFC7451F8D8A4100738934 /* ObjectMapper.framework */,

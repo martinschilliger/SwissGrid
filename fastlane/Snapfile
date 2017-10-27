@@ -1,28 +1,16 @@
 # Uncomment the lines below you want to change by removing the # in the beginning
 
-# debug weird problems  
+# debug weird problems
 #clean true
 #erase_simulator true
 #localize_simulator true
 output_simulator_logs true
 
-# A list of devices you want to take the screenshots from
- devices([
-   "iPhone 6",
-#   "iPhone 6 Plus",
-#   "iPhone 5",
-#   "iPad Pro (12.9-inch)",
-#   "iPad Pro (9.7-inch)",
-#   "Apple TV 1080p"
- ])
-
 languages([
-#  "en-US",
+  "en-US",
   "de-DE",
   "fr-FR",
 ])
-
-ios_version("11.0.1")
 
 # The name of the scheme which contains the UI Tests
 scheme "SwissGridUIScreenshots"
@@ -31,7 +19,7 @@ scheme "SwissGridUIScreenshots"
 # output_directory "./screenshots"
 
 # Clear all previously generated screenshots before creating new ones
-clear_previous_screenshots true
+#clear_previous_screenshots true
 
 # Choose which project/workspace to use
 # project "./Project.xcodeproj"
