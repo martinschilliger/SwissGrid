@@ -1,1 +1,1 @@
-SwissGrid, Swiss Grid, Swiss coordinate system, CH1903, CH1995, LV03, LV95, Military, Swisstopo, WGS84
+SwissGrid, Swiss Grid, CH1903, CH1995, LV03, LV95, Military, Swisstopo, WGS84

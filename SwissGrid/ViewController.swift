@@ -14,6 +14,8 @@ import ObjectMapper
 import AlamofireObjectMapper
 import Whisper
 
+//import SimulatorStatusMagic
+
 
 class ViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegate, CLLocationManagerDelegate {
     @IBOutlet var coordinateInput: UITextField!
@@ -32,11 +34,14 @@ class ViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegate, 
         // Do any additional setup after loading the view, typically from a nib.
 
         // stop function when in snapshot-mode
-        if UserDefaults.standard.bool(forKey: "FASTLANE_SNAPSHOT") {
-            // Show the keyboard
-            coordinateInput.becomeFirstResponder()
-            return
-        }
+//        if true {
+//            // Make the Statusbar magic
+//            SDStatusBarManager.sharedInstance().enableOverrides()
+//
+//            // Show the keyboard
+//            coordinateInput.becomeFirstResponder()
+//            return
+//        }
         
         // Ask for location authorization
         locationManager.requestWhenInUseAuthorization()

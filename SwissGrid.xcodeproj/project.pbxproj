@@ -23,7 +23,6 @@
 		5B45A7731F6FEFDE0042331A /* Coordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B45A7721F6FEFDE0042331A /* Coordinates.swift */; };
 		5B45A7751F6FF4570042331A /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B45A7741F6FF4570042331A /* GradientView.swift */; };
 		5B45A77C1F711D560042331A /* CLLocation+CH1903.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B45A77B1F711D560042331A /* CLLocation+CH1903.swift */; };
-		5B6240251FA1E12800BD1D93 /* SimulatorStatusMagic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B6240261FA1E12800BD1D93 /* SimulatorStatusMagic.framework */; };
 		5B8B08371F8FAE6400926144 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B8B08361F8FAE6400926144 /* NotificationCenter.framework */; };
 		5B8B083A1F8FAE6500926144 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8B08391F8FAE6500926144 /* TodayViewController.swift */; };
 		5B8B083D1F8FAE6500926144 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B8B083B1F8FAE6500926144 /* MainInterface.storyboard */; };
@@ -172,7 +171,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B6240251FA1E12800BD1D93 /* SimulatorStatusMagic.framework in Frameworks */,
 				5B9CD4C51F9E771E00A7831C /* Whisper.framework in Frameworks */,
 				5BEFC7421F8D8A4100738934 /* AlamofireObjectMapper.framework in Frameworks */,
 				5BEFC7431F8D8A4100738934 /* ObjectMapper.framework in Frameworks */,
@@ -465,7 +463,7 @@
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = F7DL86356B;
 						LastSwiftMigration = 0900;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					5B2B2D931F6A63170033834A = {
 						CreatedOnToolsVersion = 8.3.3;
@@ -484,7 +482,7 @@
 					5B8B08341F8FAE6400926144 = {
 						CreatedOnToolsVersion = 9.0;
 						DevelopmentTeam = F7DL86356B;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					5B9CD4CD1F9F2B5900A7831C = {
 						CreatedOnToolsVersion = 9.0.1;
@@ -993,16 +991,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = F7DL86356B;
 				INFOPLIST_FILE = SwissGrid/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Schilliger.SwissGrid;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "ec840bb2-663e-474f-bba0-5e918542ee71";
+				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.Schilliger.SwissGrid";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 				SWIFT_VERSION = 4.0;
 			};
@@ -1014,16 +1012,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = F7DL86356B;
 				INFOPLIST_FILE = SwissGrid/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Schilliger.SwissGrid;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "ec840bb2-663e-474f-bba0-5e918542ee71";
+				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.Schilliger.SwissGrid";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 				SWIFT_VERSION = 4.0;
 			};
@@ -1097,8 +1095,8 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = F7DL86356B;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = CurrentPosition/Info.plist;
@@ -1106,8 +1104,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Schilliger.SwissGrid.CurrentPosition;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "c1582071-9533-4b37-a010-5466abf32dde";
+				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.Schilliger.SwissGrid.CurrentPosition";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1120,8 +1118,8 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = F7DL86356B;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = CurrentPosition/Info.plist;
@@ -1129,8 +1127,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Schilliger.SwissGrid.CurrentPosition;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "c1582071-9533-4b37-a010-5466abf32dde";
+				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.Schilliger.SwissGrid.CurrentPosition";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

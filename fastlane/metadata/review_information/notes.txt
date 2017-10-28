@@ -1,1 +1,1 @@
-Enter swiss grid coordinates, like 600.000/200.000 (old) or 600.000/200.000 (new) (formatting of numbers doesn't matter).
+Enter swiss grid coordinates, like 600.000/200.000 (old) or 2600.000/1200.000 (new) (formatting of numbers doesn't matter).
