@@ -17,9 +17,22 @@
 	<key>CFBundleShortVersionString</key>
 	<string>3.0</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>3.0.2</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>comgooglemaps</string>
+		<string>waze</string>
+		<string>mapswithme</string>
+		<string>navigon</string>
+		<string>garminonboardwesterneurope</string>
+		<string>sbbmobile</string>
+	</array>
+	<key>LSHasLocalizedDisplayName</key>
+	<true/>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Start getting the location of your device for faster routing in the later opened maps app. $(PRODUCT_NAME) will use it to display your current location in swiss grid coordinates.</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
@@ -41,18 +54,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>LSApplicationQueriesSchemes</key>
-	<array>
-		<string>comgooglemaps</string>
-		<string>waze</string>
-		<string>mapswithme</string>
-		<string>navigon</string>
-		<string>garminonboardwesterneurope</string>
-		<string>sbbmobile</string>
-	</array>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Start getting the location of your device for faster routing in the later opened maps app. $(PRODUCT_NAME) will use it to display your current location in swiss grid coordinates.</string>
-	<key>LSHasLocalizedDisplayName</key>
-	<true/>
 </dict>
 </plist>
