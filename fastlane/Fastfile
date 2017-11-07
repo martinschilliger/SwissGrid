@@ -51,7 +51,7 @@ platform :ios do
 #                "iPad (5th generation)",
                 "iPad Pro (9.7-inch)",
                 "iPad Pro (12.9-inch)",
-#                "iPad Pro (12.9-inch) (2nd generation)", 
+#                "iPad Pro (12.9-inch) (2nd generation)",
                 "iPad Pro (10.5-inch)"
             ],
 	    number_of_retries: 3
@@ -84,7 +84,20 @@ platform :ios do
         # match(type: "appstore")
         # snapshot
         gym(scheme: "SwissGrid") # Build your app - more options available
-        deliver(force: true)
+        deliver
+        # frameit
+    end
+
+    desc "Deploy a new version to the App Store without Screenshots and Metadata"
+    lane :releaseFast do
+        # match(type: "appstore")
+        # snapshot
+        gym(scheme: "SwissGrid") # Build your app - more options available
+        deliver(
+            force: true,
+            skip_screenshots: true,
+            skip_metadata: true,
+        )
         # frameit
     end
 
