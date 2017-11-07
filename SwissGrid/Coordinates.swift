@@ -62,7 +62,7 @@ class Coordinates {
             Whisper.show(whistle: murmur, action: .show(2.5))
             return (false, 0, 0, false)
         } else {
-            Inform the user about his input
+//            Inform the user about his input
             let msg = String(format: NSLocalizedString("Entered %@ coordinates", comment: "Shows the coordinate system used"), coordinate1Type.coordinateSystem)
             let murmur = Murmur(title: msg, backgroundColor: Colors.LightBackground.color(), titleColor: UIColor.black)
             Whisper.show(whistle: murmur, action: .show(2.5))
