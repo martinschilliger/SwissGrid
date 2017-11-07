@@ -37,7 +37,7 @@ class ViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegate, 
         //            // Make the Statusbar magic
         //            SDStatusBarManager.sharedInstance().enableOverrides()
         //
-        //            // Show the keyboard
+        //            // Show the keyboard before stoping viewDidLoad()
         //            coordinateInput.becomeFirstResponder()
         //            return
         //        }
