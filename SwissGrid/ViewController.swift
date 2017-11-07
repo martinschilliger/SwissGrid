@@ -14,8 +14,7 @@ import ObjectMapper
 import AlamofireObjectMapper
 import Whisper
 
-//import SimulatorStatusMagic
-
+// import SimulatorStatusMagic
 
 class ViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegate, CLLocationManagerDelegate {
     @IBOutlet var coordinateInput: UITextField!
@@ -34,15 +33,15 @@ class ViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegate, 
         // Do any additional setup after loading the view, typically from a nib.
 
         // stop function when in snapshot-mode
-//        if true {
-//            // Make the Statusbar magic
-//            SDStatusBarManager.sharedInstance().enableOverrides()
-//
-//            // Show the keyboard
-//            coordinateInput.becomeFirstResponder()
-//            return
-//        }
-        
+        //        if true {
+        //            // Make the Statusbar magic
+        //            SDStatusBarManager.sharedInstance().enableOverrides()
+        //
+        //            // Show the keyboard
+        //            coordinateInput.becomeFirstResponder()
+        //            return
+        //        }
+
         // Ask for location authorization
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
@@ -177,7 +176,6 @@ class ViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegate, 
             }
 
             // Start the request
-            // TODO: What if the request fails?
             Alamofire.request(geodesyURL)
                 .downloadProgress { progress in
                     // multiply with 0.6 cause otherwise the progress-bar is immediatly 100%
