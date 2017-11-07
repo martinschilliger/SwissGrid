@@ -26,10 +26,10 @@
 "Force aerial view" = "Forcer la vue satellite";
 
 /* 2x same direction (east) entred */
-"Invalid: Entered two easting coordinates" = "Invalide: 2x des coordonnées nord entrées";
+"Invalid: Detected two easting coordinates" = "Invalide: 2x des coordonnées nord détectées";
 
 /* 2x same direction (north) entred */
-"Invalid: Entered two northing coordinates" = "Invalide: 2x des coordonnées est entrées";
+"Invalid: Detected two northing coordinates" = "Invalide: 2x des coordonnées est détectées";
 
 /* Request to mail the developer if an map app is missing on the list */
 "Is your favorite map application missing? Please tell Martin: info@martin-apps.ch" = "Votre application de carte préférée est-elle manquante? Informez Martin à ce sujet: info@martin-apps.ch. Et même si la traduction est mauvaise…";

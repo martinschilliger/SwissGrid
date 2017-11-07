@@ -26,10 +26,10 @@
 "Force aerial view" = "Erzwinge Satellitenansicht";
 
 /* 2x same direction (east) entred */
-"Invalid: Entered two easting coordinates" = "Ungültig: 2x Ost-Koordinaten eingegeben";
+"Invalid: Detected two easting coordinates" = "Ungültig: 2x Ost-Koordinaten erkannt";
 
 /* 2x same direction (north) entred */
-"Invalid: Entered two northing coordinates" = "Ungültig: 2x Nord-Koordinaten eingegeben";
+"Invalid: Detected two northing coordinates" = "Ungültig: 2x Nord-Koordinaten erkannt";
 
 /* Request to mail the developer if an map app is missing on the list */
 "Is your favorite map application missing? Please tell Martin: info@martin-apps.ch" = "Fehlt deine Lieblings-Karten-App? Informiere Martin darüber: info@martin-apps.ch. Er freut sich auch über Lob und Schnorris.";

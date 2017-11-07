@@ -79,9 +79,9 @@ class Coordinates {
             debugPrint("Coordinates invalid, 2x the same direction")
             let msg: String
             if coordinate1calculated.direction == "Nx" {
-                msg = NSLocalizedString("Invalid: Entered two northing coordinates", comment: "2x same direction (north) entred")
+                msg = NSLocalizedString("Invalid: Detected two northing coordinates", comment: "2x same direction (north) entred")
             } else {
-                msg = NSLocalizedString("Invalid: Entered two easting coordinates", comment: "2x same direction (east) entred")
+                msg = NSLocalizedString("Invalid: Detected two easting coordinates", comment: "2x same direction (east) entred")
             }
             let murmur = Murmur(title: msg, backgroundColor: Colors.ErrorBackground.color(), titleColor: UIColor.white)
             Whisper.show(whistle: murmur, action: .show(5))
