@@ -77,6 +77,7 @@ class Coordinates {
         // Proofing, if two different coordinate directinos have been entered
         if coordinate1calculated.direction == coordinate2calculated.direction {
             debugPrint("Coordinates invalid, 2x the same direction")
+            // TODO: Detect if LV95 get entered, don't say that just because it is not yet finished!
             let msg: String
             if coordinate1calculated.direction == "Nx" {
                 msg = NSLocalizedString("Invalid: Detected two northing coordinates", comment: "2x same direction (north) entred")
